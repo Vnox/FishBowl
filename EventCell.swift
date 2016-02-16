@@ -221,7 +221,7 @@ class EventCell: UITableViewCell {
     
     func updateTime() {
         
-        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
         //Find the difference between current time and start time.
         
@@ -247,7 +247,7 @@ class EventCell: UITableViewCell {
         
         let strMinutes = String(format: "%02d", minutes)
         let strSeconds = String(format: "%02d", seconds)
-        let strFraction = String(format: "%02d", fraction)
+        //let strFraction = String(format: "%02d", fraction)
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         
