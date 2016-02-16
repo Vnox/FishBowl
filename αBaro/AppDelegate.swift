@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+         //MonkeyKing.registerAccount(.WeChat(appID: "wxd930ea5d5a258f4f"))
+        
         return true
     }
 

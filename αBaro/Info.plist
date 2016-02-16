@@ -30,6 +30,44 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>WeChat</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wx4868b35061f87885</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>pocket-oauth-v1</string>
+		<string>weixin</string>
+		<string>mqqapi</string>
+		<string>weibosdk</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>apiweibo.com</key>
+			<string></string>
+			<key>blessingsoft.com</key>
+			<string></string>
+			<key>open.weibo.com</key>
+			<string></string>
+			<key>qq.com</key>
+			<string></string>
+			<key>sina.com.cn</key>
+			<string></string>
+		</dict>
+	</dict>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

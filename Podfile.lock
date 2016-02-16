@@ -1,0 +1,10 @@
+PODS:
+  - MonkeyKing (0.9.1)
+
+DEPENDENCIES:
+  - MonkeyKing (~> 0.9.1)
+
+SPEC CHECKSUMS:
+  MonkeyKing: 84d0f711a0e20eb104616d0b393a74efd5d9d9ad
+
+COCOAPODS: 0.39.0
