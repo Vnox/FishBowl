@@ -551,6 +551,7 @@ class JSSAlertView: UIViewController {
         saveName(self.myTextField.text!)
     }
     
+    // save the name of event
     func saveName(name: String) {
         //1
         let appDelegate =

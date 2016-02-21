@@ -201,14 +201,26 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
     
     func toDoItemDeleted(toDoItem: Event) {
         // Delete everything in this method
-        
         let index = events.indexOf(toDoItem)
         if index == NSNotFound { return }
         events.removeAtIndex(index!)
         
+        let indexPathForRow = NSIndexPath(forRow: index!, inSection: 0)
+        
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context:NSManagedObjectContext = appDel.managedObjectContext!
+        context.deleteObject(eventData[indexPathForRow.row] as NSManagedObject)
+        eventData.removeAtIndex(indexPathForRow.row)
+        do{
+            try context.save()
+        }catch let error as NSError{
+            print("Can't delete: \(error)")
+        }
+
+        
         // use the UITableView to animate the removal of this row
         tableView.beginUpdates()
-        let indexPathForRow = NSIndexPath(forRow: index!, inSection: 0)
+        //let indexPathForRow = NSIndexPath(forRow: index!, inSection: 0)
         tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
         tableView.endUpdates()    
     }
