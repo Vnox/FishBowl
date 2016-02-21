@@ -18,6 +18,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
     var eventData = [NSManagedObject]()
     let nonurgentImg = UIImage(named: "urgentIndiGr")
     let urgentImg = UIImage(named: "urgentIndi")
+    //var onedetail = false
     //the details row
     var detailRow = [Int]()
     var managedContext: NSManagedObjectContext!
@@ -37,27 +38,13 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
         swipeGesture.direction = .Down
         view.addGestureRecognizer(swipeGesture)
         
-        //self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0)
-        
-        
-        // Do any additional setup after loading the view.
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
+        }
     
 
     
     
     func loadEvents() {
-        
-//        let event1:Event = Event(name: "Finish math Homwwork", timeRemaining: 4.00, priority: false)
-//        let event2:Event = Event(name: "CSE Test Review", timeRemaining: 2.00, priority: false)
-//        let event3:Event = Event(name: "Getting ready for the driving test", timeRemaining: 1.00, priority: true)
-//        events += [event1, event2, event3]
+
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
@@ -161,6 +148,13 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        // If detail cell, then response nothing
+        if(detailRow.contains(indexPath.row)){
+            return
+        }
+        
         let selectedCell:EventCell = tableView.cellForRowAtIndexPath(indexPath)! as! EventCell
         
         if(selectedCell.showedDetail == false){
@@ -169,13 +163,24 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
             events.insert(Event(name: "DETAILS", timeRemaining: 0.00, priority: false), atIndex: indexPath.row + 1)
             
             detailRow.insert(indexPath.row + 1, atIndex: 0)
+            for(var i = 0; i < detailRow.count; i++){
+                if(detailRow[i] > indexPath.row+1 ){
+                    detailRow[i]++
+                }
+            }
             
             tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)], withRowAnimation: .Fade)
             selectedCell.showedDetail = true
+            return
             
-        }else{
+        }
+        
+        else{
             
-            detailRow.removeAll()
+            var toremove = detailRow.indexOf(indexPath.row + 1)
+            if(toremove != nil){detailRow.removeAtIndex(toremove!)}
+       
+            
             
             events.removeAtIndex(indexPath.row + 1)
             tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)], withRowAnimation: .Fade)
