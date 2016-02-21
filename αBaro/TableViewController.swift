@@ -18,6 +18,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
     var eventData = [NSManagedObject]()
     let nonurgentImg = UIImage(named: "urgentIndiGr")
     let urgentImg = UIImage(named: "urgentIndi")
+    //the details row
     var detailRow = [Int]()
     var managedContext: NSManagedObjectContext!
     

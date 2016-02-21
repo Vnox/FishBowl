@@ -52,6 +52,9 @@ class MainViewController: UIViewController {
         view.addGestureRecognizer(swipeGesture)
 
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
         NSThread.sleepForTimeInterval(1.0)
         
         super.viewDidLoad()
@@ -503,6 +506,10 @@ class MainViewController: UIViewController {
         //self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
         presentViewController(theView, animated: true, completion: nil)
         
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 
