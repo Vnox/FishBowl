@@ -196,7 +196,7 @@ class EventCell: UITableViewCell {
                     let aSelector : Selector = "updateTime"
                     timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
                     startTime = NSDate.timeIntervalSinceReferenceDate()
-                    NSLog("YES")
+                    //NSLog("YES")
             }
             self.hoursLeft.alpha = self.recordState ? 0.0 : 1.0
             self.EventName.alpha = self.recordState ? 0.0 : 1.0

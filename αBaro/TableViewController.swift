@@ -206,6 +206,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
     }
     
     func toDoItemDeleted(toDoItem: Event) {
+        
         // Delete everything in this method
         let index = events.indexOf(toDoItem)
         if index == NSNotFound { return }
@@ -230,8 +231,6 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
         tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
         tableView.endUpdates()    
     }
-
-    
 
 
     /*

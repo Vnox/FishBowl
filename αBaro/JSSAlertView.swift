@@ -104,8 +104,12 @@ class JSSAlertView: UIViewController {
             self.alertview.setTextTheme(theme)
         }
         
-        func getTextfieldText() -> String{
+        func getTextfieldText() -> String {
             return self.alertview.myTextField.text!
+        }
+        
+        func getTextfield() -> UITextField {
+            return self.alertview.myTextField!
         }
         
         @objc func close() {

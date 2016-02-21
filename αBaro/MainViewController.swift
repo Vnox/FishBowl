@@ -12,7 +12,7 @@ import Social
 
 var sound = true
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var baseImage: UIButton!
@@ -395,7 +395,7 @@ class MainViewController: UIViewController {
         alertview.setButtonFont("AvenirNext-Regular")
         alertview.setTextTheme(.Light)
         alertview.addAction(bloodyHell)
-        
+        alertview.getTextfield().delegate = self
     }
 
     
@@ -512,6 +512,10 @@ class MainViewController: UIViewController {
         view.endEditing(true)
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 
 }
     
