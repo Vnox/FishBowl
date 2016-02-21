@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController, TableViewCellDelegate {
     
@@ -14,9 +15,11 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
     
 
     var events = [Event]()
+    var eventData = [NSManagedObject]()
     let nonurgentImg = UIImage(named: "urgentIndiGr")
     let urgentImg = UIImage(named: "urgentIndi")
     var detailRow = [Int]()
+    var managedContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +53,28 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
     
     func loadEvents() {
         
-        let event1:Event = Event(name: "Finish math Homwwork", timeRemaining: 4.00, priority: false)
-        let event2:Event = Event(name: "CSE Test Review", timeRemaining: 2.00, priority: false)
-        let event3:Event = Event(name: "Getting ready for the driving test", timeRemaining: 1.00, priority: true)
-        events += [event1, event2, event3]
+//        let event1:Event = Event(name: "Finish math Homwwork", timeRemaining: 4.00, priority: false)
+//        let event2:Event = Event(name: "CSE Test Review", timeRemaining: 2.00, priority: false)
+//        let event3:Event = Event(name: "Getting ready for the driving test", timeRemaining: 1.00, priority: true)
+//        events += [event1, event2, event3]
         
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Entity")
+        
+        do{
+            let results =
+            try managedContext!.executeFetchRequest(fetchRequest)
+            eventData = results as! [NSManagedObject]
+            for var i=0; i<eventData.count; i++ {
+                let tmpEvent = eventData[i]
+                let eventObj: Event = Event(name: (tmpEvent.valueForKey("name") as? String)!, timeRemaining: 4.00, priority: false)
+                events.append(eventObj)
+            }
+            print("\(eventData)")
+        } catch let error as NSError {
+            print("could not fetch \(error), \(error.userInfo)")
+        }
         
     }
     
@@ -181,14 +201,26 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
     
     func toDoItemDeleted(toDoItem: Event) {
         // Delete everything in this method
-        
         let index = events.indexOf(toDoItem)
         if index == NSNotFound { return }
         events.removeAtIndex(index!)
         
+        let indexPathForRow = NSIndexPath(forRow: index!, inSection: 0)
+        
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context:NSManagedObjectContext = appDel.managedObjectContext!
+        context.deleteObject(eventData[indexPathForRow.row] as NSManagedObject)
+        eventData.removeAtIndex(indexPathForRow.row)
+        do{
+            try context.save()
+        }catch let error as NSError{
+            print("Can't delete: \(error)")
+        }
+
+        
         // use the UITableView to animate the removal of this row
         tableView.beginUpdates()
-        let indexPathForRow = NSIndexPath(forRow: index!, inSection: 0)
+        //let indexPathForRow = NSIndexPath(forRow: index!, inSection: 0)
         tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
         tableView.endUpdates()    
     }
