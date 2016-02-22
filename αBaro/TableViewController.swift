@@ -25,12 +25,14 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+
         
         
         
         // load event list
         loadEvents()
+        
         
         
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))

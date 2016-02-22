@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0423DBA0ACAFA2E29E259AE4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F3BA06CE78E1A22423E86E /* Pods.framework */; };
+		0423DBA0ACAFA2E29E259AE4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F3BA06CE78E1A22423E86E /* Pods.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		7A03811F1C1F68C600B8C9E7 /* conclude.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A03811E1C1F68C600B8C9E7 /* conclude.png */; };
 		7A0381211C1F6A1600B8C9E7 /* clearBKG.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A0381201C1F6A1600B8C9E7 /* clearBKG.png */; };
 		7A0381231C1F6B5A00B8C9E7 /* CELL1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A0381221C1F6B5A00B8C9E7 /* CELL1.png */; };
@@ -156,8 +156,8 @@
 		7A03811E1C1F68C600B8C9E7 /* conclude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conclude.png; sourceTree = "<group>"; };
 		7A0381201C1F6A1600B8C9E7 /* clearBKG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearBKG.png; sourceTree = "<group>"; };
 		7A0381221C1F6B5A00B8C9E7 /* CELL1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CELL1.png; sourceTree = "<group>"; };
-		7A0381241C1F7E2F00B8C9E7 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		7A0381281C1F8A6000B8C9E7 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCell.swift; path = ../EventCell.swift; sourceTree = "<group>"; };
+		7A0381241C1F7E2F00B8C9E7 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = "αBaro/TableViewController.swift"; sourceTree = "<group>"; };
+		7A0381281C1F8A6000B8C9E7 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		7A0D46C31BF31580009CAB1F /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
 		7A0D46C41BF31580009CAB1F /* lightbulb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightbulb@2x.png"; sourceTree = "<group>"; };
 		7A0D46C51BF31580009CAB1F /* lightbulb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightbulb@3x.png"; sourceTree = "<group>"; };
@@ -166,15 +166,15 @@
 		7A46E05A1C72846000C5705A /* RecingBkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecingBkg.png; sourceTree = "<group>"; };
 		7A472BBC1C20E184005CAF1D /* urgentIndi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urgentIndi.png; sourceTree = "<group>"; };
 		7A472BBE1C20E217005CAF1D /* urgentIndiGr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urgentIndiGr.png; sourceTree = "<group>"; };
-		7A472BC21C20ED07005CAF1D /* complexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = complexViewController.swift; path = ../complexViewController.swift; sourceTree = "<group>"; };
-		7A472BC41C21FCE0005CAF1D /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
+		7A472BC21C20ED07005CAF1D /* complexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = complexViewController.swift; sourceTree = "<group>"; };
+		7A472BC41C21FCE0005CAF1D /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableTableViewController.swift; path = "αBaro/SettingsTableTableViewController.swift"; sourceTree = "<group>"; };
 		7A472BC61C220DC4005CAF1D /* settingsbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsbar.png; sourceTree = "<group>"; };
 		7A472BC81C220F3D005CAF1D /* baritem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baritem.png; sourceTree = "<group>"; };
 		7A472BC91C220F3D005CAF1D /* bartop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bartop.png; sourceTree = "<group>"; };
 		7A472BCA1C220F3D005CAF1D /* barbottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barbottom.png; sourceTree = "<group>"; };
 		7A472BCE1C221111005CAF1D /* check-mark-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark-512.png"; sourceTree = "<group>"; };
 		7A472BD01C221188005CAF1D /* check-mark-in-white-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark-in-white-hi.png"; sourceTree = "<group>"; };
-		7A472BD21C22126C005CAF1D /* SettingRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingRootViewController.swift; sourceTree = "<group>"; };
+		7A472BD21C22126C005CAF1D /* SettingRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingRootViewController.swift; path = "αBaro/SettingRootViewController.swift"; sourceTree = "<group>"; };
 		7A5C12451C33487B007688B0 /* BKGBLUE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BKGBLUE.png; sourceTree = "<group>"; };
 		7A5C12471C334A64007688B0 /* RingBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RingBlue.png; sourceTree = "<group>"; };
 		7A5C12491C334B53007688B0 /* level40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level40.png; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		7A5C12531C3361B6007688B0 /* LCH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LCH.png; sourceTree = "<group>"; };
 		7A5C12551C33775B007688B0 /* cloud2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud2.png; sourceTree = "<group>"; };
 		7A5C12561C33775B007688B0 /* cloud1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud1.png; sourceTree = "<group>"; };
-		7A7072EB1C3C565D00B9E9E3 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		7A7072EB1C3C565D00B9E9E3 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailCell.swift; path = "αBaro/DetailCell.swift"; sourceTree = "<group>"; };
 		7A7072ED1C3C611A00B9E9E3 /* DetailBkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DetailBkg.png; sourceTree = "<group>"; };
 		7A7072EF1C3C625E00B9E9E3 /* DetailBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DetailBox.png; sourceTree = "<group>"; };
 		7A7072F11C3C7CDA00B9E9E3 /* timebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timebox.png; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		7A70730C1C3CAD8600B9E9E3 /* checkmark-circled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-circled.png"; sourceTree = "<group>"; };
 		7A70730D1C3CAD8600B9E9E3 /* backspace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backspace.png; sourceTree = "<group>"; };
 		7A7073131C3CBD5A00B9E9E3 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
-		7A7545951C0A841E00E54BE9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7A7545951C0A841E00E54BE9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "αBaro/Main.storyboard"; sourceTree = "<group>"; };
 		7A7FF65E1C0A5223008C03FB /* level0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level0.png; sourceTree = "<group>"; };
 		7A7FF65F1C0A5223008C03FB /* level10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level10.png; sourceTree = "<group>"; };
 		7A7FF6601C0A5223008C03FB /* level20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level20.png; sourceTree = "<group>"; };
@@ -213,11 +213,11 @@
 		7A7FF6671C0A5223008C03FB /* level90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level90.png; sourceTree = "<group>"; };
 		7A96D2721C7A76C900CFA918 /* RecordBkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordBkg.png; sourceTree = "<group>"; };
 		7A96D2741C7A7A9300CFA918 /* DD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DD.png; sourceTree = "<group>"; };
-		7AC900D41C1F60930035ED54 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
+		7AC900D41C1F60930035ED54 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSSAlertView.swift; path = "αBaro/JSSAlertView.swift"; sourceTree = "<group>"; };
 		7ACF23651C6D8CC6008F9826 /* GIFTCELL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GIFTCELL.png; sourceTree = "<group>"; };
-		D023F8EB1C21F7EA0093C501 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		D023F8EC1C21F7EA0093C501 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
-		D023F8ED1C21F7EA0093C501 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D023F8EB1C21F7EA0093C501 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = "αBaro/AboutViewController.swift"; sourceTree = "<group>"; };
+		D023F8EC1C21F7EA0093C501 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = "αBaro/HelpViewController.swift"; sourceTree = "<group>"; };
+		D023F8ED1C21F7EA0093C501 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "αBaro/SettingsViewController.swift"; sourceTree = "<group>"; };
 		D023F8F11C21F9C40093C501 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D023F8F31C21F9E90093C501 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		D09281751BE2FA160050819E /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
@@ -236,18 +236,18 @@
 		D09281821BE2FA160050819E /* ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ring.png; sourceTree = "<group>"; };
 		D09281831BE2FA160050819E /* seperate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seperate.png; sourceTree = "<group>"; };
 		D09281841BE2FA160050819E /* speakImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speakImage.png; sourceTree = "<group>"; };
-		D09281951BE2FA970050819E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		D0A911901BE4572F00D6BF3D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D09281951BE2FA970050819E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = "αBaro/LaunchScreen.xib"; sourceTree = "<group>"; };
+		D0A911901BE4572F00D6BF3D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "αBaro/MainViewController.swift"; sourceTree = "<group>"; };
 		D0CFAF271BCB1E4C00D10615 /* αBaro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "αBaro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CFAF2B1BCB1E4C00D10615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0CFAF2C1BCB1E4C00D10615 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0CFAF2C1BCB1E4C00D10615 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "αBaro/AppDelegate.swift"; sourceTree = "<group>"; };
 		D0CFAF2F1BCB1E4C00D10615 /* _Baro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _Baro.xcdatamodel; sourceTree = "<group>"; };
-		D0CFAF311BCB1E4C00D10615 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D0CFAF361BCB1E4C00D10615 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D0CFAF311BCB1E4C00D10615 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "αBaro/ViewController.swift"; sourceTree = "<group>"; };
+		D0CFAF361BCB1E4C00D10615 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "αBaro/Images.xcassets"; sourceTree = "<group>"; };
 		D0CFAF3F1BCB1E4D00D10615 /* αBaroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "αBaroTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CFAF441BCB1E4D00D10615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0CFAF451BCB1E4D00D10615 /* _BaroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _BaroTests.swift; sourceTree = "<group>"; };
-		D0CFAF511BCB2EA900D10615 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D0CFAF511BCB2EA900D10615 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = "αBaro/Event.swift"; sourceTree = "<group>"; };
 		D0E11C191BFAECA400DDA208 /* Group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Group.png; sourceTree = "<group>"; };
 		D0E11C1B1BFAED6A00DDA208 /* drop button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drop button.png"; sourceTree = "<group>"; };
 		D0E11C1D1BFAF02D00DDA208 /* BKG Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BKG Default.png"; sourceTree = "<group>"; };
@@ -310,26 +310,6 @@
 				D0E511AA1C73B4E400CE7C27 /* Pods.xcodeproj */,
 				D023F8F31C21F9E90093C501 /* Social.framework */,
 				D023F8F11C21F9C40093C501 /* MessageUI.framework */,
-				D0CFAF291BCB1E4C00D10615 /* αBaro */,
-				D0CFAF421BCB1E4D00D10615 /* αBaroTests */,
-				D0CFAF281BCB1E4C00D10615 /* Products */,
-				5616DB1BD2F66246842141A2 /* Pods */,
-				AE65D5065E58F116C0CB02DB /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		D0CFAF281BCB1E4C00D10615 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D0CFAF271BCB1E4C00D10615 /* αBaro.app */,
-				D0CFAF3F1BCB1E4D00D10615 /* αBaroTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D0CFAF291BCB1E4C00D10615 /* αBaro */ = {
-			isa = PBXGroup;
-			children = (
 				D0E511C21C73B56100CE7C27 /* MonkeyKing */,
 				7A0381281C1F8A6000B8C9E7 /* EventCell.swift */,
 				7A7072EB1C3C565D00B9E9E3 /* DetailCell.swift */,
@@ -350,8 +330,20 @@
 				D0CFAF361BCB1E4C00D10615 /* Images.xcassets */,
 				D0CFAF2E1BCB1E4C00D10615 /* _Baro.xcdatamodeld */,
 				D0CFAF2A1BCB1E4C00D10615 /* Supporting Files */,
+				D0CFAF421BCB1E4D00D10615 /* αBaroTests */,
+				D0CFAF281BCB1E4C00D10615 /* Products */,
+				5616DB1BD2F66246842141A2 /* Pods */,
+				AE65D5065E58F116C0CB02DB /* Frameworks */,
 			);
-			path = "αBaro";
+			sourceTree = "<group>";
+		};
+		D0CFAF281BCB1E4C00D10615 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0CFAF271BCB1E4C00D10615 /* αBaro.app */,
+				D0CFAF3F1BCB1E4D00D10615 /* αBaroTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		D0CFAF2A1BCB1E4C00D10615 /* Supporting Files */ = {
@@ -435,6 +427,7 @@
 				D0CFAF2B1BCB1E4C00D10615 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = "αBaro";
 			sourceTree = "<group>";
 		};
 		D0CFAF421BCB1E4D00D10615 /* αBaroTests */ = {
@@ -486,7 +479,7 @@
 				D0E511C11C73B56100CE7C27 /* Support Files */,
 			);
 			name = MonkeyKing;
-			path = ../Pods/MonkeyKing;
+			path = Pods/MonkeyKing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -987,7 +980,8 @@
 				D0CFAF2F1BCB1E4C00D10615 /* _Baro.xcdatamodel */,
 			);
 			currentVersion = D0CFAF2F1BCB1E4C00D10615 /* _Baro.xcdatamodel */;
-			path = _Baro.xcdatamodeld;
+			name = _Baro.xcdatamodeld;
+			path = "αBaro/_Baro.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
