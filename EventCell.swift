@@ -63,6 +63,8 @@ class EventCell: UITableViewCell {
 
         
         self.frame = CGRect(x: contentView.frame.origin.x, y: contentView.frame.origin.y, width: contentView.frame.width + 100, height: contentView.frame.height)
+        self.deleteOnDragRelease = false
+        
         
         addSubview(crossLabel)
         // remove the default blue highlight for selected cells
@@ -82,6 +84,7 @@ class EventCell: UITableViewCell {
         super.layoutSubviews()
            crossLabel.frame = CGRect(x: bounds.size.width + kUICuesMargin, y: 0,
             width: kUICuesWidth, height: bounds.size.height)
+        self.bkgTrans.image = UIImage(named: "CellBkg")
     }
     
     override func awakeFromNib() {

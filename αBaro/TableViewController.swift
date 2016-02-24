@@ -177,19 +177,8 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    
-
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //NSLog("SELECTED")
         
         // If detail cell, then response nothing
         if(detailRow.contains(indexPath.row)){
