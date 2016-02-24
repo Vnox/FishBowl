@@ -206,14 +206,27 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         }
         
         else{
+            // showed detail == true and and is showinhg details //
             
+            // Remove the selected cell's detail cell
+            // index is not right (...)
             let toremove = detailRow.indexOf(indexPath.row + 1)
             if(toremove != nil){detailRow.removeAtIndex(toremove!)}
-       
+            
+            
+            
+            for(var i = 0; i < detailRow.count; i++){
+                if(detailRow[i] > indexPath.row + 1 ){
+                    detailRow[i] = detailRow[i] - 1
+                }
+            }
             
             
             events.removeAtIndex(indexPath.row + 1)
             tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)], withRowAnimation: .Fade)
+
+
+
             
             selectedCell.showedDetail = false
             
