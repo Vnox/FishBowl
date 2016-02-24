@@ -25,10 +25,10 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     var detailRow = [Int]()
     var managedContext: NSManagedObjectContext!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         // load event list
         loadEvents()
         
@@ -42,6 +42,10 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         myRefreshControl = UIRefreshControl()
         self.tableView.addSubview(myRefreshControl)
         self.myRefreshControl.addTarget(self, action: "addEvents:", forControlEvents: UIControlEvents.ValueChanged)
+
+        
+        
+        //self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0)
         
         }
     

@@ -19,6 +19,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
          //MonkeyKing.registerAccount(.WeChat(appID: "wxd930ea5d5a258f4f"))
         
+        //Action1
+        let ignoreAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        ignoreAction.identifier = "IGNORE_ACTION"
+        ignoreAction.title = "Ignore"
+        
+        ignoreAction.activationMode = UIUserNotificationActivationMode.Background
+        ignoreAction.destructive = true
+        ignoreAction.authenticationRequired = false
+        
+        //Action2
+        let goAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        goAction.identifier = "GO_ACTION"
+        goAction.title = "Go"
+        
+        goAction.activationMode = UIUserNotificationActivationMode.Foreground
+        goAction.destructive = false
+        goAction.authenticationRequired = false
+        
+        //Action3
+        let thirdAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        thirdAction.identifier = "SECOND_ACTION"
+        thirdAction.title = "Second Action"
+        
+        thirdAction.activationMode = UIUserNotificationActivationMode.Background
+        thirdAction.destructive = false
+        thirdAction.authenticationRequired = false
+        
+        //category
+        let firstCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        firstCategory.identifier = "FIRST_CATEGORY"
+        
+        let defaultActions:NSArray = [ignoreAction, goAction, thirdAction]
+        let minimalActions:NSArray = [ignoreAction, goAction]
+        
+        firstCategory.setActions(defaultActions as? [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Default)
+        firstCategory.setActions(minimalActions as? [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Minimal)
+        
+        // NSSet of category
+        let categories:NSSet = NSSet(objects: firstCategory)
+        
+        //let types: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge
+        let mySettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: categories as? Set<UIUserNotificationCategory>)
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(mySettings)
         return true
     }
 
@@ -30,14 +74,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        // Local notification by Ye
+        let notification: UILocalNotification = UILocalNotification()
+        notification.category = "FIRST_CATEGORY"
+        notification.alertBody = "Haha, notification poped"
+        notification.repeatInterval = NSCalendarUnit.Day
+        notification.timeZone = NSTimeZone.defaultTimeZone()
+        //setting app's icon badge
+        notification.applicationIconBadgeNumber = 1
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
+    
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        // when app get active again delete all notification and badge number
+        application.cancelAllLocalNotifications()
+        application.applicationIconBadgeNumber = 0
     }
 
     func applicationWillTerminate(application: UIApplication) {
