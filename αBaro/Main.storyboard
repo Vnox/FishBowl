@@ -173,9 +173,6 @@
                                 <state key="normal" title=" " backgroundImage="drop button.png">
                                     <color key="titleColor" red="0.92156862750000001" green="0.8862745098" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="createPushed:" destination="pnE-0b-r0V" eventType="touchUpInside" id="bWt-VN-TmF"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Xth" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUl-jx-963">
                                 <rect key="frame" x="18" y="26" width="34" height="21"/>

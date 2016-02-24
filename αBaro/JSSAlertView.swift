@@ -352,8 +352,11 @@ class JSSAlertView: UIViewController {
     func show(viewController: UIViewController, title: String, text: String?=nil, buttonText: String?=nil, cancelButtonText: String?=nil, color: UIColor?=nil, iconImage: UIImage?=nil) -> JSSAlertViewResponder {
         
         self.rootViewController = viewController.view.window!.rootViewController
-        self.rootViewController.addChildViewController(self)
-        self.rootViewController.view.addSubview(view)
+        let insertViewController = self.rootViewController
+        
+        (insertViewController as! MainViewController!).theView.addChildViewController(self)
+        (insertViewController as! MainViewController!).theView.view.addSubview(view)
+        //self.rootViewController.view.insertSubview(view, atIndex: 100)
         
         self.view.backgroundColor = UIColorFromHex(0x000000, alpha: 0.7)
         

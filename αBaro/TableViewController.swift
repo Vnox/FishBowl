@@ -9,11 +9,13 @@
 import UIKit
 import CoreData
 
-class TableViewController: UITableViewController, TableViewCellDelegate {
+class TableViewController: UITableViewController, TableViewCellDelegate, UITextFieldDelegate {
     
 
+    // REFRESH CONTROL RELATED //
     
-
+    var myRefreshControl: UIRefreshControl!
+    
     var events = [Event]()
     var eventData = [NSManagedObject]()
     let nonurgentImg = UIImage(named: "urgentIndiGr")
@@ -25,9 +27,6 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-        
         
         
         // load event list
@@ -40,7 +39,33 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
         swipeGesture.direction = .Down
         view.addGestureRecognizer(swipeGesture)
         
+        myRefreshControl = UIRefreshControl()
+        self.tableView.addSubview(myRefreshControl)
+        self.myRefreshControl.addTarget(self, action: "addEvents:", forControlEvents: UIControlEvents.ValueChanged)
+        
         }
+    
+    func addEvents(sender: AnyObject){
+        
+        NSLog("ADDING EVENTS")
+        
+        let customIcon = UIImage(named: "lightbulb")
+        let alertview = JSSAlertView().show(self, title: "New Event", text: "This is still under construction. Don't press me yet : )", buttonText: "Cancel",cancelButtonText: "Confirm", color: UIColorFromHex(0x496FBE, alpha: 1), iconImage: customIcon)
+        alertview.setTitleFont("AvenirNext-Regular")
+        alertview.setTextFont("AvenirNext-Regular")
+        alertview.setButtonFont("AvenirNext-Regular")
+        alertview.setTextTheme(.Light)
+        alertview.addAction(confirmEvent)
+        alertview.getTextfield().delegate = self
+        self.myRefreshControl.endRefreshing()
+        
+        
+    
+    }
+    
+    func confirmEvent(){
+    
+    }
     
 
     

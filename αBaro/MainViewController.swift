@@ -31,6 +31,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     var flipped = false
     var first = true
+    var theView = UIViewController!()
     
     
 
@@ -100,11 +101,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
         NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
 
-//        UIView.animateWithDuration(1.0, delay: 0.0, options: [ .Repeat, .Autoreverse ], animations: {
-//            self.ringImage.transform = CGAffineTransformMakeRotation(0.1);
-//            }, completion: nil)
-
-        
         
         myPercent = 0
         self.first = true
@@ -348,62 +344,11 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func createPushed(sender: UIButton) {
-        
-        //Below are alert view. Need Customization
-        //blur
-//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        
-//        blurEffectView.frame = self.view.bounds
-//        blurEffectView.alpha = 0.0
-        
-//        let alert = UIAlertController(title: "New Name",
-//            message: "Add a new name",
-//            preferredStyle: .Alert)
-//        
-//        alert.view.backgroundColor = UIColor.blackColor()
-////        
-//        let saveAction = UIAlertAction(title: "Save",
-//            style: .Default,
-//            handler: { (action:UIAlertAction) -> Void in
-//                
-//                let textField = alert.textFields!.first
-//                self.saveName(textField!.text!)
-//        })
-//
-//        let cancelAction = UIAlertAction(title: "Cancel",
-//            style: .Default) { (action: UIAlertAction) -> Void in
-//        }
-//        
-//        alert.addTextFieldWithConfigurationHandler {
-//            (textField: UITextField) -> Void in
-//        }
-//        
-//        alert.addAction(saveAction)
-//        alert.addAction(cancelAction)
-//        
-//        presentViewController(alert,
-//            animated: true,
-//            completion: nil)
-//
-        
-        
-        let customIcon = UIImage(named: "lightbulb")
-        let alertview = JSSAlertView().show(self, title: "New Event", text: "This is still under construction. Don't press me yet : )", buttonText: "Cancel",cancelButtonText: "Confirm", color: UIColorFromHex(0x496FBE, alpha: 1), iconImage: customIcon)
-        alertview.setTitleFont("AvenirNext-Regular")
-        alertview.setTextFont("AvenirNext-Regular")
-        alertview.setButtonFont("AvenirNext-Regular")
-        alertview.setTextTheme(.Light)
-        alertview.addAction(bloodyHell)
-        alertview.getTextfield().delegate = self
+        //Hello from the other side
+   
     }
 
-    
-    func bloodyHell(){
-        
-        print("anbla")
-        
-    }
+
     
     func saveName(name: String) {
         //1
@@ -446,13 +391,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func shareButton(sender: AnyObject) {
-//        
-//        let itemsToShare : NSArray = ["https://itunes.apple.com/us/app/id961390574",snapshot(),"the best app ever"]
-//        let shareBar : UIActivityViewController = UIActivityViewController(activityItems: itemsToShare as [AnyObject], applicationActivities: nil);
-//        shareBar.excludedActivityTypes = [];
-//        self.presentViewController(shareBar, animated: true, completion: nil);
-        
-        
         
         
         MonkeyKing.registerAccount(.WeChat(appID: "wx4868b35061f87885", appKey: "64020361b8ec4c99936c0e3999a9f249"))
@@ -499,11 +437,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     func handleSwipes(sender:UISwipeGestureRecognizer){
         
         let myBoard = UIStoryboard(name: "Main", bundle: nil)
-        let theView = myBoard.instantiateViewControllerWithIdentifier("complexView")
+        theView = myBoard.instantiateViewControllerWithIdentifier("complexView")
         theView.modalTransitionStyle = .CoverVertical
         theView.view.backgroundColor = UIColor.clearColor()
         theView.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
-        //self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
         presentViewController(theView, animated: true, completion: nil)
         
     }
