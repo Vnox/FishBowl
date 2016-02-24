@@ -81,6 +81,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     
     
     func loadEvents() {
+        events = []
 
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
@@ -99,6 +100,11 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         } catch let error as NSError {
             print("could not fetch \(error), \(error.userInfo)")
         }
+        
+    }
+    
+    func updateEvents(){
+        // should be implemented by maple someday
         
     }
     
