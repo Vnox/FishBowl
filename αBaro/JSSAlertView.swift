@@ -5,7 +5,7 @@ import UIKit
 import CoreData
 
 
-class JSSAlertView: UIViewController, UITextFieldDelegate {
+class JSSAlertView: UIViewController, UITextFieldDelegate, UITableViewDelegate {
     
     var containerView:UIView!
     var alertBackgroundView:UIView!
@@ -551,9 +551,10 @@ class JSSAlertView: UIViewController, UITextFieldDelegate {
                     }, completion: { finished in
                         if withCallback {
                             if let action = self.closeAction where source == .Close {
+                                NSLog("SAVING")
+                                // !!!!! SAVE EVENTS HERE !!!!! //
                                 self.saveName(self.myTextField.text!)
                                 action()
-                                 
                             }
                             else if let action = self.cancelAction where source == .Cancel {
                                 action()
@@ -590,6 +591,7 @@ class JSSAlertView: UIViewController, UITextFieldDelegate {
             try managedContext!.save()
             event.append(person)
             print("saved!")
+        
             //5
             
         } catch let error as NSError  {
@@ -608,7 +610,7 @@ class JSSAlertView: UIViewController, UITextFieldDelegate {
             let results =
             try managedContext!.executeFetchRequest(fetchRequest)
             event = results as! [NSManagedObject]
-            print(results)
+            //print(results)
         } catch let error as NSError {
             print("could not fetch \(error), \(error.userInfo)")
         }

@@ -27,13 +27,13 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
         // load event list
         loadEvents()
         
-        
-        
- 
         
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         swipeGesture.numberOfTouchesRequired = 1
@@ -43,7 +43,8 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         myRefreshControl = UIRefreshControl()
         self.tableView.addSubview(myRefreshControl)
         self.myRefreshControl.addTarget(self, action: "addEvents:", forControlEvents: UIControlEvents.ValueChanged)
-
+        
+        
         
         }
     
@@ -56,20 +57,25 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         alertview.setTitleFont("AvenirNext-Regular")
         alertview.setTextFont("AvenirNext-Regular")
         alertview.setButtonFont("AvenirNext-Regular")
-        alertview.setTextTheme(.Light)
         alertview.addAction(confirmEvent)
+        alertview.setTextTheme(.Light)
         alertview.getTextfield().delegate = self
         alertview.getTextfield().returnKeyType = UIReturnKeyType.Go
-        self.myRefreshControl.endRefreshing()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        //self.myRefreshControl.endRefreshing()
         
     
     }
     
     func confirmEvent(){
-    
-    
+        NSLog("action")
+        self.loadEvents()
+        self.tableView.reloadData()
+        self.myRefreshControl.endRefreshing()
+        
+        
     }
+    
+    
     
 
     

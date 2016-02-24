@@ -53,9 +53,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(swipeGesture)
 
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
-        
         NSThread.sleepForTimeInterval(1.0)
         
         super.viewDidLoad()
