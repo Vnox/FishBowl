@@ -21,11 +21,11 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
     var detailRow = [Int]()
     var managedContext: NSManagedObjectContext!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+              
         
         // load event list
         loadEvents()
@@ -35,6 +35,8 @@ class TableViewController: UITableViewController, TableViewCellDelegate {
         swipeGesture.numberOfTouchesRequired = 1
         swipeGesture.direction = .Down
         view.addGestureRecognizer(swipeGesture)
+        
+        
         
         //self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0)
         
