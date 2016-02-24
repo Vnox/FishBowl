@@ -5,7 +5,7 @@ import UIKit
 import CoreData
 
 
-class JSSAlertView: UIViewController {
+class JSSAlertView: UIViewController, UITextFieldDelegate {
     
     var containerView:UIView!
     var alertBackgroundView:UIView!
@@ -27,22 +27,25 @@ class JSSAlertView: UIViewController {
     // Leon Added text field & slider
     var myTextField:UITextField!
     var mySegcontrol:UISegmentedControl!
-    var myTimeDisplay:UIImageView!
-    var myTimeLabel:UILabel!
+    // var myTimeDisplay:UIImageView!
+    //var myTimeLabel:UILabel!
     
-    // Leon the dial - oh damn this is so complicated
-    var button0:UIButton!
-    var button1:UIButton!
-    var button2:UIButton!
-    var button3:UIButton!
-    var button4:UIButton!
-    var button5:UIButton!
-    var button6:UIButton!
-    var button7:UIButton!
-    var button8:UIButton!
-    var button9:UIButton!
-    var buttoncon:UIButton!
-    var buttondel:UIButton!
+//    // Leon the dial - oh damn this is so complicated
+//    var button0:UIButton!
+//    var button1:UIButton!
+//    var button2:UIButton!
+//    var button3:UIButton!
+//    var button4:UIButton!
+//    var button5:UIButton!
+//    var button6:UIButton!
+//    var button7:UIButton!
+//    var button8:UIButton!
+//    var button9:UIButton!
+//    var buttoncon:UIButton!
+//    var buttondel:UIButton!
+    
+    // ADDED  BY LEON
+    var insertViewController:MainViewController!
 
     
     enum FontType {
@@ -209,7 +212,7 @@ class JSSAlertView: UIViewController {
         //Position text field Added by Leon
         self.myTextField.frame = CGRect(x: self.padding, y: yPos + 10, width: self.alertWidth - (self.padding * 2), height:ceil(titleRect.size.height))
         self.myTextField.backgroundColor = UIColor.whiteColor()
-        self.myTextField.alpha = 0.8
+        self.myTextField.alpha = 1.0
         self.myTextField.placeholder = "Enter event name"
         self.myTextField.textAlignment = NSTextAlignment.Center
         self.myTextField.font = UIFont(name: "AvenirNext-Regular", size: 18)
@@ -218,58 +221,58 @@ class JSSAlertView: UIViewController {
         yPos += self.padding * 2
         
         //Position timebox by Leon
-        self.myTimeDisplay.frame = CGRect(x: self.padding, y: yPos + 10, width: self.alertWidth - (self.padding * 2), height:ceil(titleRect.size.height))
-        self.myTimeDisplay.image = UIImage(named: "timebox")
+//        self.myTimeDisplay.frame = CGRect(x: self.padding, y: yPos + 10, width: self.alertWidth - (self.padding * 2), height:ceil(titleRect.size.height))
+//        self.myTimeDisplay.image = UIImage(named: "timebox")
         
         
-        self.myTimeLabel.frame = myTimeDisplay.frame
-        self.myTimeLabel.text = "Time"
-        self.myTimeLabel.textAlignment = NSTextAlignment.Center
-        self.myTimeLabel.font = UIFont(name: "AvenirNext-Regular", size: 18)
-        self.myTimeLabel.textColor = UIColor.whiteColor()
+//        self.myTimeLabel.frame = myTimeDisplay.frame
+//        self.myTimeLabel.text = "Time"
+//        self.myTimeLabel.textAlignment = NSTextAlignment.Center
+//        self.myTimeLabel.font = UIFont(name: "AvenirNext-Regular", size: 18)
+//        self.myTimeLabel.textColor = UIColor.whiteColor()
         
-        yPos += self.padding * 2 + 15
-        
-        // Posotion the dial by Leon
-        let centerX = self.myTimeLabel.center.x - 10
-        self.button1.frame = CGRect(x: centerX - 70, y: yPos + 10, width: 13 , height: 18 )
-        self.button2.frame = CGRect(x: centerX, y: yPos + 10, width: 13 , height: 18 )
-        self.button3.frame = CGRect(x: centerX + 70, y: yPos + 10, width: 13 , height: 18 )
-        
-        yPos += self.padding * 2
-        
-        self.button4.frame = CGRect(x: centerX - 70, y: yPos + 10, width: 13 , height: 18 )
-        self.button5.frame = CGRect(x: centerX, y: yPos + 10, width: 13 , height: 18 )
-        self.button6.frame = CGRect(x: centerX + 70, y: yPos + 10, width: 13 , height: 18 )
-        
-        yPos += self.padding * 2
-        
-        self.button7.frame = CGRect(x: centerX - 70, y: yPos + 10, width: 13 , height: 18 )
-        self.button8.frame = CGRect(x: centerX, y: yPos + 10, width: 13 , height: 18 )
-        self.button9.frame = CGRect(x: centerX + 70, y: yPos + 10, width: 13 , height: 18 )
-        
-        yPos += self.padding * 2
-        
-        self.button0.frame = CGRect(x: centerX - 70, y: yPos + 10, width: 13 , height: 19 )
-        self.buttondel.frame = CGRect(x: centerX - 5, y: yPos + 10, width: 26 , height: 18 )
-        self.buttoncon.frame = CGRect(x: centerX + 70 - 5, y: yPos + 10, width: 22 , height: 22 )
 
         
+        // Posotion the dial by Leon
+        //let centerX = self.myTimeLabel.center.x - 10
+//        self.button1.frame = CGRect(x: centerX - 70, y: yPos + 10, width: 13 , height: 18 )
+//        self.button2.frame = CGRect(x: centerX, y: yPos + 10, width: 13 , height: 18 )
+//        self.button3.frame = CGRect(x: centerX + 70, y: yPos + 10, width: 13 , height: 18 )
+//        
+//        yPos += self.padding * 2
+//        
+//        self.button4.frame = CGRect(x: centerX - 70, y: yPos + 10, width: 13 , height: 18 )
+//        self.button5.frame = CGRect(x: centerX, y: yPos + 10, width: 13 , height: 18 )
+//        self.button6.frame = CGRect(x: centerX + 70, y: yPos + 10, width: 13 , height: 18 )
+//        
+//        yPos += self.padding * 2
+//        
+//        self.button7.frame = CGRect(x: centerX - 70, y: yPos + 10, width: 13 , height: 18 )
+//        self.button8.frame = CGRect(x: centerX, y: yPos + 10, width: 13 , height: 18 )
+//        self.button9.frame = CGRect(x: centerX + 70, y: yPos + 10, width: 13 , height: 18 )
+//        
+//        yPos += self.padding * 2
+//        
+//        self.button0.frame = CGRect(x: centerX - 70, y: yPos + 10, width: 13 , height: 19 )
+//        self.buttondel.frame = CGRect(x: centerX - 5, y: yPos + 10, width: 26 , height: 18 )
+//        self.buttoncon.frame = CGRect(x: centerX + 70 - 5, y: yPos + 10, width: 22 , height: 22 )
+//
         
-        self.button1.setBackgroundImage(UIImage(named: "1"), forState: UIControlState.Normal)
-        self.button2.setBackgroundImage(UIImage(named: "2"), forState: UIControlState.Normal)
-        self.button3.setBackgroundImage(UIImage(named: "3"), forState: UIControlState.Normal)
-        self.button4.setBackgroundImage(UIImage(named: "4"), forState: UIControlState.Normal)
-        self.button5.setBackgroundImage(UIImage(named: "5"), forState: UIControlState.Normal)
-        self.button6.setBackgroundImage(UIImage(named: "6"), forState: UIControlState.Normal)
-        self.button7.setBackgroundImage(UIImage(named: "7"), forState: UIControlState.Normal)
-        self.button8.setBackgroundImage(UIImage(named: "8"), forState: UIControlState.Normal)
-        self.button9.setBackgroundImage(UIImage(named: "9"), forState: UIControlState.Normal)
-        self.button0.setBackgroundImage(UIImage(named: "0"), forState: UIControlState.Normal)
-        self.buttoncon.setBackgroundImage(UIImage(named: "checkmark-circled"), forState: UIControlState.Normal)
-        self.buttondel.setBackgroundImage(UIImage(named: "backspace"), forState: UIControlState.Normal)
         
-        yPos += self.padding * 2 + 5
+//        self.button1.setBackgroundImage(UIImage(named: "1"), forState: UIControlState.Normal)
+//        self.button2.setBackgroundImage(UIImage(named: "2"), forState: UIControlState.Normal)
+//        self.button3.setBackgroundImage(UIImage(named: "3"), forState: UIControlState.Normal)
+//        self.button4.setBackgroundImage(UIImage(named: "4"), forState: UIControlState.Normal)
+//        self.button5.setBackgroundImage(UIImage(named: "5"), forState: UIControlState.Normal)
+//        self.button6.setBackgroundImage(UIImage(named: "6"), forState: UIControlState.Normal)
+//        self.button7.setBackgroundImage(UIImage(named: "7"), forState: UIControlState.Normal)
+//        self.button8.setBackgroundImage(UIImage(named: "8"), forState: UIControlState.Normal)
+//        self.button9.setBackgroundImage(UIImage(named: "9"), forState: UIControlState.Normal)
+//        self.button0.setBackgroundImage(UIImage(named: "0"), forState: UIControlState.Normal)
+//        self.buttoncon.setBackgroundImage(UIImage(named: "checkmark-circled"), forState: UIControlState.Normal)
+//        self.buttondel.setBackgroundImage(UIImage(named: "backspace"), forState: UIControlState.Normal)
+        
+       // yPos += self.padding * 2
 
         
         //Position segcontrol by Leon
@@ -279,7 +282,7 @@ class JSSAlertView: UIViewController {
         
     
         
-        yPos += self.padding * 2 + 10
+        yPos += self.padding * 3
         
         // position text
         if self.textView != nil {
@@ -352,11 +355,13 @@ class JSSAlertView: UIViewController {
     func show(viewController: UIViewController, title: String, text: String?=nil, buttonText: String?=nil, cancelButtonText: String?=nil, color: UIColor?=nil, iconImage: UIImage?=nil) -> JSSAlertViewResponder {
         
         self.rootViewController = viewController.view.window!.rootViewController
-        let insertViewController = self.rootViewController
+        insertViewController = self.rootViewController as! MainViewController
         
-        (insertViewController as! MainViewController!).theView.addChildViewController(self)
-        (insertViewController as! MainViewController!).theView.view.addSubview(view)
-        //self.rootViewController.view.insertSubview(view, atIndex: 100)
+        insertViewController.theView.addChildViewController(self)
+        insertViewController.theView.view.addSubview(view)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        insertViewController.theView.view.addGestureRecognizer(tap)
+
         
         self.view.backgroundColor = UIColorFromHex(0x000000, alpha: 0.7)
         
@@ -406,42 +411,42 @@ class JSSAlertView: UIViewController {
         self.myTextField = UITextField()
         self.containerView.addSubview(myTextField)
         
-        let myitems = ["Easy", "So-so", "Norm", "Hard", "Hell"]
+        let myitems = ["Play", "Work"]
         self.mySegcontrol = UISegmentedControl(items:myitems)
         self.mySegcontrol.selectedSegmentIndex = 0
         self.containerView.addSubview(mySegcontrol)
         
-        self.myTimeDisplay = UIImageView()
-        self.containerView.addSubview(myTimeDisplay)
-        
-        self.myTimeLabel = UILabel()
-        self.containerView.addSubview(myTimeLabel)
-        
-        // Dial by Leon
-        self.button1 = UIButton()
-        self.button2 = UIButton()
-        self.button3 = UIButton()
-        self.button4 = UIButton()
-        self.button5 = UIButton()
-        self.button6 = UIButton()
-        self.button7 = UIButton()
-        self.button8 = UIButton()
-        self.button9 = UIButton()
-        self.button0 = UIButton()
-        self.buttoncon = UIButton()
-        self.buttondel = UIButton()
-        self.containerView.addSubview(button1)
-        self.containerView.addSubview(button2)
-        self.containerView.addSubview(button3)
-        self.containerView.addSubview(button4)
-        self.containerView.addSubview(button5)
-        self.containerView.addSubview(button6)
-        self.containerView.addSubview(button7)
-        self.containerView.addSubview(button8)
-        self.containerView.addSubview(button9)
-        self.containerView.addSubview(button0)
-        self.containerView.addSubview(buttoncon)
-        self.containerView.addSubview(buttondel)
+//        self.myTimeDisplay = UIImageView()
+//        self.containerView.addSubview(myTimeDisplay)
+//   
+//        self.myTimeLabel = UILabel()
+//        self.containerView.addSubview(myTimeLabel)
+//        
+//        // Dial by Leon
+//        self.button1 = UIButton()
+//        self.button2 = UIButton()
+//        self.button3 = UIButton()
+//        self.button4 = UIButton()
+//        self.button5 = UIButton()
+//        self.button6 = UIButton()
+//        self.button7 = UIButton()
+//        self.button8 = UIButton()
+//        self.button9 = UIButton()
+//        self.button0 = UIButton()
+//        self.buttoncon = UIButton()
+//        self.buttondel = UIButton()
+//        self.containerView.addSubview(button1)
+//        self.containerView.addSubview(button2)
+//        self.containerView.addSubview(button3)
+//        self.containerView.addSubview(button4)
+//        self.containerView.addSubview(button5)
+//        self.containerView.addSubview(button6)
+//        self.containerView.addSubview(button7)
+//        self.containerView.addSubview(button8)
+//        self.containerView.addSubview(button9)
+//        self.containerView.addSubview(button0)
+//        self.containerView.addSubview(buttoncon)
+//        self.containerView.addSubview(buttondel)
 
         
 
@@ -523,16 +528,18 @@ class JSSAlertView: UIViewController {
         self.closeAction = action
     }
     
+    //cancelButton
     func buttonTap() {
-        closeView(true, source: .Close);
+        closeView(true, source: .Cancel);
     }
     
     func addCancelAction(action: ()->Void) {
         self.cancelAction = action
     }
     
+    //confirmbutton
     func cancelButtonTap() {
-        closeView(true, source: .Cancel);
+        closeView(true, source: .Close);
     }
     
     func closeView(withCallback:Bool, source:ActionType = .Close) {
@@ -544,7 +551,9 @@ class JSSAlertView: UIViewController {
                     }, completion: { finished in
                         if withCallback {
                             if let action = self.closeAction where source == .Close {
+                                self.saveName(self.myTextField.text!)
                                 action()
+                                 
                             }
                             else if let action = self.cancelAction where source == .Cancel {
                                 action()
@@ -555,7 +564,7 @@ class JSSAlertView: UIViewController {
                 
         })
         
-        saveName(self.myTextField.text!)
+       
     }
     
     // save the name of event
@@ -621,6 +630,12 @@ class JSSAlertView: UIViewController {
         return screenSize
     }
     
+    func dismissKeyboard() {
+        // DISSMISS
+        insertViewController.theView.view.endEditing(true)
+        
+    }
+    
 }
 
 
@@ -675,3 +690,4 @@ func adjustBrightness(color:UIColor, amount:CGFloat) -> UIColor {
     }
     return color
 }
+

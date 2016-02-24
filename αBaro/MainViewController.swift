@@ -74,7 +74,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         var tempString = "level"
         tempString = tempString.stringByAppendingString(baseImageString)
 
-        NSLog(tempString)
+        //NSLog(tempString)
         
         self.timeLabel.center.y -= 50
         self.monthTag.center.y -= 50
@@ -445,14 +445,12 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
+
+  
 
 }
     

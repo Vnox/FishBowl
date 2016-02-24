@@ -20,8 +20,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     var eventData = [NSManagedObject]()
     let nonurgentImg = UIImage(named: "urgentIndiGr")
     let urgentImg = UIImage(named: "urgentIndi")
-    //var onedetail = false
-    //the details row
+
     var detailRow = [Int]()
     var managedContext: NSManagedObjectContext!
     
@@ -34,6 +33,8 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         
         
         
+ 
+        
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         swipeGesture.numberOfTouchesRequired = 1
         swipeGesture.direction = .Down
@@ -43,9 +44,6 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         self.tableView.addSubview(myRefreshControl)
         self.myRefreshControl.addTarget(self, action: "addEvents:", forControlEvents: UIControlEvents.ValueChanged)
 
-        
-        
-        //self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0)
         
         }
     
@@ -61,14 +59,15 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         alertview.setTextTheme(.Light)
         alertview.addAction(confirmEvent)
         alertview.getTextfield().delegate = self
+        alertview.getTextfield().returnKeyType = UIReturnKeyType.Go
         self.myRefreshControl.endRefreshing()
-        self.tableView.reloadData()
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
     
     }
     
     func confirmEvent(){
+    
     
     }
     
@@ -77,7 +76,6 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     
     func loadEvents() {
 
-        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Entity")
@@ -180,7 +178,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        //NSLog("SELECTED")
         
         // If detail cell, then response nothing
         if(detailRow.contains(indexPath.row)){
@@ -209,7 +207,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         
         else{
             
-            var toremove = detailRow.indexOf(indexPath.row + 1)
+            let toremove = detailRow.indexOf(indexPath.row + 1)
             if(toremove != nil){detailRow.removeAtIndex(toremove!)}
        
             
@@ -225,9 +223,6 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
 
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         //set height
@@ -263,6 +258,9 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
         tableView.endUpdates()    
     }
+    
+
+    
 
 
    }

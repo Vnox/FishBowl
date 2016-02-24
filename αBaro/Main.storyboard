@@ -84,7 +84,7 @@
         <!--Main View Controller-->
         <scene sceneID="Oun-fr-Q8Z">
             <objects>
-                <viewController id="pnE-0b-r0V" customClass="MainViewController" customModule="αBaro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pnE-0b-r0V" customClass="MainViewController" customModule="αBaro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rYo-00-87w"/>
                         <viewControllerLayoutGuide type="bottom" id="xmw-XR-kzt"/>
@@ -262,7 +262,7 @@
         <!--Table View Controller-->
         <scene sceneID="bQ3-lE-aGt">
             <objects>
-                <tableViewController id="4DW-SB-jK4" customClass="TableViewController" customModule="αBaro" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4DW-SB-jK4" customClass="TableViewController" customModule="αBaro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="cc2-6X-kdI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
