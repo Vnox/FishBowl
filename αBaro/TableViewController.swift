@@ -72,7 +72,6 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         self.tableView.reloadData()
         self.myRefreshControl.endRefreshing()
         
-        
     }
     
     

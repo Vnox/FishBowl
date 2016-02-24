@@ -46,6 +46,7 @@ class JSSAlertView: UIViewController, UITextFieldDelegate, UITableViewDelegate {
     
     // ADDED  BY LEON
     var insertViewController:MainViewController!
+    var tap: UITapGestureRecognizer!
 
     
     enum FontType {
@@ -359,7 +360,7 @@ class JSSAlertView: UIViewController, UITextFieldDelegate, UITableViewDelegate {
         
         insertViewController.theView.addChildViewController(self)
         insertViewController.theView.view.addSubview(view)
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         insertViewController.theView.view.addGestureRecognizer(tap)
 
         
@@ -554,6 +555,7 @@ class JSSAlertView: UIViewController, UITextFieldDelegate, UITableViewDelegate {
                                 NSLog("SAVING")
                                 // !!!!! SAVE EVENTS HERE !!!!! //
                                 self.saveName(self.myTextField.text!)
+                                self.insertViewController.theView.view.removeGestureRecognizer(self.tap)
                                 action()
                             }
                             else if let action = self.cancelAction where source == .Cancel {
