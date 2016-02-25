@@ -20,6 +20,8 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     
     /* Other Stuff */
     
+    var indicatorImageView: UIImageView!
+    
     var events = [Event]()
     var eventData = [NSManagedObject]()
     let nonurgentImg = UIImage(named: "urgentIndiGr")
@@ -30,11 +32,25 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadEvents()
+        
+        // Do anything after load events
+        
+        self.indicatorImageView = UIImageView(image: UIImage(named: "pullIndicator"))
+        self.indicatorImageView.frame = CGRect(x: 0, y: 0, width: 240, height: 80)
+        self.indicatorImageView.center.x = self.view.center.x
+        self.indicatorImageView.center.y += 60
+        NSLog("NUM:" + String(events.count))
+        if(events.count != 0){
+            self.indicatorImageView.alpha = 0.0
+        }else if(tableView.numberOfRowsInSection(0) == 0){
+            self.indicatorImageView.alpha = 1.0
+        }
+        self.view.addSubview(indicatorImageView)
         
         tableView.delegate = self
         tableView.dataSource = self
 
-        loadEvents()
         
         self.tableView.addPullToRefresh({ [weak self] in
             // refresh code
@@ -90,6 +106,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         self.tableView.reloadData()
         //self.myRefreshControl.endRefreshing()
         self.tableView.stopPullToRefresh()
+        self.indicatorImageView.alpha = 0.0
         
     }
     

@@ -59,7 +59,6 @@
 		7A70730F1C3CAD8600B9E9E3 /* checkmark-circled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A70730C1C3CAD8600B9E9E3 /* checkmark-circled.png */; };
 		7A7073101C3CAD8600B9E9E3 /* backspace.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A70730D1C3CAD8600B9E9E3 /* backspace.png */; };
 		7A7073141C3CBD5A00B9E9E3 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7073131C3CBD5A00B9E9E3 /* 0.png */; };
-		7A7545961C0A841E00E54BE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7545951C0A841E00E54BE9 /* Main.storyboard */; };
 		7A7FF6681C0A5223008C03FB /* level0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF65E1C0A5223008C03FB /* level0.png */; };
 		7A7FF6691C0A5223008C03FB /* level10.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF65F1C0A5223008C03FB /* level10.png */; };
 		7A7FF66A1C0A5223008C03FB /* level20.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF6601C0A5223008C03FB /* level20.png */; };
@@ -73,10 +72,12 @@
 		7A96D2751C7A7A9300CFA918 /* DD.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A96D2741C7A7A9300CFA918 /* DD.png */; };
 		7AC900D51C1F60930035ED54 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC900D41C1F60930035ED54 /* JSSAlertView.swift */; };
 		7ACF23661C6D8CC6008F9826 /* GIFTCELL.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ACF23651C6D8CC6008F9826 /* GIFTCELL.png */; };
+		7ADE43BD1C7EE5AA00B085EE /* pullIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE43BC1C7EE5AA00B085EE /* pullIndicator.png */; };
 		7AE5561E1C7E8D17006894A7 /* PullToRefreshOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5561A1C7E8D17006894A7 /* PullToRefreshOption.swift */; };
 		7AE5561F1C7E8D17006894A7 /* PullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5561B1C7E8D17006894A7 /* PullToRefreshView.swift */; };
 		7AE556201C7E8D17006894A7 /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5561C1C7E8D17006894A7 /* UIScrollViewExtension.swift */; };
 		7AE556221C7E96C5006894A7 /* pulltorefresharrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE556211C7E96C5006894A7 /* pulltorefresharrow.png */; };
+		7AFFAE071C7EE6D100C43E96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AFFAE061C7EE6D100C43E96 /* Main.storyboard */; };
 		D023F8EE1C21F7EA0093C501 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023F8EB1C21F7EA0093C501 /* AboutViewController.swift */; };
 		D023F8EF1C21F7EA0093C501 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023F8EC1C21F7EA0093C501 /* HelpViewController.swift */; };
 		D023F8F01C21F7EA0093C501 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023F8ED1C21F7EA0093C501 /* SettingsViewController.swift */; };
@@ -211,7 +212,6 @@
 		7A70730C1C3CAD8600B9E9E3 /* checkmark-circled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-circled.png"; sourceTree = "<group>"; };
 		7A70730D1C3CAD8600B9E9E3 /* backspace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backspace.png; sourceTree = "<group>"; };
 		7A7073131C3CBD5A00B9E9E3 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
-		7A7545951C0A841E00E54BE9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "αBaro/Main.storyboard"; sourceTree = "<group>"; };
 		7A7FF65E1C0A5223008C03FB /* level0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level0.png; sourceTree = "<group>"; };
 		7A7FF65F1C0A5223008C03FB /* level10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level10.png; sourceTree = "<group>"; };
 		7A7FF6601C0A5223008C03FB /* level20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level20.png; sourceTree = "<group>"; };
@@ -225,10 +225,12 @@
 		7A96D2741C7A7A9300CFA918 /* DD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DD.png; sourceTree = "<group>"; };
 		7AC900D41C1F60930035ED54 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSSAlertView.swift; path = "αBaro/JSSAlertView.swift"; sourceTree = "<group>"; };
 		7ACF23651C6D8CC6008F9826 /* GIFTCELL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GIFTCELL.png; sourceTree = "<group>"; };
+		7ADE43BC1C7EE5AA00B085EE /* pullIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pullIndicator.png; sourceTree = "<group>"; };
 		7AE5561A1C7E8D17006894A7 /* PullToRefreshOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshOption.swift; sourceTree = "<group>"; };
 		7AE5561B1C7E8D17006894A7 /* PullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
 		7AE5561C1C7E8D17006894A7 /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		7AE556211C7E96C5006894A7 /* pulltorefresharrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulltorefresharrow.png; sourceTree = "<group>"; };
+		7AFFAE061C7EE6D100C43E96 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "αBaro/Main.storyboard"; sourceTree = "<group>"; };
 		D023F8EB1C21F7EA0093C501 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = "αBaro/AboutViewController.swift"; sourceTree = "<group>"; };
 		D023F8EC1C21F7EA0093C501 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = "αBaro/HelpViewController.swift"; sourceTree = "<group>"; };
 		D023F8ED1C21F7EA0093C501 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "αBaro/SettingsViewController.swift"; sourceTree = "<group>"; };
@@ -344,8 +346,8 @@
 				7AE5561A1C7E8D17006894A7 /* PullToRefreshOption.swift */,
 				7AE5561B1C7E8D17006894A7 /* PullToRefreshView.swift */,
 				7AE5561C1C7E8D17006894A7 /* UIScrollViewExtension.swift */,
+				7AFFAE061C7EE6D100C43E96 /* Main.storyboard */,
 				7AE556211C7E96C5006894A7 /* pulltorefresharrow.png */,
-				7A7545951C0A841E00E54BE9 /* Main.storyboard */,
 				D0CFAF361BCB1E4C00D10615 /* Images.xcassets */,
 				D0CFAF2E1BCB1E4C00D10615 /* _Baro.xcdatamodeld */,
 				D0CFAF2A1BCB1E4C00D10615 /* Supporting Files */,
@@ -371,6 +373,7 @@
 				7A0381221C1F6B5A00B8C9E7 /* CELL1.png */,
 				7A5C12531C3361B6007688B0 /* LCH.png */,
 				7A5C12551C33775B007688B0 /* cloud2.png */,
+				7ADE43BC1C7EE5AA00B085EE /* pullIndicator.png */,
 				7A46E05A1C72846000C5705A /* RecingBkg.png */,
 				7A46E0541C6E809F00C5705A /* CellBkg.png */,
 				7A7072ED1C3C611A00B9E9E3 /* DetailBkg.png */,
@@ -624,6 +627,7 @@
 				D09281911BE2FA160050819E /* popup.png in Resources */,
 				7A7073051C3CABD100B9E9E3 /* 4.png in Resources */,
 				7A472BCD1C220F3D005CAF1D /* barbottom.png in Resources */,
+				7ADE43BD1C7EE5AA00B085EE /* pullIndicator.png in Resources */,
 				7A5C12501C335904007688B0 /* DefaultBase.png in Resources */,
 				7A0D46C81BF31580009CAB1F /* lightbulb@3x.png in Resources */,
 				7A7073081C3CABD100B9E9E3 /* 7.png in Resources */,
@@ -638,7 +642,6 @@
 				D0E11C241BFAFE0600DDA208 /* SHARE.png in Resources */,
 				7A472BCC1C220F3D005CAF1D /* bartop.png in Resources */,
 				7A7072F21C3C7CDA00B9E9E3 /* timebox.png in Resources */,
-				7A7545961C0A841E00E54BE9 /* Main.storyboard in Resources */,
 				D09281921BE2FA160050819E /* ring.png in Resources */,
 				7A7073071C3CABD100B9E9E3 /* 6.png in Resources */,
 				D092818B1BE2FA160050819E /* FinalGP.png in Resources */,
@@ -677,6 +680,7 @@
 				D09281891BE2FA160050819E /* ButtonRing.png in Resources */,
 				7A5C12521C335DB0007688B0 /* Dimmer.png in Resources */,
 				7A0D46C61BF31580009CAB1F /* lightbulb.png in Resources */,
+				7AFFAE071C7EE6D100C43E96 /* Main.storyboard in Resources */,
 				7A472BD11C221188005CAF1D /* check-mark-in-white-hi.png in Resources */,
 				7A7FF6691C0A5223008C03FB /* level10.png in Resources */,
 				D0E11C1E1BFAF02D00DDA208 /* BKG Default.png in Resources */,
