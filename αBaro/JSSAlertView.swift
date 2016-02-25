@@ -355,8 +355,10 @@ class JSSAlertView: UIViewController, UITextFieldDelegate, UITableViewDelegate {
     
     func show(viewController: UIViewController, title: String, text: String?=nil, buttonText: String?=nil, cancelButtonText: String?=nil, color: UIColor?=nil, iconImage: UIImage?=nil) -> JSSAlertViewResponder {
         
-        self.rootViewController = viewController.view.window!.rootViewController
-        insertViewController = self.rootViewController as! MainViewController
+       self.rootViewController = viewController.view.window!.rootViewController
+        insertViewController = (self.rootViewController as! UINavigationController).childViewControllers.first as! MainViewController
+        
+
         
         insertViewController.theView.addChildViewController(self)
         insertViewController.theView.view.addSubview(view)

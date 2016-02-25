@@ -12,7 +12,7 @@ import UIKit
 class leonLoaderView: UIView {
     
     let circlePathLayer = CAShapeLayer()
-    let circleRadius: CGFloat = 45.0
+    let circleRadius: CGFloat = 125.0
     
     var progress: CGFloat {
         get {
@@ -50,7 +50,7 @@ class leonLoaderView: UIView {
     
     func configure() {
         circlePathLayer.frame = bounds
-        circlePathLayer.lineWidth = 4
+        circlePathLayer.lineWidth = 12
         circlePathLayer.fillColor = UIColor.clearColor().CGColor
         circlePathLayer.strokeColor = UIColor.whiteColor().CGColor
         layer.addSublayer(circlePathLayer)
@@ -76,6 +76,7 @@ class leonLoaderView: UIView {
         super.layoutSubviews()
         circlePathLayer.frame = bounds
         circlePathLayer.path = circlePath().CGPath
+        
     }
     
    

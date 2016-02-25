@@ -52,7 +52,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         progressIndicatorView.frame = CGRectMake(0, 0, 100, 100)
-        self.bkgImage.addSubview(progressIndicatorView)
+        //self.bkgImage.addSubview(progressIndicatorView)
         
         progressIndicatorView.center.y = self.R2Image.center.y
         progressIndicatorView.center.x = self.view.center.x
