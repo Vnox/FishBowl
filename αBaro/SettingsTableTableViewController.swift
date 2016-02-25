@@ -14,6 +14,8 @@ class SettingsTableTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.layer.cornerRadius = 10
+        self.view.clipsToBounds = true
    
         
         

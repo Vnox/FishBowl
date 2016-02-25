@@ -47,6 +47,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
+        self.view.layer.cornerRadius = 10
+        self.view.clipsToBounds = true
+        
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         swipeGesture.numberOfTouchesRequired = 1
         swipeGesture.direction = .Up

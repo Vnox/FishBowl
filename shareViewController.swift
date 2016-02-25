@@ -1,36 +1,27 @@
 //
-//  complexViewController.swift
+//  shareViewController.swift
 //  αBaro
 //
-//  Created by Leon on 12/15/15.
-//  Copyright © 2015 Ethereo. All rights reserved.
+//  Created by Leon on 2/24/16.
+//  Copyright © 2016 Ethereo. All rights reserved.
 //
 
 import UIKit
 
-class complexViewController: UIViewController {
+class shareViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.clearColor()
-        let myBlur = UIBlurEffect(style: .Dark)
-        let myEXView = UIVisualEffectView(effect: myBlur)
-        myEXView.frame = self.view.bounds
-        self.view.insertSubview(myEXView, atIndex: 0)
         self.view.layer.cornerRadius = 10
         self.view.clipsToBounds = true
+        
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        swipeGesture.numberOfTouchesRequired = 1
+        swipeGesture.direction = .Down
+        view.addGestureRecognizer(swipeGesture)
+
 
         // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func backbutton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +29,16 @@ class complexViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    func handleSwipes(sender:UISwipeGestureRecognizer){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
+
     
 
     /*
