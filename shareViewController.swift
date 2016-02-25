@@ -12,7 +12,7 @@ class shareViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layer.cornerRadius = 10
+        self.view.layer.cornerRadius = 7
         self.view.clipsToBounds = true
         
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))

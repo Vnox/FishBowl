@@ -14,8 +14,9 @@ class SettingsTableTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layer.cornerRadius = 10
-        self.view.clipsToBounds = true
+        //self.view.layer.cornerRadius = 7
+        //self.view.clipsToBounds = true
+        //self.view.backgroundColor = UIColor.blackColor()
    
         
         

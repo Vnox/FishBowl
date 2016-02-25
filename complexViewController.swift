@@ -17,7 +17,7 @@ class complexViewController: UIViewController {
         let myEXView = UIVisualEffectView(effect: myBlur)
         myEXView.frame = self.view.bounds
         self.view.insertSubview(myEXView, atIndex: 0)
-        self.view.layer.cornerRadius = 10
+        self.view.layer.cornerRadius = 7
         self.view.clipsToBounds = true
 
         // Do any additional setup after loading the view.
