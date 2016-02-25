@@ -81,6 +81,32 @@
             </objects>
             <point key="canvasLocation" x="-184" y="-234"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Ceu-M6-vQf">
+            <objects>
+                <viewController id="Dkx-Qz-eMM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="58s-k2-7Fb"/>
+                        <viewControllerLayoutGuide type="bottom" id="qag-kC-UPc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZUt-Mf-WtD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nice Job, Leon. Go showing off to your friends!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szi-k0-w8f">
+                                <rect key="frame" x="30" y="0.0" width="221" height="81"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490196078433" green="0.21176470588235294" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zO1-PG-eUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-858" y="-155"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="Oun-fr-Q8Z">
             <objects>
