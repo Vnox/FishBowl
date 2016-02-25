@@ -10,6 +10,12 @@ import UIKit
 
 class shareViewController: UIViewController {
 
+    @IBOutlet weak var myButton: UIButton!
+    
+    @IBAction func backTouched(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layer.cornerRadius = 7
@@ -33,9 +39,6 @@ class shareViewController: UIViewController {
         return true
     }
     
-    func handleSwipes(sender:UISwipeGestureRecognizer){
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
 
     
 

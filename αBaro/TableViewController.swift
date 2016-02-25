@@ -39,7 +39,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         self.indicatorImageView = UIImageView(image: UIImage(named: "pullIndicator"))
         self.indicatorImageView.frame = CGRect(x: 0, y: 0, width: 240, height: 80)
         self.indicatorImageView.center.x = self.view.center.x
-        self.indicatorImageView.center.y += 60
+        self.indicatorImageView.center.y += 40
         NSLog("NUM:" + String(events.count))
         if(events.count != 0){
             self.indicatorImageView.alpha = 0.0

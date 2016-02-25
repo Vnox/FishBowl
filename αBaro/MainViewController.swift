@@ -27,25 +27,38 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var NiceTalk: UILabel!
     @IBOutlet weak var cloud1: UIImageView!
     @IBOutlet weak var cloud2: UIImageView!
-
+    @IBOutlet weak var R2Image: UIButton!
+    
+    
     
     var flipped = false
     var first = true
     var theView = UIViewController!()
     
     
-
+    
     var event = [NSManagedObject]()
     
     var myPercent = 0
-    var percentage = 42
+    var percentage = 75
     var animated = false
     
-    @IBOutlet weak var R2Image: UIButton!
+    // Animation related stuff
+    let progressIndicatorView = leonLoaderView(frame: CGRectZero)
+    
 
     
     
     override func viewDidLoad() {
+        
+        progressIndicatorView.frame = CGRectMake(0, 0, 100, 100)
+        self.bkgImage.addSubview(progressIndicatorView)
+        
+        progressIndicatorView.center.y = self.R2Image.center.y
+        progressIndicatorView.center.x = self.view.center.x
+        
+        
+        //progressIndicatorView.autoresizingMask = self.view.FlexibleWidth | .FlexibleHeight
         
         self.view.layer.cornerRadius = 7
         self.view.clipsToBounds = true
@@ -198,6 +211,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             self.percentLAbel.text = String.localizedStringWithFormat("%d%%", myPercent)
         if(self.myPercent < self.percentage){
             myPercent++}
+        progressIndicatorView.progress = CGFloat(Double(myPercent)/100.0)
     } 
     
     
@@ -289,6 +303,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func BallHited(sender: AnyObject) {
+        
         
         if(flipped == false){
         

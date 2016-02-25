@@ -77,7 +77,10 @@
 		7AE5561F1C7E8D17006894A7 /* PullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5561B1C7E8D17006894A7 /* PullToRefreshView.swift */; };
 		7AE556201C7E8D17006894A7 /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5561C1C7E8D17006894A7 /* UIScrollViewExtension.swift */; };
 		7AE556221C7E96C5006894A7 /* pulltorefresharrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE556211C7E96C5006894A7 /* pulltorefresharrow.png */; };
-		7AFFAE071C7EE6D100C43E96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AFFAE061C7EE6D100C43E96 /* Main.storyboard */; };
+		7AFFAE091C7F91BE00C43E96 /* leonLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFAE081C7F91BE00C43E96 /* leonLoaderView.swift */; };
+		7AFFAE0B1C7FA72000C43E96 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFAE0A1C7FA72000C43E96 /* NavigationControllerDelegate.swift */; };
+		7AFFAE0D1C7FA95800C43E96 /* CircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFAE0C1C7FA95800C43E96 /* CircleTransitionAnimator.swift */; };
+		7AFFAE0F1C7FAE5300C43E96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AFFAE0E1C7FAE5300C43E96 /* Main.storyboard */; };
 		D023F8EE1C21F7EA0093C501 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023F8EB1C21F7EA0093C501 /* AboutViewController.swift */; };
 		D023F8EF1C21F7EA0093C501 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023F8EC1C21F7EA0093C501 /* HelpViewController.swift */; };
 		D023F8F01C21F7EA0093C501 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023F8ED1C21F7EA0093C501 /* SettingsViewController.swift */; };
@@ -230,7 +233,10 @@
 		7AE5561B1C7E8D17006894A7 /* PullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
 		7AE5561C1C7E8D17006894A7 /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		7AE556211C7E96C5006894A7 /* pulltorefresharrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulltorefresharrow.png; sourceTree = "<group>"; };
-		7AFFAE061C7EE6D100C43E96 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "αBaro/Main.storyboard"; sourceTree = "<group>"; };
+		7AFFAE081C7F91BE00C43E96 /* leonLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = leonLoaderView.swift; sourceTree = "<group>"; };
+		7AFFAE0A1C7FA72000C43E96 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		7AFFAE0C1C7FA95800C43E96 /* CircleTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTransitionAnimator.swift; sourceTree = "<group>"; };
+		7AFFAE0E1C7FAE5300C43E96 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "αBaro/Main.storyboard"; sourceTree = "<group>"; };
 		D023F8EB1C21F7EA0093C501 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = "αBaro/AboutViewController.swift"; sourceTree = "<group>"; };
 		D023F8EC1C21F7EA0093C501 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = "αBaro/HelpViewController.swift"; sourceTree = "<group>"; };
 		D023F8ED1C21F7EA0093C501 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "αBaro/SettingsViewController.swift"; sourceTree = "<group>"; };
@@ -328,8 +334,11 @@
 				D023F8F11C21F9C40093C501 /* MessageUI.framework */,
 				D0E511C21C73B56100CE7C27 /* MonkeyKing */,
 				7A0381281C1F8A6000B8C9E7 /* EventCell.swift */,
+				7AFFAE081C7F91BE00C43E96 /* leonLoaderView.swift */,
 				7A7072EB1C3C565D00B9E9E3 /* DetailCell.swift */,
 				7A0381241C1F7E2F00B8C9E7 /* TableViewController.swift */,
+				7AFFAE0A1C7FA72000C43E96 /* NavigationControllerDelegate.swift */,
+				7AFFAE0C1C7FA95800C43E96 /* CircleTransitionAnimator.swift */,
 				7A472BC41C21FCE0005CAF1D /* SettingsTableTableViewController.swift */,
 				7A472BD21C22126C005CAF1D /* SettingRootViewController.swift */,
 				D023F8EB1C21F7EA0093C501 /* AboutViewController.swift */,
@@ -342,11 +351,11 @@
 				D0CFAF311BCB1E4C00D10615 /* ViewController.swift */,
 				7A17EC4D1C7ED649007758E1 /* shareViewController.swift */,
 				D09281951BE2FA970050819E /* LaunchScreen.xib */,
+				7AFFAE0E1C7FAE5300C43E96 /* Main.storyboard */,
 				7AC900D41C1F60930035ED54 /* JSSAlertView.swift */,
 				7AE5561A1C7E8D17006894A7 /* PullToRefreshOption.swift */,
 				7AE5561B1C7E8D17006894A7 /* PullToRefreshView.swift */,
 				7AE5561C1C7E8D17006894A7 /* UIScrollViewExtension.swift */,
-				7AFFAE061C7EE6D100C43E96 /* Main.storyboard */,
 				7AE556211C7E96C5006894A7 /* pulltorefresharrow.png */,
 				D0CFAF361BCB1E4C00D10615 /* Images.xcassets */,
 				D0CFAF2E1BCB1E4C00D10615 /* _Baro.xcdatamodeld */,
@@ -680,7 +689,7 @@
 				D09281891BE2FA160050819E /* ButtonRing.png in Resources */,
 				7A5C12521C335DB0007688B0 /* Dimmer.png in Resources */,
 				7A0D46C61BF31580009CAB1F /* lightbulb.png in Resources */,
-				7AFFAE071C7EE6D100C43E96 /* Main.storyboard in Resources */,
+				7AFFAE0F1C7FAE5300C43E96 /* Main.storyboard in Resources */,
 				7A472BD11C221188005CAF1D /* check-mark-in-white-hi.png in Resources */,
 				7A7FF6691C0A5223008C03FB /* level10.png in Resources */,
 				D0E11C1E1BFAF02D00DDA208 /* BKG Default.png in Resources */,
@@ -773,6 +782,7 @@
 				D0E511C51C73B56100CE7C27 /* Networking.swift in Sources */,
 				7A472BD31C22126C005CAF1D /* SettingRootViewController.swift in Sources */,
 				D0CFAF521BCB2EA900D10615 /* Event.swift in Sources */,
+				7AFFAE091C7F91BE00C43E96 /* leonLoaderView.swift in Sources */,
 				D0CFAF321BCB1E4C00D10615 /* ViewController.swift in Sources */,
 				7A472BC51C21FCE0005CAF1D /* SettingsTableTableViewController.swift in Sources */,
 				D0E511C81C73B56100CE7C27 /* MonkeyKing-dummy.m in Sources */,
@@ -780,9 +790,11 @@
 				7AE5561F1C7E8D17006894A7 /* PullToRefreshView.swift in Sources */,
 				7A0381251C1F7E2F00B8C9E7 /* TableViewController.swift in Sources */,
 				7A17EC4E1C7ED649007758E1 /* shareViewController.swift in Sources */,
+				7AFFAE0B1C7FA72000C43E96 /* NavigationControllerDelegate.swift in Sources */,
 				D0CFAF2D1BCB1E4C00D10615 /* AppDelegate.swift in Sources */,
 				7A0381291C1F8A6000B8C9E7 /* EventCell.swift in Sources */,
 				7AE556201C7E8D17006894A7 /* UIScrollViewExtension.swift in Sources */,
+				7AFFAE0D1C7FA95800C43E96 /* CircleTransitionAnimator.swift in Sources */,
 				D0CFAF301BCB1E4C00D10615 /* _Baro.xcdatamodeld in Sources */,
 				D0A911911BE4572F00D6BF3D /* MainViewController.swift in Sources */,
 				7A472BC31C20ED07005CAF1D /* complexViewController.swift in Sources */,
