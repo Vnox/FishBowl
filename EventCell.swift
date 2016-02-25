@@ -84,11 +84,14 @@ class EventCell: UITableViewCell {
         super.layoutSubviews()
            crossLabel.frame = CGRect(x: bounds.size.width + kUICuesMargin, y: 0,
             width: kUICuesWidth, height: bounds.size.height)
-        self.bkgTrans.image = UIImage(named: "CellBkg")
+        if(self.recordState){self.bkgTrans.image = UIImage(named: "RecingBkg")}
+        else{self.bkgTrans.image = UIImage(named: "CellBkg")}
+        
     }
     
     override func awakeFromNib() {
         self.TimerLabel.alpha = 0.0
+        //self.bkgTrans.image = UIImage(named: "CellBkg")
     }
     
 

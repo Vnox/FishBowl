@@ -12,9 +12,13 @@ import CoreData
 class TableViewController: UITableViewController, TableViewCellDelegate, UITextFieldDelegate {
     
 
-    // REFRESH CONTROL RELATED //
+    /* Refresh Control Related */
     
     var myRefreshControl: UIRefreshControl!
+    var myLoaderView:UIView!
+    var myLoader:UIImageView!
+    
+    /* Other Stuff */
     
     var events = [Event]()
     var eventData = [NSManagedObject]()
@@ -24,26 +28,40 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     var detailRow = [Int]()
     var managedContext: NSManagedObjectContext!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
 
-        // load event list
         loadEvents()
         
+        self.tableView.addPullToRefresh({ [weak self] in
+            // refresh code
+            let customIcon = UIImage(named: "lightbulb")
+            let alertview = JSSAlertView().show(self!, title: "New Event", text: "This is still under construction. Don't press me yet : )", buttonText: "Cancel",cancelButtonText: "Confirm", color: UIColorFromHex(0x496FBE, alpha: 1), iconImage: customIcon)
+            alertview.setTitleFont("AvenirNext-Regular")
+            alertview.setTextFont("AvenirNext-Regular")
+            alertview.setButtonFont("AvenirNext-Regular")
+            alertview.addAction(self!.confirmEvent)
+            alertview.setTextTheme(.Light)
+            alertview.getTextfield().delegate = self
+            alertview.getTextfield().returnKeyType = UIReturnKeyType.Go
+
+            
+            self?.tableView.reloadData()
+            
+            })
         
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         swipeGesture.numberOfTouchesRequired = 1
         swipeGesture.direction = .Down
         view.addGestureRecognizer(swipeGesture)
         
-        myRefreshControl = UIRefreshControl()
-        self.tableView.addSubview(myRefreshControl)
-        self.myRefreshControl.addTarget(self, action: "addEvents:", forControlEvents: UIControlEvents.ValueChanged)
-        
+        /* Refresh control configurings */
+//        myRefreshControl = UIRefreshControl()
+//        self.tableView.addSubview(myRefreshControl)
+//        self.myRefreshControl.addTarget(self, action: "addEvents:", forControlEvents: UIControlEvents.ValueChanged)
         
         
         }
@@ -70,7 +88,8 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         NSLog("action")
         self.loadEvents()
         self.tableView.reloadData()
-        self.myRefreshControl.endRefreshing()
+        //self.myRefreshControl.endRefreshing()
+        self.tableView.stopPullToRefresh()
         
     }
     
@@ -106,6 +125,8 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         // should be implemented by maple someday
         
     }
+    
+
     
     // Hide the status bar
     override func prefersStatusBarHidden() -> Bool {
@@ -208,13 +229,12 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         else{
             // showed detail == true and and is showinhg details //
             
-            // Remove the selected cell's detail cell
-            // index is not right (...)
+
             let toremove = detailRow.indexOf(indexPath.row + 1)
             if(toremove != nil){detailRow.removeAtIndex(toremove!)}
             
             
-            
+            // Adjust the indexes about the height
             for(var i = 0; i < detailRow.count; i++){
                 if(detailRow[i] > indexPath.row + 1 ){
                     detailRow[i] = detailRow[i] - 1
@@ -247,7 +267,17 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     
     func toDoItemDeleted(toDoItem: Event) {
         
-        // Delete everything in this method
+        
+        
+        /* NEED CODES HERE TO HANDLE SITUATION WHERE 
+        ITEM IS BEING DELETED WHILE DETAIL CELL IS SHOWING */
+        
+        
+        
+        
+        /* ENDS HERE */
+        
+        
         let index = events.indexOf(toDoItem)
         if index == NSNotFound { return }
         events.removeAtIndex(index!)

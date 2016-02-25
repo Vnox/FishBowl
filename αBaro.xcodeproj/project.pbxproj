@@ -70,6 +70,11 @@
 		7A96D2751C7A7A9300CFA918 /* DD.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A96D2741C7A7A9300CFA918 /* DD.png */; };
 		7AC900D51C1F60930035ED54 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC900D41C1F60930035ED54 /* JSSAlertView.swift */; };
 		7ACF23661C6D8CC6008F9826 /* GIFTCELL.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ACF23651C6D8CC6008F9826 /* GIFTCELL.png */; };
+		7AE5560E1C7E7BA1006894A7 /* Loader.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE5560D1C7E7BA1006894A7 /* Loader.png */; };
+		7AE5561D1C7E8D17006894A7 /* pulltorefresharrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE556191C7E8D17006894A7 /* pulltorefresharrow.png */; };
+		7AE5561E1C7E8D17006894A7 /* PullToRefreshOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5561A1C7E8D17006894A7 /* PullToRefreshOption.swift */; };
+		7AE5561F1C7E8D17006894A7 /* PullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5561B1C7E8D17006894A7 /* PullToRefreshView.swift */; };
+		7AE556201C7E8D17006894A7 /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5561C1C7E8D17006894A7 /* UIScrollViewExtension.swift */; };
 		D023F8EE1C21F7EA0093C501 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023F8EB1C21F7EA0093C501 /* AboutViewController.swift */; };
 		D023F8EF1C21F7EA0093C501 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023F8EC1C21F7EA0093C501 /* HelpViewController.swift */; };
 		D023F8F01C21F7EA0093C501 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023F8ED1C21F7EA0093C501 /* SettingsViewController.swift */; };
@@ -215,6 +220,11 @@
 		7A96D2741C7A7A9300CFA918 /* DD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DD.png; sourceTree = "<group>"; };
 		7AC900D41C1F60930035ED54 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSSAlertView.swift; path = "αBaro/JSSAlertView.swift"; sourceTree = "<group>"; };
 		7ACF23651C6D8CC6008F9826 /* GIFTCELL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GIFTCELL.png; sourceTree = "<group>"; };
+		7AE5560D1C7E7BA1006894A7 /* Loader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Loader.png; path = ../../../../Desktop/Loader.png; sourceTree = "<group>"; };
+		7AE556191C7E8D17006894A7 /* pulltorefresharrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulltorefresharrow.png; sourceTree = "<group>"; };
+		7AE5561A1C7E8D17006894A7 /* PullToRefreshOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshOption.swift; sourceTree = "<group>"; };
+		7AE5561B1C7E8D17006894A7 /* PullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
+		7AE5561C1C7E8D17006894A7 /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		D023F8EB1C21F7EA0093C501 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = "αBaro/AboutViewController.swift"; sourceTree = "<group>"; };
 		D023F8EC1C21F7EA0093C501 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = "αBaro/HelpViewController.swift"; sourceTree = "<group>"; };
 		D023F8ED1C21F7EA0093C501 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "αBaro/SettingsViewController.swift"; sourceTree = "<group>"; };
@@ -326,6 +336,10 @@
 				D0CFAF311BCB1E4C00D10615 /* ViewController.swift */,
 				D09281951BE2FA970050819E /* LaunchScreen.xib */,
 				7AC900D41C1F60930035ED54 /* JSSAlertView.swift */,
+				7AE556191C7E8D17006894A7 /* pulltorefresharrow.png */,
+				7AE5561A1C7E8D17006894A7 /* PullToRefreshOption.swift */,
+				7AE5561B1C7E8D17006894A7 /* PullToRefreshView.swift */,
+				7AE5561C1C7E8D17006894A7 /* UIScrollViewExtension.swift */,
 				7A7545951C0A841E00E54BE9 /* Main.storyboard */,
 				D0CFAF361BCB1E4C00D10615 /* Images.xcassets */,
 				D0CFAF2E1BCB1E4C00D10615 /* _Baro.xcdatamodeld */,
@@ -354,6 +368,7 @@
 				7A5C12551C33775B007688B0 /* cloud2.png */,
 				7A46E05A1C72846000C5705A /* RecingBkg.png */,
 				7A46E0541C6E809F00C5705A /* CellBkg.png */,
+				7AE5560D1C7E7BA1006894A7 /* Loader.png */,
 				7A7072ED1C3C611A00B9E9E3 /* DetailBkg.png */,
 				7A46E0581C72683800C5705A /* PauseBkg.png */,
 				7ACF23651C6D8CC6008F9826 /* GIFTCELL.png */,
@@ -612,6 +627,7 @@
 				7A7072FE1C3C89B300B9E9E3 /* 1.png in Resources */,
 				7A0381231C1F6B5A00B8C9E7 /* CELL1.png in Resources */,
 				D0E511C61C73B56100CE7C27 /* Info.plist in Resources */,
+				7AE5560E1C7E7BA1006894A7 /* Loader.png in Resources */,
 				D0E11C241BFAFE0600DDA208 /* SHARE.png in Resources */,
 				7A472BCC1C220F3D005CAF1D /* bartop.png in Resources */,
 				7A7072F21C3C7CDA00B9E9E3 /* timebox.png in Resources */,
@@ -643,6 +659,7 @@
 				7A472BBD1C20E184005CAF1D /* urgentIndi.png in Resources */,
 				D0E11C1C1BFAED6A00DDA208 /* drop button.png in Resources */,
 				D0CFAF371BCB1E4C00D10615 /* Images.xcassets in Resources */,
+				7AE5561D1C7E8D17006894A7 /* pulltorefresharrow.png in Resources */,
 				7A7072F01C3C625E00B9E9E3 /* DetailBox.png in Resources */,
 				7A0D46C71BF31580009CAB1F /* lightbulb@2x.png in Resources */,
 				D092818A1BE2FA160050819E /* discardBtn.png in Resources */,
@@ -738,6 +755,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE5561E1C7E8D17006894A7 /* PullToRefreshOption.swift in Sources */,
 				D0E511C41C73B56100CE7C27 /* MonkeyKing.swift in Sources */,
 				D023F8EF1C21F7EA0093C501 /* HelpViewController.swift in Sources */,
 				D0E511C31C73B56100CE7C27 /* AnyActivity.swift in Sources */,
@@ -748,9 +766,11 @@
 				7A472BC51C21FCE0005CAF1D /* SettingsTableTableViewController.swift in Sources */,
 				D0E511C81C73B56100CE7C27 /* MonkeyKing-dummy.m in Sources */,
 				7A7072EC1C3C565E00B9E9E3 /* DetailCell.swift in Sources */,
+				7AE5561F1C7E8D17006894A7 /* PullToRefreshView.swift in Sources */,
 				7A0381251C1F7E2F00B8C9E7 /* TableViewController.swift in Sources */,
 				D0CFAF2D1BCB1E4C00D10615 /* AppDelegate.swift in Sources */,
 				7A0381291C1F8A6000B8C9E7 /* EventCell.swift in Sources */,
+				7AE556201C7E8D17006894A7 /* UIScrollViewExtension.swift in Sources */,
 				D0CFAF301BCB1E4C00D10615 /* _Baro.xcdatamodeld in Sources */,
 				D0A911911BE4572F00D6BF3D /* MainViewController.swift in Sources */,
 				7A472BC31C20ED07005CAF1D /* complexViewController.swift in Sources */,
