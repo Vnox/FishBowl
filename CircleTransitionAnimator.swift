@@ -11,7 +11,6 @@ import UIKit
 class CircleTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     weak var transitionContext: UIViewControllerContextTransitioning?
-    var transitioned = false
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.3
@@ -24,11 +23,11 @@ class CircleTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
         
         //2
         var containerView = transitionContext.containerView()
-        var fromViewController : UIViewController
-        var toViewController : UIViewController
+        var fromViewController : UIViewController!
+        var toViewController : UIViewController!
         var button : UIButton
-
-        if(transitioned == false){
+        
+        if let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as? MainViewController{
             
             fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! MainViewController
             toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! shareViewController
@@ -40,7 +39,6 @@ class CircleTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
             toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! MainViewController
             button = (fromViewController as! shareViewController).myButton
 
-        
         }
         
         //3
@@ -65,7 +63,6 @@ class CircleTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
         maskLayerAnimation.delegate = self
         maskLayer.addAnimation(maskLayerAnimation, forKey: "path")
         
-        transitioned = !transitioned
     }
     
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
