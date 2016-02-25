@@ -61,7 +61,8 @@ public class PullToRefreshView: UIView {
         self.backgroundView.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         self.addSubview(backgroundView)
         
-        self.arrow = UIImageView(frame: CGRectMake(0, 0, 30, 30))
+        self.arrow = UIImageView(frame: CGRectMake(0, 0, 40, 40))
+        self.arrow.alpha = 0.4
         self.arrow.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin]
         
         self.arrow.image = UIImage(named: PullToRefreshConst.imageName, inBundle: NSBundle(forClass: self.dynamicType), compatibleWithTraitCollection: nil)
@@ -121,8 +122,8 @@ public class PullToRefreshView: UIView {
                 // Alpha set
                 if PullToRefreshConst.alpha {
                     var alpha = fabs(offsetWithoutInsets) / (self.frame.size.height + 30)
-                    if alpha > 0.8 {
-                        alpha = 0.8
+                    if alpha > 0.4 {
+                        alpha = 0.4
                     }
                     self.arrow.alpha = alpha
                 }
@@ -148,6 +149,7 @@ public class PullToRefreshView: UIView {
                     } else if (self.state != .Refreshing) {
                         self.arrowRotation()
                         self.state = .Pulling
+                        self.arrow.alpha = 1.0
                     }
                 } else if (self.state != .Refreshing && offsetWithoutInsets < 0) {
                     // normal
@@ -164,7 +166,8 @@ public class PullToRefreshView: UIView {
     
     private func startAnimating() {
         self.indicator.startAnimating()
-        self.arrow.hidden = true
+        self.indicator.hidden = true
+        //self.arrow.hidden = true
         
         if let scrollView = superview as? UIScrollView {
             scrollViewBounces = scrollView.bounces
