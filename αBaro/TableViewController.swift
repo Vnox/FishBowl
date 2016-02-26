@@ -52,7 +52,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         tableView.dataSource = self
 
         
-        self.tableView.addPullToRefresh({ [weak self] in
+        self.tableView.addPullToRefresh( { [weak self] in
             // refresh code
             let customIcon = UIImage(named: "lightbulb")
             let alertview = JSSAlertView().show(self!, title: "New Event", text: "This is still under construction. Don't press me yet : )", buttonText: "Cancel",cancelButtonText: "Confirm", color: UIColorFromHex(0x496FBE, alpha: 1), iconImage: customIcon)
@@ -67,12 +67,14 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
             
             self?.tableView.reloadData()
             
+            },refreshPull: { //[weak self] in
+               //Pull code
+                NSLog(" -> -> -> ")
+                self.dismissViewControllerAnimated(true, completion: nil)
+            
             })
         
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        swipeGesture.numberOfTouchesRequired = 1
-        swipeGesture.direction = .Down
-        view.addGestureRecognizer(swipeGesture)
+        
         
         /* Refresh control configurings */
 //        myRefreshControl = UIRefreshControl()
@@ -165,10 +167,6 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return events.count
-    }
-    
-    func handleSwipes(sender:UISwipeGestureRecognizer){
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 

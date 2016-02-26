@@ -508,7 +508,7 @@
         <!--complexView-->
         <scene sceneID="oa0-uu-KzN">
             <objects>
-                <viewController storyboardIdentifier="complexView" title="complexView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y0a-XW-QPm" customClass="complexViewController" customModule="αBaro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="complexVC" title="complexView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y0a-XW-QPm" customClass="complexViewController" customModule="αBaro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4oi-VG-78t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -566,8 +566,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wBs-nd-ePT"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="backButton" destination="X3u-pB-6PY" id="PQE-hP-98t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRr-uv-tWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

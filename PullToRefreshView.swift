@@ -6,18 +6,23 @@
 //
 import UIKit
 
+
 public class PullToRefreshView: UIView {
+    
     enum PullToRefreshState {
         case Normal
         case Pulling
         case Refreshing
+        case PullDown
     }
     
     // MARK: Variables
     let contentOffsetKeyPath = "contentOffset"
     var kvoContext = ""
     
-    private var options: PullToRefreshOption!
+    
+    
+    private var options = PullToRefreshOption()
     private var backgroundView: UIView!
     private var arrow: UIImageView!
     private var indicator: UIActivityIndicatorView!
@@ -25,6 +30,11 @@ public class PullToRefreshView: UIView {
     private var scrollViewInsets: UIEdgeInsets = UIEdgeInsetsZero
     private var previousOffset: CGFloat = 0
     private var refreshCompletion: (() -> ()) = {}
+    private var refreshPull: (() -> ()) = {}
+    var pullMe = false
+    
+    /* Leon modified */
+    private var pulledThatFar = false
     
     var state: PullToRefreshState = PullToRefreshState.Normal {
         didSet {
@@ -36,6 +46,8 @@ public class PullToRefreshView: UIView {
                 stopAnimating()
             case .Refreshing:
                 startAnimating()
+            case .PullDown:
+                arrowImageChange()
             default:
                 break
             }
@@ -77,6 +89,34 @@ public class PullToRefreshView: UIView {
         
         self.autoresizingMask = .FlexibleWidth
     }
+    
+    //Mine
+    public convenience init( frame: CGRect, refreshCompletion :(() -> ()), refreshPull : (() -> ())) {
+        self.init(frame: frame)
+        self.refreshCompletion = refreshCompletion
+        self.refreshPull = refreshPull
+        
+        self.backgroundView = UIView(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
+        //self.backgroundView.backgroundColor = self.options.backgroundColor
+        self.backgroundView.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        self.addSubview(backgroundView)
+        
+        self.arrow = UIImageView(frame: CGRectMake(0, 0, 40, 40))
+        self.arrow.alpha = 0.4
+        self.arrow.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin]
+        
+        self.arrow.image = UIImage(named: PullToRefreshConst.imageName, inBundle: NSBundle(forClass: self.dynamicType), compatibleWithTraitCollection: nil)
+        self.addSubview(arrow)
+        
+        self.indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        self.indicator.bounds = self.arrow.bounds
+        self.indicator.autoresizingMask = self.arrow.autoresizingMask
+        self.indicator.hidesWhenStopped = true
+        //self.indicator.color = options.indicatorColor
+        self.addSubview(indicator)
+        
+        self.autoresizingMask = .FlexibleWidth
+    }
    
     public override func layoutSubviews() {
         super.layoutSubviews()
@@ -112,7 +152,7 @@ public class PullToRefreshView: UIView {
                 let offsetWithoutInsets = self.previousOffset + self.scrollViewInsets.top
                 
                 // Update the content inset for fixed section headers
-                if self.options.fixedSectionHeader && self.state == .Refreshing {
+                if self.state == .Refreshing {
                     if (scrollView.contentOffset.y > 0) {
                         scrollView.contentInset = UIEdgeInsetsZero;
                     }
@@ -140,20 +180,35 @@ public class PullToRefreshView: UIView {
                     self.backgroundView.frame.origin.y = -fabs(offsetWithoutInsets)
                 }
                 
-                // Pulling State Check
+                // Pulling State Check //LEON WANTS TO MODIFY//
                 if (offsetWithoutInsets < -self.frame.size.height) {
+                    NSLog("INSET IS : " + String(offsetWithoutInsets))
                     
                     // pulling or refreshing
                     if (scrollView.dragging == false && self.state != .Refreshing) {
                         self.state = .Refreshing
-                    } else if (self.state != .Refreshing) {
+                        
+                    }  else if( self.state != .Refreshing && offsetWithoutInsets < -140){
+                        
+                        
+                        self.arrow.alpha = 0.0
+                        self.pulledThatFar = true
+                        NSLog("THAT FAR")
+                        
+                    }
+                    else if (self.state != .Refreshing) {
+                        
                         self.arrowRotation()
                         self.state = .Pulling
-                        self.arrow.alpha = 1.0
+                        //self.arrow.alpha = 1.0
+                        self.pulledThatFar = false
+                        NSLog("NOT THAT FAR")
+                        
                     }
-                } else if (self.state != .Refreshing && offsetWithoutInsets < 0) {
+                }else if (self.state != .Refreshing && offsetWithoutInsets < 0) {
                     // normal
                     self.arrowRotationBack()
+                    self.arrow.alpha = 1.0
                 }
                 self.previousOffset = scrollView.contentOffset.y
             }
@@ -177,6 +232,7 @@ public class PullToRefreshView: UIView {
             insets.top += self.frame.size.height
             scrollView.contentOffset.y = self.previousOffset
             scrollView.bounces = false
+            
             UIView.animateWithDuration(PullToRefreshConst.animationDuration, delay: 0, options:[], animations: {
                 scrollView.contentInset = insets
                 scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -insets.top)
@@ -187,8 +243,9 @@ public class PullToRefreshView: UIView {
                             self.state = .Normal
                         }
                     }
-                    self.refreshCompletion()
-            })
+                    if(self.pulledThatFar == false){ self.refreshCompletion() }
+                    else{ self.refreshPull() }
+                })
         }
     }
     
@@ -219,4 +276,12 @@ public class PullToRefreshView: UIView {
             self.arrow.transform = CGAffineTransformIdentity
             }, completion:nil)
     }
+    
+    private func arrowImageChange(){
+        self.arrow.hidden = true
+        
+        /* Added by Leon */
+        
+    }
+    
 }

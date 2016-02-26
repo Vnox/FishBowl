@@ -106,15 +106,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.cloud1.alpha -= 1.0
         self.cloud2.alpha -= 1.0
         
-        
-        
-
-
-        
-        
         NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
 
-        
         myPercent = 0
         self.first = true
         
@@ -212,7 +205,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         if(self.myPercent < self.percentage){
             myPercent++}
         progressIndicatorView.progress = CGFloat(Double(myPercent)/100.0)
-    } 
+    }
+    
+
     
     
     func updateTime() {
@@ -452,12 +447,11 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     func handleSwipes(sender:UISwipeGestureRecognizer){
         
         let myBoard = UIStoryboard(name: "Main", bundle: nil)
-        theView = myBoard.instantiateViewControllerWithIdentifier("complexView")
+        theView = myBoard.instantiateViewControllerWithIdentifier("complexVC")
         theView.modalTransitionStyle = .CoverVertical
         theView.view.backgroundColor = UIColor.clearColor()
         theView.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
         presentViewController(theView, animated: true, completion: nil)
-        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
