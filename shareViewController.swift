@@ -49,6 +49,7 @@ class shareViewController: UIViewController {
         NSLog("VDIDL")
         self.myEventsView.center.y += 400
         self.percentDisplayButton.center.x = self.view.center.x
+        self.displayLabel.userInteractionEnabled = false
         
         
         colorCircle1.center = self.percentDisplayButton.center
@@ -76,12 +77,14 @@ class shareViewController: UIViewController {
         colorCircle5.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
         
         progressIndicatorView.frame = CGRectMake(150, 190, 100, 100)
-        self.view.addSubview(progressIndicatorView)
-        self.view.addSubview(colorCircle5)
-        self.view.addSubview(colorCircle4)
-        self.view.addSubview(colorCircle3)
-        self.view.addSubview(colorCircle2)
-        self.view.addSubview(colorCircle1)
+        
+        self.view.insertSubview(progressIndicatorView, atIndex: 1)
+        self.view.insertSubview(colorCircle5, aboveSubview: progressIndicatorView)
+        self.view.insertSubview(colorCircle4, aboveSubview: colorCircle5)
+        self.view.insertSubview(colorCircle3, aboveSubview: colorCircle4)
+        self.view.insertSubview(colorCircle2, aboveSubview: colorCircle3)
+        self.view.insertSubview(colorCircle1, aboveSubview: colorCircle2)
+       
         
         progressIndicatorView.center.x = self.view.center.x
         progressIndicatorView.center.y = self.percentDisplayButton.center.y

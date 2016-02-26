@@ -121,6 +121,18 @@
                                     <action selector="backTouched:" destination="Dkx-Qz-eMM" eventType="touchUpInside" id="fN6-T7-nDB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RaU-PN-Dzh">
+                                <rect key="frame" x="92" y="170" width="191" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.13725490200000001" green="0.21176470589999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="displayTouched:" destination="Dkx-Qz-eMM" eventType="touchUpInside" id="rhh-0l-BCM"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Oe8-F2-e16">
                                 <rect key="frame" x="85" y="172" width="204" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -128,17 +140,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RaU-PN-Dzh">
-                                <rect key="frame" x="81" y="119" width="208" height="208"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="75"/>
-                                <state key="normal" title="     ">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="displayTouched:" destination="Dkx-Qz-eMM" eventType="touchUpInside" id="rhh-0l-BCM"/>
-                                </connections>
-                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" id="lsE-LO-XeI">
                                 <rect key="frame" x="30" y="407" width="315" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
