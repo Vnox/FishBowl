@@ -192,8 +192,9 @@ public class PullToRefreshView: UIView {
                         
                         
                         self.pulledThatFar = true
-                        self.arrow.image = UIImage(named: "pullDownArrow")
+                        //self.arrow.image = UIImage(named: "pullDownArrow")
                         self.arrow.alpha = 1.0
+                        self.arrowRotateAndChange()
                         //NSLog("THAT FAR")
                         
                     }
@@ -268,8 +269,16 @@ public class PullToRefreshView: UIView {
     private func arrowRotation() {
         UIView.animateWithDuration(0.2, delay: 0, options:[], animations: {
             // -0.0000001 for the rotation direction control
-            self.arrow.transform = CGAffineTransformMakeRotation(CGFloat(M_PI-0.0000001))
+            self.arrow.transform = CGAffineTransformMakeRotation(CGFloat(M_PI - 0.0000000001))
         }, completion:nil)
+    }
+    
+    private func arrowRotateAndChange() {
+        UIView.animateWithDuration(0.2, delay: 0, options:[], animations: {
+            // -0.0000001 for the rotation direction control
+            self.arrow.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_4))
+            self.arrow.image = UIImage(named:"pullDownArrow")
+            }, completion:nil)
     }
     
     private func arrowRotationBack() {
