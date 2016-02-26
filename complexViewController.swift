@@ -11,7 +11,6 @@ import UIKit
 class complexViewController: UIViewController {
 
 
-    @IBOutlet var backButton: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +24,6 @@ class complexViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func backbutton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     
     
     override func prefersStatusBarHidden() -> Bool {

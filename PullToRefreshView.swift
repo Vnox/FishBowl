@@ -182,33 +182,34 @@ public class PullToRefreshView: UIView {
                 
                 // Pulling State Check //LEON WANTS TO MODIFY//
                 if (offsetWithoutInsets < -self.frame.size.height) {
-                    NSLog("INSET IS : " + String(offsetWithoutInsets))
+                    //NSLog("INSET IS : " + String(offsetWithoutInsets))
                     
                     // pulling or refreshing
                     if (scrollView.dragging == false && self.state != .Refreshing) {
                         self.state = .Refreshing
                         
-                    }  else if( self.state != .Refreshing && offsetWithoutInsets < -140){
+                    }  else if( self.state != .Refreshing && offsetWithoutInsets < -130){
                         
                         
-                        self.arrow.alpha = 0.0
                         self.pulledThatFar = true
-                        NSLog("THAT FAR")
+                        self.arrow.image = UIImage(named: "pullDownArrow")
+                        self.arrow.alpha = 1.0
+                        //NSLog("THAT FAR")
                         
                     }
                     else if (self.state != .Refreshing) {
                         
                         self.arrowRotation()
                         self.state = .Pulling
-                        //self.arrow.alpha = 1.0
                         self.pulledThatFar = false
-                        NSLog("NOT THAT FAR")
+                        self.arrow.image = UIImage(named: "pulltorefresharrow")
+                        self.arrow.alpha = 1.0
+                        //NSLog("NOT THAT FAR")
                         
                     }
                 }else if (self.state != .Refreshing && offsetWithoutInsets < 0) {
                     // normal
                     self.arrowRotationBack()
-                    self.arrow.alpha = 1.0
                 }
                 self.previousOffset = scrollView.contentOffset.y
             }
