@@ -38,6 +38,11 @@ class shareViewController: UIViewController {
     var p4 = 0
     var p5 = 0
     
+    var t1 : NSTimer!
+    var t2 : NSTimer!
+    var t3 : NSTimer!
+    var t4 : NSTimer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,11 +63,11 @@ class shareViewController: UIViewController {
         colorCircle4.circlePathLayer.strokeColor = UIColor.greenColor().CGColor
         colorCircle5.circlePathLayer.strokeColor = UIColor.cyanColor().CGColor
         
-        colorCircle1.circlePathLayer.lineWidth = 18
-        colorCircle2.circlePathLayer.lineWidth = 18
-        colorCircle3.circlePathLayer.lineWidth = 18
-        colorCircle4.circlePathLayer.lineWidth = 18
-        colorCircle5.circlePathLayer.lineWidth = 18
+        colorCircle1.circlePathLayer.lineWidth = 20
+        colorCircle2.circlePathLayer.lineWidth = 20
+        colorCircle3.circlePathLayer.lineWidth = 20
+        colorCircle4.circlePathLayer.lineWidth = 20
+        colorCircle5.circlePathLayer.lineWidth = 20
         
         colorCircle1.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
         colorCircle2.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
@@ -106,6 +111,10 @@ class shareViewController: UIViewController {
     @IBAction func displayTouched(sender: UIButton) {
         if(self.pressedIt == false){
             
+            if(t2 != nil){
+                t2.invalidate()
+            }
+            
             
             UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [] , animations: {
                 self.myEventsView.center.y -= 400
@@ -120,14 +129,20 @@ class shareViewController: UIViewController {
             thing4 = 70
             thing5 = 100
             
+            t1 = NSTimer.scheduledTimerWithTimeInterval(0.005, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
+            t1.invalidate()
+            
+            t2 = NSTimer.scheduledTimerWithTimeInterval(0.005, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
             
             
-            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
-            
-            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
             self.pressedIt = true
+            
             return
         }else{
+            
+            if(t2 != nil){
+                t2.invalidate()
+            }
             
             UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [] , animations: {
                 self.myEventsView.center.y += 400
@@ -141,9 +156,12 @@ class shareViewController: UIViewController {
             thing4 = 0
             thing5 = 0
             
-            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
+            t1 = NSTimer.scheduledTimerWithTimeInterval(0.005, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
+            t1.invalidate()
             
-            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
+            t2 = NSTimer.scheduledTimerWithTimeInterval(0.005, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
+            
+            
             self.pressedIt = false
             return
 

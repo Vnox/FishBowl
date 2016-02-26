@@ -50,7 +50,7 @@ class leonLoaderView: UIView {
     
     func configure() {
         circlePathLayer.frame = bounds
-        circlePathLayer.lineWidth = 12
+        circlePathLayer.lineWidth = 18
         circlePathLayer.fillColor = UIColor.clearColor().CGColor
         circlePathLayer.strokeColor = UIColor.whiteColor().CGColor
         layer.addSublayer(circlePathLayer)
