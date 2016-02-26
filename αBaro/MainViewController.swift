@@ -40,7 +40,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     var event = [NSManagedObject]()
     
     var myPercent = 0
-    var percentage = 75
+    var percentage = 42
     var animated = false
     
     // Animation related stuff

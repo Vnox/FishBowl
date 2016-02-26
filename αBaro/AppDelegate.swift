@@ -78,11 +78,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Local notification by Ye
         let notification: UILocalNotification = UILocalNotification()
         notification.category = "FIRST_CATEGORY"
-        notification.alertBody = "Haha, notification poped"
+        notification.alertBody = "Hey there, please come back"
         notification.repeatInterval = NSCalendarUnit.Day
         notification.timeZone = NSTimeZone.defaultTimeZone()
         //setting app's icon badge
-        notification.applicationIconBadgeNumber = 1
+        //notification.applicationIconBadgeNumber = 1
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }

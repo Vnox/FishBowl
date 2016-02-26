@@ -10,6 +10,8 @@ import UIKit
 
 class shareViewController: UIViewController {
     
+    @IBOutlet weak var needLabel: UILabel!
+    @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var myEventsView: UIView!
     @IBOutlet weak var percentDisplayButton: UIButton!
     @IBOutlet weak var myButton: UIButton!
@@ -22,9 +24,10 @@ class shareViewController: UIViewController {
     let colorCircle3 = leonLoaderView(frame: CGRectZero)
     let colorCircle4 = leonLoaderView(frame: CGRectZero)
     let colorCircle5 = leonLoaderView(frame: CGRectZero)
+    let greyCircle = leonLoaderView(frame: CGRectZero)
     
     var myPercent = 0
-    var percentage = 75
+    var percentage = 42
     
     // simulate model //
     var thing1 = 5
@@ -57,18 +60,21 @@ class shareViewController: UIViewController {
         colorCircle3.center = self.percentDisplayButton.center
         colorCircle4.center = self.percentDisplayButton.center
         colorCircle5.center = self.percentDisplayButton.center
+        greyCircle.center = self.percentDisplayButton.center
         
         colorCircle1.circlePathLayer.strokeColor = UIColor.redColor().CGColor
         colorCircle2.circlePathLayer.strokeColor = UIColor.orangeColor().CGColor
         colorCircle3.circlePathLayer.strokeColor = UIColor.yellowColor().CGColor
         colorCircle4.circlePathLayer.strokeColor = UIColor.greenColor().CGColor
         colorCircle5.circlePathLayer.strokeColor = UIColor.cyanColor().CGColor
+        greyCircle.circlePathLayer.strokeColor = UIColor.blackColor().CGColor
         
         colorCircle1.circlePathLayer.lineWidth = 20
         colorCircle2.circlePathLayer.lineWidth = 20
         colorCircle3.circlePathLayer.lineWidth = 20
         colorCircle4.circlePathLayer.lineWidth = 20
         colorCircle5.circlePathLayer.lineWidth = 20
+        greyCircle.circlePathLayer.lineWidth = 18
         
         colorCircle1.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
         colorCircle2.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
@@ -78,7 +84,8 @@ class shareViewController: UIViewController {
         
         progressIndicatorView.frame = CGRectMake(150, 190, 100, 100)
         
-        self.view.insertSubview(progressIndicatorView, atIndex: 1)
+        self.view.insertSubview(greyCircle, atIndex: 1)
+        self.view.insertSubview(progressIndicatorView, aboveSubview: greyCircle)
         self.view.insertSubview(colorCircle5, aboveSubview: progressIndicatorView)
         self.view.insertSubview(colorCircle4, aboveSubview: colorCircle5)
         self.view.insertSubview(colorCircle3, aboveSubview: colorCircle4)
@@ -89,6 +96,9 @@ class shareViewController: UIViewController {
         progressIndicatorView.center.x = self.view.center.x
         progressIndicatorView.center.y = self.percentDisplayButton.center.y
         progressIndicatorView.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
+        
+        greyCircle.progress = 1
+        greyCircle.alpha = 0.25
         
         displayLabel.center.x = self.view.center.x
         displayLabel.center.y = self.percentDisplayButton.center.y
@@ -121,6 +131,8 @@ class shareViewController: UIViewController {
             
             UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [] , animations: {
                 self.myEventsView.center.y -= 400
+                self.needLabel.center.y += 400
+                self.hourLabel.center.y += 400
                 self.myButton.center.y += 400
                 }, completion: nil)
 
@@ -149,10 +161,12 @@ class shareViewController: UIViewController {
             
             UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [] , animations: {
                 self.myEventsView.center.y += 400
+                self.needLabel.center.y -= 400
+                self.hourLabel.center.y -= 400
                 self.myButton.center.y -= 400
                 }, completion: nil)
             
-            self.percentage = 75
+            self.percentage = 42
             thing1 = 0
             thing2 = 0
             thing3 = 0
