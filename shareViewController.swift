@@ -10,6 +10,7 @@ import UIKit
 
 class shareViewController: UIViewController {
     
+    @IBOutlet weak var myEventsView: UIView!
     @IBOutlet weak var percentDisplayButton: UIButton!
     @IBOutlet weak var myButton: UIButton!
     
@@ -37,53 +38,14 @@ class shareViewController: UIViewController {
     var p4 = 0
     var p5 = 0
     
-    
-    @IBOutlet weak var displayLabel: UILabel!
-    @IBAction func backTouched(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
-    @IBAction func displayTouched(sender: UIButton) {
-        if(self.pressedIt == false){
-            self.percentage = 100
-            thing1 = 5
-            thing2 = 15
-            thing3 = 40
-            thing4 = 70
-            thing5 = 100
-            
-            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
-            
-            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
-            self.pressedIt = true
-            return
-        }else{
-            
-            self.percentage = 75
-            thing1 = 0
-            thing2 = 0
-            thing3 = 0
-            thing4 = 0
-            thing5 = 0
-            
-            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
-            
-            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
-            self.pressedIt = false
-            return
-
-        
-        
-        }
-        
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSLog("VDIDL")
+        self.myEventsView.center.y += 400
         self.percentDisplayButton.center.x = self.view.center.x
         
-
+        
         colorCircle1.center = self.percentDisplayButton.center
         colorCircle2.center = self.percentDisplayButton.center
         colorCircle3.center = self.percentDisplayButton.center
@@ -107,7 +69,7 @@ class shareViewController: UIViewController {
         colorCircle3.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
         colorCircle4.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
         colorCircle5.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
-
+        
         progressIndicatorView.frame = CGRectMake(150, 190, 100, 100)
         self.view.addSubview(progressIndicatorView)
         self.view.addSubview(colorCircle5)
@@ -128,12 +90,71 @@ class shareViewController: UIViewController {
         self.view.clipsToBounds = true
         
         NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
-
-
-
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 
+    
+    
+    @IBOutlet weak var displayLabel: UILabel!
+    @IBAction func backTouched(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func displayTouched(sender: UIButton) {
+        if(self.pressedIt == false){
+            
+            
+            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [] , animations: {
+                self.myEventsView.center.y -= 400
+                self.myButton.center.y += 400
+                }, completion: nil)
+
+            
+            self.percentage = 100
+            thing1 = 5
+            thing2 = 15
+            thing3 = 40
+            thing4 = 70
+            thing5 = 100
+            
+            
+            
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
+            
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
+            self.pressedIt = true
+            return
+        }else{
+            
+            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [] , animations: {
+                self.myEventsView.center.y += 400
+                self.myButton.center.y -= 400
+                }, completion: nil)
+            
+            self.percentage = 75
+            thing1 = 0
+            thing2 = 0
+            thing3 = 0
+            thing4 = 0
+            thing5 = 0
+            
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
+            
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
+            self.pressedIt = false
+            return
+
+        
+        
+        }
+        
+        
+    }
+    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
