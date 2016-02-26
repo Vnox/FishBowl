@@ -10,37 +10,122 @@ import UIKit
 
 class shareViewController: UIViewController {
     
-    @IBOutlet weak var percentDisplay: UILabel!
-    
-    let progressIndicatorView = leonLoaderView(frame: CGRectZero)
-    var myPercent = 0
-    var percentage = 75
-
+    @IBOutlet weak var percentDisplayButton: UIButton!
     @IBOutlet weak var myButton: UIButton!
     
+    var pressedIt = false
+
+    let progressIndicatorView = leonLoaderView(frame: CGRectZero)
+    let colorCircle1 = leonLoaderView(frame: CGRectZero)
+    let colorCircle2 = leonLoaderView(frame: CGRectZero)
+    let colorCircle3 = leonLoaderView(frame: CGRectZero)
+    let colorCircle4 = leonLoaderView(frame: CGRectZero)
+    let colorCircle5 = leonLoaderView(frame: CGRectZero)
+    
+    var myPercent = 0
+    var percentage = 75
+    
+    // simulate model //
+    var thing1 = 5
+    var thing2 = 15
+    var thing3 = 40
+    var thing4 = 70
+    var thing5 = 100
+    var p1 = 0
+    var p2 = 0
+    var p3 = 0
+    var p4 = 0
+    var p5 = 0
+    
+    
+    @IBOutlet weak var displayLabel: UILabel!
     @IBAction func backTouched(sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    @IBAction func displayTouched(sender: UIButton) {
+        if(self.pressedIt == false){
+            self.percentage = 100
+            thing1 = 5
+            thing2 = 15
+            thing3 = 40
+            thing4 = 70
+            thing5 = 100
+            
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
+            
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
+            self.pressedIt = true
+            return
+        }else{
+            
+            self.percentage = 75
+            thing1 = 0
+            thing2 = 0
+            thing3 = 0
+            thing4 = 0
+            thing5 = 0
+            
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
+            
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
+            self.pressedIt = false
+            return
+
+        
+        
+        }
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.percentDisplayButton.center.x = self.view.center.x
         
+
+        colorCircle1.center = self.percentDisplayButton.center
+        colorCircle2.center = self.percentDisplayButton.center
+        colorCircle3.center = self.percentDisplayButton.center
+        colorCircle4.center = self.percentDisplayButton.center
+        colorCircle5.center = self.percentDisplayButton.center
+        
+        colorCircle1.circlePathLayer.strokeColor = UIColor.redColor().CGColor
+        colorCircle2.circlePathLayer.strokeColor = UIColor.orangeColor().CGColor
+        colorCircle3.circlePathLayer.strokeColor = UIColor.yellowColor().CGColor
+        colorCircle4.circlePathLayer.strokeColor = UIColor.greenColor().CGColor
+        colorCircle5.circlePathLayer.strokeColor = UIColor.cyanColor().CGColor
+        
+        colorCircle1.circlePathLayer.lineWidth = 18
+        colorCircle2.circlePathLayer.lineWidth = 18
+        colorCircle3.circlePathLayer.lineWidth = 18
+        colorCircle4.circlePathLayer.lineWidth = 18
+        colorCircle5.circlePathLayer.lineWidth = 18
+        
+        colorCircle1.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
+        colorCircle2.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
+        colorCircle3.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
+        colorCircle4.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
+        colorCircle5.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
+
         progressIndicatorView.frame = CGRectMake(150, 190, 100, 100)
         self.view.addSubview(progressIndicatorView)
+        self.view.addSubview(colorCircle5)
+        self.view.addSubview(colorCircle4)
+        self.view.addSubview(colorCircle3)
+        self.view.addSubview(colorCircle2)
+        self.view.addSubview(colorCircle1)
         
         progressIndicatorView.center.x = self.view.center.x
-        progressIndicatorView.center.y = self.percentDisplay.center.y
+        progressIndicatorView.center.y = self.percentDisplayButton.center.y
         progressIndicatorView.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
         
+        displayLabel.center.x = self.view.center.x
+        displayLabel.center.y = self.percentDisplayButton.center.y
         
         
         self.view.layer.cornerRadius = 7
         self.view.clipsToBounds = true
-        
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        swipeGesture.numberOfTouchesRequired = 1
-        swipeGesture.direction = .Down
-        view.addGestureRecognizer(swipeGesture)
         
         NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
 
@@ -60,11 +145,33 @@ class shareViewController: UIViewController {
     
     func updatePercent() {
         
-         self.percentDisplay.text = String.localizedStringWithFormat("%d%%", myPercent)
-        
+        self.displayLabel.text = String.localizedStringWithFormat("%d%%", myPercent)
         if(self.myPercent < self.percentage){
-            myPercent++}
+            myPercent++}else if(self.myPercent > self.percentage){
+            myPercent--
+        }
         progressIndicatorView.progress = CGFloat(Double(myPercent)/100.0)
+    }
+    
+    func updateSections() {
+        
+        
+        if(self.p1 < self.thing1){p1++}else if(self.p1 > self.thing1){p1--}
+        colorCircle1.progress = CGFloat(Double(p1)/100.0)
+        
+        if(self.p2 < self.thing2){p2++}else if(self.p2 > self.thing2){p2--}
+        colorCircle2.progress = CGFloat(Double(p2)/100.0)
+        
+        if(self.p3 < self.thing3){p3++}else if(self.p3 > self.thing3){p3--}
+        colorCircle3.progress = CGFloat(Double(p3)/100.0)
+        
+        if(self.p4 < self.thing4){p4++}else if(self.p4 > self.thing4){p4--}
+        colorCircle4.progress = CGFloat(Double(p4)/100.0)
+        
+        if(self.p5 < self.thing5){p5++}else if(self.p5 > self.thing5){p5--}
+        colorCircle5.progress = CGFloat(Double(p5)/100.0)
+    
+    
     }
 
     

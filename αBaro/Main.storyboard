@@ -118,20 +118,31 @@
                                     <action selector="backTouched:" destination="Dkx-Qz-eMM" eventType="touchUpInside" id="fN6-T7-nDB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qk-nF-kRG">
-                                <rect key="frame" x="106" y="212" width="163" height="100"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="62"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oe8-F2-e16">
+                                <rect key="frame" x="85" y="172" width="204" height="115"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="75"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaU-PN-Dzh">
+                                <rect key="frame" x="81" y="119" width="208" height="208"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="75"/>
+                                <state key="normal" title="     ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="displayTouched:" destination="Dkx-Qz-eMM" eventType="touchUpInside" id="rhh-0l-BCM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.21176470588235294" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="j3r-Mv-rdM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="displayLabel" destination="Oe8-F2-e16" id="Hyg-ME-nS3"/>
                         <outlet property="myButton" destination="lbz-Ct-qjF" id="aI6-Js-lS7"/>
-                        <outlet property="percentDisplay" destination="2qk-nF-kRG" id="XVI-kh-j6A"/>
+                        <outlet property="percentDisplayButton" destination="RaU-PN-Dzh" id="UgY-k8-NIk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zO1-PG-eUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
