@@ -113,10 +113,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     }
     
     
-    
-
-    
-    
+    // load event by Ye's power
     func loadEvents() {
         events = []
 
@@ -130,6 +127,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
             eventData = results as! [NSManagedObject]
             for var i=0; i<eventData.count; i++ {
                 let tmpEvent = eventData[i]
+                // get the task name
                 let eventObj: Event = Event(name: (tmpEvent.valueForKey("name") as? String)!, timeRemaining: 4.00, priority: false)
                 events.append(eventObj)
             }
@@ -140,9 +138,32 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         
     }
     
-    func updateEvents(){
-        // should be implemented by maple someday
+    // update the event by Ye's power
+    func updateEvent(index:Int, newName:String, newTime:NSData){
+        // create a fetch request
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Entity")
         
+        do{
+            let currentlist = try managedContext!.executeFetchRequest(fetchRequest)
+            eventData = currentlist as! [NSManagedObject]
+            let updatedEvent = eventData[index]
+            // update event name
+            updatedEvent.setValue(newName, forKey: "name")
+            // update event time
+            updatedEvent.setValue(newTime, forKey: "dueDate")
+            
+            // save the change
+            do{
+                try updatedEvent.managedObjectContext?.save()
+            }catch{
+                let saveError = error as NSError
+                print(saveError)
+            }
+        } catch let error as NSError {
+            print("could not update \(error), \(error.userInfo)")
+        }
     }
     
 
@@ -316,7 +337,6 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
         tableView.endUpdates()    
     }
-    
 
     
 

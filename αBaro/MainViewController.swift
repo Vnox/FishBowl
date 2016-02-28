@@ -106,6 +106,13 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.cloud1.alpha -= 1.0
         self.cloud2.alpha -= 1.0
         
+        // get todayWidget shared info path
+        let sharedDefaults = NSUserDefaults(suiteName: "group.com.ethereo.lifebaro")
+        // get number of tasks
+        sharedDefaults?.setObject("\(event.count)", forKey: "StringKey")
+        sharedDefaults?.synchronize()
+        
+        
         NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
 
         myPercent = 0

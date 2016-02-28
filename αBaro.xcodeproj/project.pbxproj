@@ -70,11 +70,6 @@
 		7A7FF66F1C0A5223008C03FB /* level70.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF6651C0A5223008C03FB /* level70.png */; };
 		7A7FF6701C0A5223008C03FB /* level80.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF6661C0A5223008C03FB /* level80.png */; };
 		7A7FF6711C0A5223008C03FB /* level90.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF6671C0A5223008C03FB /* level90.png */; };
-		7A923A101C8393E500F0B181 /* SettingCellBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A923A0C1C8393E500F0B181 /* SettingCellBottom.png */; };
-		7A923A111C8393E500F0B181 /* SettingCellMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A923A0D1C8393E500F0B181 /* SettingCellMiddle.png */; };
-		7A923A121C8393E500F0B181 /* SettingsCellTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A923A0E1C8393E500F0B181 /* SettingsCellTop.png */; };
-		7A923A131C8393E500F0B181 /* SettingsSingleCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A923A0F1C8393E500F0B181 /* SettingsSingleCell.png */; };
-		7A923A151C839A6200F0B181 /* Highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A923A141C839A6200F0B181 /* Highlighted.png */; };
 		7A96D2731C7A76C900CFA918 /* RecordBkg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A96D2721C7A76C900CFA918 /* RecordBkg.png */; };
 		7A96D2751C7A7A9300CFA918 /* DD.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A96D2741C7A7A9300CFA918 /* DD.png */; };
 		7AC900D51C1F60930035ED54 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC900D41C1F60930035ED54 /* JSSAlertView.swift */; };
@@ -127,6 +122,10 @@
 		D0E511C61C73B56100CE7C27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0E511BB1C73B56100CE7C27 /* Info.plist */; };
 		D0E511C71C73B56100CE7C27 /* MonkeyKing.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D0E511BD1C73B56100CE7C27 /* MonkeyKing.xcconfig */; };
 		D0E511C81C73B56100CE7C27 /* MonkeyKing-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E511BE1C73B56100CE7C27 /* MonkeyKing-dummy.m */; };
+		FB391E871C817D78005F7DC1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB391E861C817D78005F7DC1 /* NotificationCenter.framework */; };
+		FB391E8A1C817D78005F7DC1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB391E891C817D78005F7DC1 /* TodayViewController.swift */; };
+		FB391E8D1C817D78005F7DC1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB391E8B1C817D78005F7DC1 /* MainInterface.storyboard */; };
+		FB391E911C817D78005F7DC1 /* LifeBaroT.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB391E851C817D78005F7DC1 /* LifeBaroT.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,7 +164,28 @@
 			remoteGlobalIDString = 2BF45C0CC6D0B9D87883EA03A1C70CAE;
 			remoteInfo = Pods;
 		};
+		FB391E8F1C817D78005F7DC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0CFAF1F1BCB1E4C00D10615 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB391E841C817D78005F7DC1;
+			remoteInfo = LifeBaroT;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB391E951C817D78005F7DC1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FB391E911C817D78005F7DC1 /* LifeBaroT.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		05F3BA06CE78E1A22423E86E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,11 +252,6 @@
 		7A7FF6651C0A5223008C03FB /* level70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level70.png; sourceTree = "<group>"; };
 		7A7FF6661C0A5223008C03FB /* level80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level80.png; sourceTree = "<group>"; };
 		7A7FF6671C0A5223008C03FB /* level90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level90.png; sourceTree = "<group>"; };
-		7A923A0C1C8393E500F0B181 /* SettingCellBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingCellBottom.png; sourceTree = "<group>"; };
-		7A923A0D1C8393E500F0B181 /* SettingCellMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingCellMiddle.png; sourceTree = "<group>"; };
-		7A923A0E1C8393E500F0B181 /* SettingsCellTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsCellTop.png; sourceTree = "<group>"; };
-		7A923A0F1C8393E500F0B181 /* SettingsSingleCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsSingleCell.png; sourceTree = "<group>"; };
-		7A923A141C839A6200F0B181 /* Highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Highlighted.png; sourceTree = "<group>"; };
 		7A96D2721C7A76C900CFA918 /* RecordBkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordBkg.png; sourceTree = "<group>"; };
 		7A96D2741C7A7A9300CFA918 /* DD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DD.png; sourceTree = "<group>"; };
 		7AC900D41C1F60930035ED54 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSSAlertView.swift; path = "αBaro/JSSAlertView.swift"; sourceTree = "<group>"; };
@@ -297,6 +312,12 @@
 		D0E511BE1C73B56100CE7C27 /* MonkeyKing-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MonkeyKing-dummy.m"; sourceTree = "<group>"; };
 		D0E511BF1C73B56100CE7C27 /* MonkeyKing-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonkeyKing-prefix.pch"; sourceTree = "<group>"; };
 		D0E511C01C73B56100CE7C27 /* MonkeyKing-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonkeyKing-umbrella.h"; sourceTree = "<group>"; };
+		FB391E851C817D78005F7DC1 /* LifeBaroT.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LifeBaroT.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB391E861C817D78005F7DC1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		FB391E891C817D78005F7DC1 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		FB391E8C1C817D78005F7DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		FB391E8E1C817D78005F7DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB391E961C818185005F7DC1 /* LifeBaroT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LifeBaroT.entitlements; sourceTree = "<group>"; };
 		FDB856921181BEC075F264DA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -318,6 +339,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FB391E821C817D78005F7DC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB391E871C817D78005F7DC1 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -334,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				05F3BA06CE78E1A22423E86E /* Pods.framework */,
+				FB391E861C817D78005F7DC1 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -374,6 +404,7 @@
 				D0CFAF2E1BCB1E4C00D10615 /* _Baro.xcdatamodeld */,
 				D0CFAF2A1BCB1E4C00D10615 /* Supporting Files */,
 				D0CFAF421BCB1E4D00D10615 /* αBaroTests */,
+				FB391E881C817D78005F7DC1 /* LifeBaroT */,
 				D0CFAF281BCB1E4C00D10615 /* Products */,
 				5616DB1BD2F66246842141A2 /* Pods */,
 				AE65D5065E58F116C0CB02DB /* Frameworks */,
@@ -385,6 +416,7 @@
 			children = (
 				D0CFAF271BCB1E4C00D10615 /* αBaro.app */,
 				D0CFAF3F1BCB1E4D00D10615 /* αBaroTests.xctest */,
+				FB391E851C817D78005F7DC1 /* LifeBaroT.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -394,11 +426,6 @@
 			children = (
 				7A0381221C1F6B5A00B8C9E7 /* CELL1.png */,
 				7A5C12531C3361B6007688B0 /* LCH.png */,
-				7A923A141C839A6200F0B181 /* Highlighted.png */,
-				7A923A0C1C8393E500F0B181 /* SettingCellBottom.png */,
-				7A923A0D1C8393E500F0B181 /* SettingCellMiddle.png */,
-				7A923A0E1C8393E500F0B181 /* SettingsCellTop.png */,
-				7A923A0F1C8393E500F0B181 /* SettingsSingleCell.png */,
 				7A5C12551C33775B007688B0 /* cloud2.png */,
 				7ADE43BC1C7EE5AA00B085EE /* pullIndicator.png */,
 				7A46E05A1C72846000C5705A /* RecingBkg.png */,
@@ -533,6 +560,17 @@
 			path = Pods/MonkeyKing;
 			sourceTree = "<group>";
 		};
+		FB391E881C817D78005F7DC1 /* LifeBaroT */ = {
+			isa = PBXGroup;
+			children = (
+				FB391E961C818185005F7DC1 /* LifeBaroT.entitlements */,
+				FB391E891C817D78005F7DC1 /* TodayViewController.swift */,
+				FB391E8B1C817D78005F7DC1 /* MainInterface.storyboard */,
+				FB391E8E1C817D78005F7DC1 /* Info.plist */,
+			);
+			path = LifeBaroT;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -546,12 +584,14 @@
 				D0CFAF251BCB1E4C00D10615 /* Resources */,
 				F16CA6915FE822106BC4EFA9 /* Embed Pods Frameworks */,
 				FD8C8B49E6510C88D60EDE13 /* Copy Pods Resources */,
+				FB391E951C817D78005F7DC1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				D0E511B61C73B4EE00CE7C27 /* PBXTargetDependency */,
 				D0E511B41C73B4EB00CE7C27 /* PBXTargetDependency */,
+				FB391E901C817D78005F7DC1 /* PBXTargetDependency */,
 			);
 			name = "αBaro";
 			productName = "αBaro";
@@ -576,6 +616,23 @@
 			productReference = D0CFAF3F1BCB1E4D00D10615 /* αBaroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FB391E841C817D78005F7DC1 /* LifeBaroT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB391E941C817D78005F7DC1 /* Build configuration list for PBXNativeTarget "LifeBaroT" */;
+			buildPhases = (
+				FB391E811C817D78005F7DC1 /* Sources */,
+				FB391E821C817D78005F7DC1 /* Frameworks */,
+				FB391E831C817D78005F7DC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifeBaroT;
+			productName = LifeBaroT;
+			productReference = FB391E851C817D78005F7DC1 /* LifeBaroT.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -583,7 +640,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Ethereo;
 				TargetAttributes = {
@@ -594,6 +651,15 @@
 					D0CFAF3E1BCB1E4D00D10615 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = D0CFAF261BCB1E4C00D10615;
+					};
+					FB391E841C817D78005F7DC1 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8RQ6VV487T;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -618,6 +684,7 @@
 			targets = (
 				D0CFAF261BCB1E4C00D10615 /* αBaro */,
 				D0CFAF3E1BCB1E4D00D10615 /* αBaroTests */,
+				FB391E841C817D78005F7DC1 /* LifeBaroT */,
 			);
 		};
 /* End PBXProject section */
@@ -647,18 +714,15 @@
 				7A46E0551C6E809F00C5705A /* CellBkg.png in Resources */,
 				7A7073091C3CABD100B9E9E3 /* 8.png in Resources */,
 				7A17EC4C1C7ED212007758E1 /* littleIcon.png in Resources */,
-				7A923A101C8393E500F0B181 /* SettingCellBottom.png in Resources */,
 				7A472BCF1C221111005CAF1D /* check-mark-512.png in Resources */,
 				7A17EC4B1C7ED212007758E1 /* indicatorGreen.png in Resources */,
 				7A96D2731C7A76C900CFA918 /* RecordBkg.png in Resources */,
 				7A6EB4791C8114B9006A406E /* pullDownArrow.png in Resources */,
 				D0E11C221BFAFE0200DDA208 /* SETTINGS.png in Resources */,
 				D09281911BE2FA160050819E /* popup.png in Resources */,
-				7A923A121C8393E500F0B181 /* SettingsCellTop.png in Resources */,
 				7A7073051C3CABD100B9E9E3 /* 4.png in Resources */,
 				7A472BCD1C220F3D005CAF1D /* barbottom.png in Resources */,
 				7ADE43BD1C7EE5AA00B085EE /* pullIndicator.png in Resources */,
-				7A923A111C8393E500F0B181 /* SettingCellMiddle.png in Resources */,
 				7A5C12501C335904007688B0 /* DefaultBase.png in Resources */,
 				7A0D46C81BF31580009CAB1F /* lightbulb@3x.png in Resources */,
 				7A7073081C3CABD100B9E9E3 /* 7.png in Resources */,
@@ -711,9 +775,7 @@
 				D09281891BE2FA160050819E /* ButtonRing.png in Resources */,
 				7A5C12521C335DB0007688B0 /* Dimmer.png in Resources */,
 				7A0D46C61BF31580009CAB1F /* lightbulb.png in Resources */,
-				7A923A151C839A6200F0B181 /* Highlighted.png in Resources */,
 				7AFFAE0F1C7FAE5300C43E96 /* Main.storyboard in Resources */,
-				7A923A131C8393E500F0B181 /* SettingsSingleCell.png in Resources */,
 				7A472BD11C221188005CAF1D /* check-mark-in-white-hi.png in Resources */,
 				7A7FF6691C0A5223008C03FB /* level10.png in Resources */,
 				D0E11C1E1BFAF02D00DDA208 /* BKG Default.png in Resources */,
@@ -741,6 +803,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB391E831C817D78005F7DC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB391E8D1C817D78005F7DC1 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,6 +906,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FB391E811C817D78005F7DC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB391E8A1C817D78005F7DC1 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -854,7 +932,23 @@
 			name = Pods;
 			targetProxy = D0E511B51C73B4EE00CE7C27 /* PBXContainerItemProxy */;
 		};
+		FB391E901C817D78005F7DC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB391E841C817D78005F7DC1 /* LifeBaroT */;
+			targetProxy = FB391E8F1C817D78005F7DC1 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB391E8B1C817D78005F7DC1 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB391E8C1C817D78005F7DC1 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D0CFAF471BCB1E4D00D10615 /* Debug */ = {
@@ -946,6 +1040,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -967,6 +1062,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1017,6 +1113,39 @@
 			};
 			name = Release;
 		};
+		FB391E921C817D78005F7DC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LifeBaroT/LifeBaroT.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = LifeBaroT/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ethereo.-Baro.LifeBaroT";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FB391E931C817D78005F7DC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LifeBaroT/LifeBaroT.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = LifeBaroT/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ethereo.-Baro.LifeBaroT";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1043,6 +1172,15 @@
 			buildConfigurations = (
 				D0CFAF4D1BCB1E4D00D10615 /* Debug */,
 				D0CFAF4E1BCB1E4D00D10615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB391E941C817D78005F7DC1 /* Build configuration list for PBXNativeTarget "LifeBaroT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB391E921C817D78005F7DC1 /* Debug */,
+				FB391E931C817D78005F7DC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
