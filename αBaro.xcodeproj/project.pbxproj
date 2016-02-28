@@ -70,6 +70,11 @@
 		7A7FF66F1C0A5223008C03FB /* level70.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF6651C0A5223008C03FB /* level70.png */; };
 		7A7FF6701C0A5223008C03FB /* level80.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF6661C0A5223008C03FB /* level80.png */; };
 		7A7FF6711C0A5223008C03FB /* level90.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF6671C0A5223008C03FB /* level90.png */; };
+		7A923A101C8393E500F0B181 /* SettingCellBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A923A0C1C8393E500F0B181 /* SettingCellBottom.png */; };
+		7A923A111C8393E500F0B181 /* SettingCellMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A923A0D1C8393E500F0B181 /* SettingCellMiddle.png */; };
+		7A923A121C8393E500F0B181 /* SettingsCellTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A923A0E1C8393E500F0B181 /* SettingsCellTop.png */; };
+		7A923A131C8393E500F0B181 /* SettingsSingleCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A923A0F1C8393E500F0B181 /* SettingsSingleCell.png */; };
+		7A923A151C839A6200F0B181 /* Highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A923A141C839A6200F0B181 /* Highlighted.png */; };
 		7A96D2731C7A76C900CFA918 /* RecordBkg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A96D2721C7A76C900CFA918 /* RecordBkg.png */; };
 		7A96D2751C7A7A9300CFA918 /* DD.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A96D2741C7A7A9300CFA918 /* DD.png */; };
 		7AC900D51C1F60930035ED54 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC900D41C1F60930035ED54 /* JSSAlertView.swift */; };
@@ -227,6 +232,11 @@
 		7A7FF6651C0A5223008C03FB /* level70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level70.png; sourceTree = "<group>"; };
 		7A7FF6661C0A5223008C03FB /* level80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level80.png; sourceTree = "<group>"; };
 		7A7FF6671C0A5223008C03FB /* level90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level90.png; sourceTree = "<group>"; };
+		7A923A0C1C8393E500F0B181 /* SettingCellBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingCellBottom.png; sourceTree = "<group>"; };
+		7A923A0D1C8393E500F0B181 /* SettingCellMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingCellMiddle.png; sourceTree = "<group>"; };
+		7A923A0E1C8393E500F0B181 /* SettingsCellTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsCellTop.png; sourceTree = "<group>"; };
+		7A923A0F1C8393E500F0B181 /* SettingsSingleCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsSingleCell.png; sourceTree = "<group>"; };
+		7A923A141C839A6200F0B181 /* Highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Highlighted.png; sourceTree = "<group>"; };
 		7A96D2721C7A76C900CFA918 /* RecordBkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordBkg.png; sourceTree = "<group>"; };
 		7A96D2741C7A7A9300CFA918 /* DD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DD.png; sourceTree = "<group>"; };
 		7AC900D41C1F60930035ED54 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSSAlertView.swift; path = "αBaro/JSSAlertView.swift"; sourceTree = "<group>"; };
@@ -384,6 +394,11 @@
 			children = (
 				7A0381221C1F6B5A00B8C9E7 /* CELL1.png */,
 				7A5C12531C3361B6007688B0 /* LCH.png */,
+				7A923A141C839A6200F0B181 /* Highlighted.png */,
+				7A923A0C1C8393E500F0B181 /* SettingCellBottom.png */,
+				7A923A0D1C8393E500F0B181 /* SettingCellMiddle.png */,
+				7A923A0E1C8393E500F0B181 /* SettingsCellTop.png */,
+				7A923A0F1C8393E500F0B181 /* SettingsSingleCell.png */,
 				7A5C12551C33775B007688B0 /* cloud2.png */,
 				7ADE43BC1C7EE5AA00B085EE /* pullIndicator.png */,
 				7A46E05A1C72846000C5705A /* RecingBkg.png */,
@@ -632,15 +647,18 @@
 				7A46E0551C6E809F00C5705A /* CellBkg.png in Resources */,
 				7A7073091C3CABD100B9E9E3 /* 8.png in Resources */,
 				7A17EC4C1C7ED212007758E1 /* littleIcon.png in Resources */,
+				7A923A101C8393E500F0B181 /* SettingCellBottom.png in Resources */,
 				7A472BCF1C221111005CAF1D /* check-mark-512.png in Resources */,
 				7A17EC4B1C7ED212007758E1 /* indicatorGreen.png in Resources */,
 				7A96D2731C7A76C900CFA918 /* RecordBkg.png in Resources */,
 				7A6EB4791C8114B9006A406E /* pullDownArrow.png in Resources */,
 				D0E11C221BFAFE0200DDA208 /* SETTINGS.png in Resources */,
 				D09281911BE2FA160050819E /* popup.png in Resources */,
+				7A923A121C8393E500F0B181 /* SettingsCellTop.png in Resources */,
 				7A7073051C3CABD100B9E9E3 /* 4.png in Resources */,
 				7A472BCD1C220F3D005CAF1D /* barbottom.png in Resources */,
 				7ADE43BD1C7EE5AA00B085EE /* pullIndicator.png in Resources */,
+				7A923A111C8393E500F0B181 /* SettingCellMiddle.png in Resources */,
 				7A5C12501C335904007688B0 /* DefaultBase.png in Resources */,
 				7A0D46C81BF31580009CAB1F /* lightbulb@3x.png in Resources */,
 				7A7073081C3CABD100B9E9E3 /* 7.png in Resources */,
@@ -693,7 +711,9 @@
 				D09281891BE2FA160050819E /* ButtonRing.png in Resources */,
 				7A5C12521C335DB0007688B0 /* Dimmer.png in Resources */,
 				7A0D46C61BF31580009CAB1F /* lightbulb.png in Resources */,
+				7A923A151C839A6200F0B181 /* Highlighted.png in Resources */,
 				7AFFAE0F1C7FAE5300C43E96 /* Main.storyboard in Resources */,
+				7A923A131C8393E500F0B181 /* SettingsSingleCell.png in Resources */,
 				7A472BD11C221188005CAF1D /* check-mark-in-white-hi.png in Resources */,
 				7A7FF6691C0A5223008C03FB /* level10.png in Resources */,
 				D0E11C1E1BFAF02D00DDA208 /* BKG Default.png in Resources */,

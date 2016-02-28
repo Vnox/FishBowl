@@ -10,6 +10,7 @@ import UIKit
 
 class shareViewController: UIViewController {
     
+    @IBOutlet weak var weeklyLabel: UILabel!
     @IBOutlet weak var needLabel: UILabel!
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var myEventsView: UIView!
@@ -134,6 +135,7 @@ class shareViewController: UIViewController {
                 self.needLabel.center.y += 400
                 self.hourLabel.center.y += 400
                 self.myButton.center.y += 400
+                self.weeklyLabel.center.y += 400
                 }, completion: nil)
 
             
@@ -164,6 +166,7 @@ class shareViewController: UIViewController {
                 self.needLabel.center.y -= 400
                 self.hourLabel.center.y -= 400
                 self.myButton.center.y -= 400
+                self.weeklyLabel.center.y -= 400
                 }, completion: nil)
             
             self.percentage = 42
