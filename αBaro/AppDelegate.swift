@@ -76,15 +76,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
         // Local notification by Ye
-        let notification: UILocalNotification = UILocalNotification()
-        notification.category = "FIRST_CATEGORY"
-        notification.alertBody = "Hey there, please come back"
-        notification.repeatInterval = NSCalendarUnit.Day
-        notification.timeZone = NSTimeZone.defaultTimeZone()
+        
+        
+        
+        
+//        let notification: UILocalNotification = UILocalNotification()
+//        notification.category = "FIRST_CATEGORY"
+//        notification.alertBody = "Hey there, please come back"
+//        notification.repeatInterval = NSCalendarUnit.Day
+//        notification.timeZone = NSTimeZone.defaultTimeZone()
+        
+        
+        
+        
         //setting app's icon badge
         //notification.applicationIconBadgeNumber = 1
         
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        //UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
     

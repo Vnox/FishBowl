@@ -46,8 +46,6 @@ public class PullToRefreshView: UIView {
                 stopAnimating()
             case .Refreshing:
                 startAnimating()
-            case .PullDown:
-                arrowImageChange()
             default:
                 break
             }
@@ -269,14 +267,14 @@ public class PullToRefreshView: UIView {
     private func arrowRotation() {
         UIView.animateWithDuration(0.2, delay: 0, options:[], animations: {
             // -0.0000001 for the rotation direction control
-            self.arrow.transform = CGAffineTransformMakeRotation(CGFloat(M_PI - 0.0000000001))
+            self.arrow.transform = CGAffineTransformMakeRotation(CGFloat(M_PI) - 0.0000001)
         }, completion:nil)
     }
     
     private func arrowRotateAndChange() {
         UIView.animateWithDuration(0.2, delay: 0, options:[], animations: {
             // -0.0000001 for the rotation direction control
-            self.arrow.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_4))
+            self.arrow.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_4 - 0.0000001))
             self.arrow.image = UIImage(named:"pullDownArrow")
             }, completion:nil)
     }
@@ -287,11 +285,5 @@ public class PullToRefreshView: UIView {
             }, completion:nil)
     }
     
-    private func arrowImageChange(){
-        self.arrow.hidden = true
-        
-        /* Added by Leon */
-        
-    }
     
 }
