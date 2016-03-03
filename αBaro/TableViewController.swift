@@ -255,7 +255,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
             // Print Testing //
             
             let selectedCell:DetailCell = tableView.cellForRowAtIndexPath(indexPath)! as! DetailCell
-            NSLog(String(selectedCell.myHour))
+            NSLog(String(selectedCell.mySec))
             
             
             return
@@ -348,6 +348,8 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         }catch let error as NSError{
             print("Can't delete: \(error)")
         }
+        
+        
 
         
         // use the UITableView to animate the removal of this row

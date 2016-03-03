@@ -22,6 +22,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var bkgTrans: UIImageView!
     @IBOutlet weak var ballIcon: UILabel!
     @IBOutlet weak var TimerLabel: UILabel!
+    var myTimeInterval : NSTimeInterval!
     var myHour = 0
     var myMin = 0
     var mySec = 0
@@ -175,6 +176,8 @@ class EventCell: UITableViewCell {
             if deleteOnDragRelease {
                 if delegate != nil && toDoItem != nil {
                     // notify the delegate that this item should be delete
+                    self.recordState = false
+                    self.mySec = 0
                     delegate!.toDoItemDeleted(toDoItem!)
                 }
             }
@@ -234,28 +237,29 @@ class EventCell: UITableViewCell {
         
         //Find the difference between current time and start time.
         
-        var elapsedTime: NSTimeInterval = currentTime - startTime
+        myTimeInterval = currentTime - startTime
         
         //calculate the minutes in elapsed time.
         
-        let minutes = UInt8(elapsedTime / 60.0)
+        let minutes = Int(myTimeInterval / 60.0)
         
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        myTimeInterval = myTimeInterval - NSTimeInterval(minutes) * 60
         
         //calculate the seconds in elapsed time.
         
-        let seconds = UInt8(elapsedTime)
+        mySec = Int(myTimeInterval)
         
-        elapsedTime -= NSTimeInterval(seconds)
+        myTimeInterval = myTimeInterval - NSTimeInterval(mySec)
         
         //find out the fraction of milliseconds to be displayed.
         
-        let fraction = UInt8(elapsedTime * 100)
+        let fraction = Int(myTimeInterval * 100)
+
         
         //add the leading zero for minutes, seconds and millseconds and store them as string constants
         
         let strMinutes = String(format: "%02d", minutes)
-        let strSeconds = String(format: "%02d", seconds)
+        let strSeconds = String(format: "%02d", mySec)
         //let strFraction = String(format: "%02d", fraction)
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
