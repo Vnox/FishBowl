@@ -47,6 +47,7 @@ class JSSAlertView: UIViewController, UITextFieldDelegate, UITableViewDelegate {
     // ADDED  BY LEON
     var insertViewController:MainViewController!
     var tap: UITapGestureRecognizer!
+    
 
     
     enum FontType {

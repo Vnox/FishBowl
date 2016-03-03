@@ -70,6 +70,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
 
         
         NSThread.sleepForTimeInterval(1.0)
+        // get todayWidget shared info path
+        let sharedDefaults = NSUserDefaults(suiteName: "group.com.ethereo.lifebaro")
         
         super.viewDidLoad()
         
@@ -106,8 +108,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.cloud1.alpha -= 1.0
         self.cloud2.alpha -= 1.0
         
-        // get todayWidget shared info path
-        let sharedDefaults = NSUserDefaults(suiteName: "group.com.ethereo.lifebaro")
+        
+        //print(event.count)
+        
         // get number of tasks
         sharedDefaults?.setObject("\(event.count)", forKey: "StringKey")
         sharedDefaults?.synchronize()

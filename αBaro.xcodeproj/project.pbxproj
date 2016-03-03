@@ -122,10 +122,10 @@
 		D0E511C61C73B56100CE7C27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0E511BB1C73B56100CE7C27 /* Info.plist */; };
 		D0E511C71C73B56100CE7C27 /* MonkeyKing.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D0E511BD1C73B56100CE7C27 /* MonkeyKing.xcconfig */; };
 		D0E511C81C73B56100CE7C27 /* MonkeyKing-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E511BE1C73B56100CE7C27 /* MonkeyKing-dummy.m */; };
-		FB391E871C817D78005F7DC1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB391E861C817D78005F7DC1 /* NotificationCenter.framework */; };
-		FB391E8A1C817D78005F7DC1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB391E891C817D78005F7DC1 /* TodayViewController.swift */; };
-		FB391E8D1C817D78005F7DC1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB391E8B1C817D78005F7DC1 /* MainInterface.storyboard */; };
-		FB391E911C817D78005F7DC1 /* LifeBaroT.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB391E851C817D78005F7DC1 /* LifeBaroT.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FB391EA31C83EBC9005F7DC1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB391E861C817D78005F7DC1 /* NotificationCenter.framework */; };
+		FB391EA61C83EBC9005F7DC1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB391EA51C83EBC9005F7DC1 /* TodayViewController.swift */; };
+		FB391EA91C83EBC9005F7DC1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB391EA71C83EBC9005F7DC1 /* MainInterface.storyboard */; };
+		FB391EAD1C83EBC9005F7DC1 /* LifeBaro.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB391EA21C83EBC9005F7DC1 /* LifeBaro.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,12 +164,12 @@
 			remoteGlobalIDString = 2BF45C0CC6D0B9D87883EA03A1C70CAE;
 			remoteInfo = Pods;
 		};
-		FB391E8F1C817D78005F7DC1 /* PBXContainerItemProxy */ = {
+		FB391EAB1C83EBC9005F7DC1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D0CFAF1F1BCB1E4C00D10615 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FB391E841C817D78005F7DC1;
-			remoteInfo = LifeBaroT;
+			remoteGlobalIDString = FB391EA11C83EBC9005F7DC1;
+			remoteInfo = LifeBaro;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -180,7 +180,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FB391E911C817D78005F7DC1 /* LifeBaroT.appex in Embed App Extensions */,
+				FB391EAD1C83EBC9005F7DC1 /* LifeBaro.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,12 +312,13 @@
 		D0E511BE1C73B56100CE7C27 /* MonkeyKing-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MonkeyKing-dummy.m"; sourceTree = "<group>"; };
 		D0E511BF1C73B56100CE7C27 /* MonkeyKing-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonkeyKing-prefix.pch"; sourceTree = "<group>"; };
 		D0E511C01C73B56100CE7C27 /* MonkeyKing-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonkeyKing-umbrella.h"; sourceTree = "<group>"; };
-		FB391E851C817D78005F7DC1 /* LifeBaroT.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LifeBaroT.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB391E861C817D78005F7DC1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		FB391E891C817D78005F7DC1 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		FB391E8C1C817D78005F7DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		FB391E8E1C817D78005F7DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB391E961C818185005F7DC1 /* LifeBaroT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LifeBaroT.entitlements; sourceTree = "<group>"; };
+		FB391E9D1C83BD78005F7DC1 /* αBaro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "αBaro.entitlements"; path = "αBaro/αBaro.entitlements"; sourceTree = "<group>"; };
+		FB391EA21C83EBC9005F7DC1 /* LifeBaro.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LifeBaro.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB391EA51C83EBC9005F7DC1 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		FB391EA81C83EBC9005F7DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		FB391EAA1C83EBC9005F7DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB391EB31C87EB76005F7DC1 /* LifeBaro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LifeBaro.entitlements; sourceTree = "<group>"; };
 		FDB856921181BEC075F264DA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -339,11 +340,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB391E821C817D78005F7DC1 /* Frameworks */ = {
+		FB391E9F1C83EBC9005F7DC1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB391E871C817D78005F7DC1 /* NotificationCenter.framework in Frameworks */,
+				FB391EA31C83EBC9005F7DC1 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +372,7 @@
 		D0CFAF1E1BCB1E4C00D10615 = {
 			isa = PBXGroup;
 			children = (
+				FB391E9D1C83BD78005F7DC1 /* αBaro.entitlements */,
 				D0E511AA1C73B4E400CE7C27 /* Pods.xcodeproj */,
 				D023F8F31C21F9E90093C501 /* Social.framework */,
 				D023F8F11C21F9C40093C501 /* MessageUI.framework */,
@@ -404,7 +406,7 @@
 				D0CFAF2E1BCB1E4C00D10615 /* _Baro.xcdatamodeld */,
 				D0CFAF2A1BCB1E4C00D10615 /* Supporting Files */,
 				D0CFAF421BCB1E4D00D10615 /* αBaroTests */,
-				FB391E881C817D78005F7DC1 /* LifeBaroT */,
+				FB391EA41C83EBC9005F7DC1 /* LifeBaro */,
 				D0CFAF281BCB1E4C00D10615 /* Products */,
 				5616DB1BD2F66246842141A2 /* Pods */,
 				AE65D5065E58F116C0CB02DB /* Frameworks */,
@@ -416,7 +418,7 @@
 			children = (
 				D0CFAF271BCB1E4C00D10615 /* αBaro.app */,
 				D0CFAF3F1BCB1E4D00D10615 /* αBaroTests.xctest */,
-				FB391E851C817D78005F7DC1 /* LifeBaroT.appex */,
+				FB391EA21C83EBC9005F7DC1 /* LifeBaro.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -560,15 +562,15 @@
 			path = Pods/MonkeyKing;
 			sourceTree = "<group>";
 		};
-		FB391E881C817D78005F7DC1 /* LifeBaroT */ = {
+		FB391EA41C83EBC9005F7DC1 /* LifeBaro */ = {
 			isa = PBXGroup;
 			children = (
-				FB391E961C818185005F7DC1 /* LifeBaroT.entitlements */,
-				FB391E891C817D78005F7DC1 /* TodayViewController.swift */,
-				FB391E8B1C817D78005F7DC1 /* MainInterface.storyboard */,
-				FB391E8E1C817D78005F7DC1 /* Info.plist */,
+				FB391EB31C87EB76005F7DC1 /* LifeBaro.entitlements */,
+				FB391EA51C83EBC9005F7DC1 /* TodayViewController.swift */,
+				FB391EA71C83EBC9005F7DC1 /* MainInterface.storyboard */,
+				FB391EAA1C83EBC9005F7DC1 /* Info.plist */,
 			);
-			path = LifeBaroT;
+			path = LifeBaro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,7 +593,7 @@
 			dependencies = (
 				D0E511B61C73B4EE00CE7C27 /* PBXTargetDependency */,
 				D0E511B41C73B4EB00CE7C27 /* PBXTargetDependency */,
-				FB391E901C817D78005F7DC1 /* PBXTargetDependency */,
+				FB391EAC1C83EBC9005F7DC1 /* PBXTargetDependency */,
 			);
 			name = "αBaro";
 			productName = "αBaro";
@@ -616,21 +618,21 @@
 			productReference = D0CFAF3F1BCB1E4D00D10615 /* αBaroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FB391E841C817D78005F7DC1 /* LifeBaroT */ = {
+		FB391EA11C83EBC9005F7DC1 /* LifeBaro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FB391E941C817D78005F7DC1 /* Build configuration list for PBXNativeTarget "LifeBaroT" */;
+			buildConfigurationList = FB391EAE1C83EBC9005F7DC1 /* Build configuration list for PBXNativeTarget "LifeBaro" */;
 			buildPhases = (
-				FB391E811C817D78005F7DC1 /* Sources */,
-				FB391E821C817D78005F7DC1 /* Frameworks */,
-				FB391E831C817D78005F7DC1 /* Resources */,
+				FB391E9E1C83EBC9005F7DC1 /* Sources */,
+				FB391E9F1C83EBC9005F7DC1 /* Frameworks */,
+				FB391EA01C83EBC9005F7DC1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LifeBaroT;
-			productName = LifeBaroT;
-			productReference = FB391E851C817D78005F7DC1 /* LifeBaroT.appex */;
+			name = LifeBaro;
+			productName = LifeBaro;
+			productReference = FB391EA21C83EBC9005F7DC1 /* LifeBaro.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -647,12 +649,17 @@
 					D0CFAF261BCB1E4C00D10615 = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = 8RQ6VV487T;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					D0CFAF3E1BCB1E4D00D10615 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = D0CFAF261BCB1E4C00D10615;
 					};
-					FB391E841C817D78005F7DC1 = {
+					FB391EA11C83EBC9005F7DC1 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 8RQ6VV487T;
 						SystemCapabilities = {
@@ -684,7 +691,7 @@
 			targets = (
 				D0CFAF261BCB1E4C00D10615 /* αBaro */,
 				D0CFAF3E1BCB1E4D00D10615 /* αBaroTests */,
-				FB391E841C817D78005F7DC1 /* LifeBaroT */,
+				FB391EA11C83EBC9005F7DC1 /* LifeBaro */,
 			);
 		};
 /* End PBXProject section */
@@ -806,11 +813,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB391E831C817D78005F7DC1 /* Resources */ = {
+		FB391EA01C83EBC9005F7DC1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB391E8D1C817D78005F7DC1 /* MainInterface.storyboard in Resources */,
+				FB391EA91C83EBC9005F7DC1 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,11 +913,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB391E811C817D78005F7DC1 /* Sources */ = {
+		FB391E9E1C83EBC9005F7DC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB391E8A1C817D78005F7DC1 /* TodayViewController.swift in Sources */,
+				FB391EA61C83EBC9005F7DC1 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -932,18 +939,18 @@
 			name = Pods;
 			targetProxy = D0E511B51C73B4EE00CE7C27 /* PBXContainerItemProxy */;
 		};
-		FB391E901C817D78005F7DC1 /* PBXTargetDependency */ = {
+		FB391EAC1C83EBC9005F7DC1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FB391E841C817D78005F7DC1 /* LifeBaroT */;
-			targetProxy = FB391E8F1C817D78005F7DC1 /* PBXContainerItemProxy */;
+			target = FB391EA11C83EBC9005F7DC1 /* LifeBaro */;
+			targetProxy = FB391EAB1C83EBC9005F7DC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FB391E8B1C817D78005F7DC1 /* MainInterface.storyboard */ = {
+		FB391EA71C83EBC9005F7DC1 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FB391E8C1C817D78005F7DC1 /* Base */,
+				FB391EA81C83EBC9005F7DC1 /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -1038,6 +1045,7 @@
 			baseConfigurationReference = 1E00514265252830311608A0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "αBaro/αBaro.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -1048,7 +1056,7 @@
 				INFOPLIST_FILE = "αBaro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ethereo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ethereo.LifeBaro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1060,6 +1068,7 @@
 			baseConfigurationReference = FDB856921181BEC075F264DA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "αBaro/αBaro.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -1070,7 +1079,7 @@
 				INFOPLIST_FILE = "αBaro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ethereo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ethereo.LifeBaro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1113,33 +1122,33 @@
 			};
 			name = Release;
 		};
-		FB391E921C817D78005F7DC1 /* Debug */ = {
+		FB391EAF1C83EBC9005F7DC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = LifeBaroT/LifeBaroT.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LifeBaro/LifeBaro.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = LifeBaroT/Info.plist;
+				INFOPLIST_FILE = LifeBaro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ethereo.-Baro.LifeBaroT";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ethereo.LifeBaro.LifeBaro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		FB391E931C817D78005F7DC1 /* Release */ = {
+		FB391EB01C83EBC9005F7DC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = LifeBaroT/LifeBaroT.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LifeBaro/LifeBaro.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = LifeBaroT/Info.plist;
+				INFOPLIST_FILE = LifeBaro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ethereo.-Baro.LifeBaroT";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ethereo.LifeBaro.LifeBaro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -1176,11 +1185,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FB391E941C817D78005F7DC1 /* Build configuration list for PBXNativeTarget "LifeBaroT" */ = {
+		FB391EAE1C83EBC9005F7DC1 /* Build configuration list for PBXNativeTarget "LifeBaro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FB391E921C817D78005F7DC1 /* Debug */,
-				FB391E931C817D78005F7DC1 /* Release */,
+				FB391EAF1C83EBC9005F7DC1 /* Debug */,
+				FB391EB01C83EBC9005F7DC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

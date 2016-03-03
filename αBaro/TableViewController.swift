@@ -32,7 +32,16 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.loadEvents()
+        
+        // get todayWidget shared info path
+        //let sharedDefaults = NSUserDefaults(suiteName: "group.com.ethereo.lifebaro")
+        
+        
+        // get number of tasks
+        //sharedDefaults?.setObject("\(eventData.count)", forKey: "StringKey")
+        //sharedDefaults?.synchronize()
         
         // Do anything after load events
         
@@ -113,6 +122,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Entity")
+        
         
         do{
             let results =

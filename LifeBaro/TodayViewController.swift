@@ -1,8 +1,8 @@
 //
 //  TodayViewController.swift
-//  LifeBaroT
+//  LifeBaro
 //
-//  Created by Ethereo PC 1 on 16/2/26.
+//  Created by Ethereo PC 1 on 16/2/28.
 //  Copyright © 2016年 Ethereo. All rights reserved.
 //
 
@@ -28,7 +28,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
-        
+
         let sharedDefaults = NSUserDefaults(suiteName: "group.com.ethereo.lifebaro")
         
         // the text label shown info

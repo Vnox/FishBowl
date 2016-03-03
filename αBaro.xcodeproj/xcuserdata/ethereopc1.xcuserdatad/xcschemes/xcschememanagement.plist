@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>LifeBaro.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>LifeBaroT.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>FB391E841C817D78005F7DC1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB391EA11C83EBC9005F7DC1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
