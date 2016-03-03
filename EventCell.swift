@@ -22,6 +22,9 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var bkgTrans: UIImageView!
     @IBOutlet weak var ballIcon: UILabel!
     @IBOutlet weak var TimerLabel: UILabel!
+    var myHour = 0
+    var myMin = 0
+    var mySec = 0
     
     
     var isDetail = false

@@ -13,18 +13,20 @@ import UIKit
 
 class DetailCell: UITableViewCell {
     
-    var myDaysLeft = 0
-    var myHoursLeft = 0
+    var myHour = 0
+    var myMin = 0
+    var mySec = 0
+    
     var deleteMeAndMyEvent = false
     
     @IBAction func deletePressed(sender: UIButton) {
         self.deleteMeAndMyEvent = true;
     }
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization code //
+        // Initialize the daysandHours // Maybe in tableview //
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

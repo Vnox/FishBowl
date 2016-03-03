@@ -12,7 +12,7 @@ class Event : NSObject{
     
     var name = ""
     var dueDate = NSDate()
-    var timeRemaining = 0.00
+    var timeRemaining = 0.0
     var priority = false
     var calculatedResult = 0.00
     var showedDetail = false

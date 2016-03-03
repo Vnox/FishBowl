@@ -75,13 +75,6 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
             })
         
         
-        
-        /* Refresh control configurings */
-//        myRefreshControl = UIRefreshControl()
-//        self.tableView.addSubview(myRefreshControl)
-//        self.myRefreshControl.addTarget(self, action: "addEvents:", forControlEvents: UIControlEvents.ValueChanged)
-        
-        
         }
     
     func addEvents(sender: AnyObject){
@@ -201,6 +194,15 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
             
             let decell = tableView.dequeueReusableCellWithIdentifier(decellIdentifier, forIndexPath: indexPath)
                 as! DetailCell
+            
+            // Configure it //
+            
+            let beforeCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: indexPath.row - 1, inSection: indexPath.section)) as! EventCell
+            
+            decell.myHour = beforeCell.myHour
+            decell.myMin = beforeCell.myMin
+            decell.mySec = beforeCell.mySec
+            
             return decell
             
         }else{
@@ -239,6 +241,13 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         
         // If detail cell, then response nothing
         if(detailRow.contains(indexPath.row)){
+            
+            // Print Testing //
+            
+            let selectedCell:DetailCell = tableView.cellForRowAtIndexPath(indexPath)! as! DetailCell
+            NSLog(String(selectedCell.myHour))
+            
+            
             return
         }
         
