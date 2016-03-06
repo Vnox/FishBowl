@@ -24,8 +24,9 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     
     var events = [Event]()
     var eventData = [NSManagedObject]()
-    let nonurgentImg = UIImage(named: "urgentIndiGr")
-    let urgentImg = UIImage(named: "urgentIndi")
+    let investImage = UIImage(named: "urgentIndiGr")
+    let haveFunImage = UIImage(named: "urgentIndi")
+    let staticTimeImage = UIImage(named: "IndicatorBlue")
 
     var detailRow = [Int]()
     var managedContext: NSManagedObjectContext!
@@ -131,7 +132,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
             for var i=0; i<eventData.count; i++ {
                 let tmpEvent = eventData[i]
                 // get the task name
-                let eventObj: Event = Event(name: (tmpEvent.valueForKey("name") as? String)!, timeRemaining: 4.00, priority: false)
+                let eventObj: Event = Event(name: (tmpEvent.valueForKey("name") as? String)!, timeRemaining: 4.00, tagColor: 2)
                 events.append(eventObj)
             }
             print("\(eventData)")
@@ -228,15 +229,19 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
 
             cell.showedDetail = event.showedDetail
  
-        if(event.priority){
+        if(event.tagColor == 0){
             
-            cell.urgentImg.image = nonurgentImg
+            cell.urgentImg.image = investImage
             
-        }else{
+        }else if(event.tagColor == 1){
             
-            cell.urgentImg.image = urgentImg
+            cell.urgentImg.image = haveFunImage
             
         
+        }else if(event.tagColor == 2){
+            
+            cell.urgentImg.image = staticTimeImage
+            
             }
             cell.delegate = self
             cell.toDoItem = event
@@ -266,7 +271,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         if(selectedCell.showedDetail == false){
         
             //Below are adding mew detail cell if possible
-            events.insert(Event(name: "DETAILS", timeRemaining: 0.00, priority: false), atIndex: indexPath.row + 1)
+            events.insert(Event(name: "DETAILS", timeRemaining: 0.00), atIndex: indexPath.row + 1)
             
             detailRow.insert(indexPath.row + 1, atIndex: 0)
             for(var i = 0; i < detailRow.count; i++){

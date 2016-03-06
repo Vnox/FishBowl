@@ -22,6 +22,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var bkgTrans: UIImageView!
     @IBOutlet weak var ballIcon: UILabel!
     @IBOutlet weak var TimerLabel: UILabel!
+    
     var myTimeInterval : NSTimeInterval!
     var myHour = 0
     var myMin = 0
@@ -29,11 +30,10 @@ class EventCell: UITableViewCell {
     
     
     var isDetail = false
+    var isBasicCell = false
     var showedDetail = false
     var recordState = false
-    
     var crossLabel: UILabel
-    
     var startTime = NSTimeInterval()
     var timer : NSTimer!
     

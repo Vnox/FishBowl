@@ -14,24 +14,33 @@ class Event : NSObject{
     var dueDate = NSDate()
     var timeRemaining = 0.0
     var priority = false
+    var tagColor = 3
     var calculatedResult = 0.00
     var showedDetail = false
     
-    init(name: String, timeRemaining: Double, priority: Bool) {
+    init(name: String, timeRemaining: Double) {
         
         self.name = name
         self.timeRemaining = timeRemaining
-        self.priority = priority
+        
+    }
+
+    
+    init(name: String, timeRemaining: Double, tagColor: Int) {
+        
+        self.name = name
+        self.timeRemaining = timeRemaining
+        self.tagColor = tagColor
         
     }
     
 
     
-    init(name: String, timeRemaining: Double, priority: Bool, showedDetail:Bool) {
+    init(name: String, timeRemaining: Double, tagColor: Int, showedDetail:Bool) {
         
         self.name = name
         self.timeRemaining = timeRemaining
-        self.priority = priority
+        self.tagColor = tagColor
         self.showedDetail = showedDetail
         
     }
