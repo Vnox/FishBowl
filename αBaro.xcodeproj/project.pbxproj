@@ -321,6 +321,7 @@
 		FB391EA81C83EBC9005F7DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		FB391EAA1C83EBC9005F7DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB391EB31C87EB76005F7DC1 /* LifeBaro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LifeBaro.entitlements; sourceTree = "<group>"; };
+		FB9D99111C8CF12800F0AEBA /* LifeBaro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeBaro.xcdatamodel; sourceTree = "<group>"; };
 		FDB856921181BEC075F264DA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1204,6 +1205,7 @@
 		D0CFAF2E1BCB1E4C00D10615 /* _Baro.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				FB9D99111C8CF12800F0AEBA /* LifeBaro.xcdatamodel */,
 				D0CFAF2F1BCB1E4C00D10615 /* _Baro.xcdatamodel */,
 			);
 			currentVersion = D0CFAF2F1BCB1E4C00D10615 /* _Baro.xcdatamodel */;

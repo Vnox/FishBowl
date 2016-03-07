@@ -36,6 +36,19 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         
         self.loadEvents()
         
+        // if first launch
+        if(eventData.count == 0){
+            // save the fixed event
+            self.saveFixedEvent("Fixed time", time: 8.0)
+            self.saveFixedEvent("Entertainment", time: 0.0)
+        }
+        
+        // load the event list
+        self.loadToEventList()
+        
+        //let fixedEvent = Event(name: "Fixed Event", timeRemaining: 8.0, tagColor: 2, showedDetail: false)
+        //events.append(fixedEvent)
+        
         // get todayWidget shared info path
         //let sharedDefaults = NSUserDefaults(suiteName: "group.com.ethereo.lifebaro")
         
@@ -115,6 +128,30 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         
     }
     
+    func saveFixedEvent(name:String, time: Double){
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let entity =  NSEntityDescription.entityForName("Entity",inManagedObjectContext:managedContext!)
+        
+        let person = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext: managedContext)
+        
+        person.setValue(name, forKey: "name")
+        person.setValue(time, forKey: "calculatedResult")
+        
+        
+        do {
+            try managedContext!.save()
+            eventData.append(person)
+            print("saved!")
+            
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
     
     // load event by Ye's power
     func loadEvents() {
@@ -129,17 +166,39 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
             let results =
             try managedContext!.executeFetchRequest(fetchRequest)
             eventData = results as! [NSManagedObject]
-            for var i=0; i<eventData.count; i++ {
-                let tmpEvent = eventData[i]
-                // get the task name
-                let eventObj: Event = Event(name: (tmpEvent.valueForKey("name") as? String)!, timeRemaining: 4.00, tagColor: 2)
-                events.append(eventObj)
-            }
+//            for var i=0; i<eventData.count; i++ {
+//                let tmpEvent = eventData[i]
+//                // get the task name
+//                let eventObj: Event = Event(name: (tmpEvent.valueForKey("name") as? String)!, timeRemaining: 4.00, tagColor: 2)
+//                events.append(eventObj)
+//            }
             print("\(eventData)")
         } catch let error as NSError {
             print("could not fetch \(error), \(error.userInfo)")
         }
         
+    }
+    
+    func loadToEventList(){
+        for var i=eventData.count-1; i>=0; i-- {
+            let tmpEvent = eventData[i]
+            let eventName = tmpEvent.valueForKey("name") as! String
+            let eventTime = tmpEvent.valueForKey("calculatedResult") as! Double
+            if (eventName == "Fixed time"){
+                // set the event object
+                let eventObj = Event(name: eventName, timeRemaining: 8.0, tagColor: 2)
+                self.events.append(eventObj)
+            }
+            else if (eventName == "Entertainment"){
+                // set the event object
+                let eventObj = Event(name: eventName, timeRemaining: eventTime, tagColor: 2)
+                self.events.append(eventObj)
+            }
+            else{
+                let eventObj = Event(name: eventName, timeRemaining: eventTime, tagColor: 1)
+                self.events.append(eventObj)
+            }
+        }
     }
     
     // update the event by Ye's power

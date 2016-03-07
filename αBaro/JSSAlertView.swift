@@ -557,7 +557,7 @@ class JSSAlertView: UIViewController, UITextFieldDelegate, UITableViewDelegate {
                             if let action = self.closeAction where source == .Close {
                                 NSLog("SAVING")
                                 // !!!!! SAVE EVENTS HERE !!!!! //
-                                self.saveName(self.myTextField.text!)
+                                self.saveName(self.myTextField.text!, time: 4.0)
                                 self.insertViewController.theView.view.removeGestureRecognizer(self.tap)
                                 action()
                             }
@@ -574,7 +574,7 @@ class JSSAlertView: UIViewController, UITextFieldDelegate, UITableViewDelegate {
     }
     
     // save the name of event
-    func saveName(name: String) {
+    func saveName(name: String, time: Double) {
         //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
@@ -589,6 +589,7 @@ class JSSAlertView: UIViewController, UITextFieldDelegate, UITableViewDelegate {
         
         //3
         person.setValue(myTextField.text!, forKey: "name")
+        person.setValue(time, forKey: "calculatedResult")
 
         
         //4
