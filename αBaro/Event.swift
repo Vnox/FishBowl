@@ -14,7 +14,7 @@ class Event : NSObject{
     var dueDate = NSDate()
     var timeRemaining = 0.0
     var priority = false
-    var tagColor = 3
+    var tagColor = 2
     var calculatedResult = 0.00
     var showedDetail = false
     

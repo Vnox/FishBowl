@@ -30,11 +30,20 @@ class shareViewController: UIViewController {
     var percentage = 42
     
     // simulate model //
+    //在这里加入百分比//
+    
     var thing1 = 5
-    var thing2 = 15
-    var thing3 = 40
-    var thing4 = 70
-    var thing5 = 100
+    var thing2 = 10
+    var thing3 = 10
+    var thing4 = 45
+    var thing5 = 30
+    
+    var temp1 = 0
+    var temp2 = 0
+    var temp3 = 0
+    var temp4 = 0
+    var temp5 = 0
+    
     var p1 = 0
     var p2 = 0
     var p3 = 0
@@ -48,6 +57,17 @@ class shareViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        thing1 += thing2
+        thing2 += thing3
+        thing3 += thing4
+        thing4 += thing5
+        
+        temp1 = thing1
+        temp2 = thing2
+        temp3 = thing3
+        temp4 = thing4
+        temp5 = thing5
         
         NSLog("VDIDL")
         self.myEventsView.center.y += 400
@@ -138,11 +158,12 @@ class shareViewController: UIViewController {
 
             
             self.percentage = 100
-            thing1 = 5
-            thing2 = 15
-            thing3 = 40
-            thing4 = 70
-            thing5 = 100
+            
+            thing1 = temp1
+            thing2 = temp2
+            thing3 = temp3
+            thing4 = temp4
+            thing5 = temp5
             
             t1 = NSTimer.scheduledTimerWithTimeInterval(0.005, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
             t1.invalidate()
