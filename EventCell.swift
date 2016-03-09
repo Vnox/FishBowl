@@ -24,6 +24,8 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var TimerLabel: UILabel!
     
     var myTimeInterval : NSTimeInterval!
+    var savedTimeInterval : NSTimeInterval!
+    var startTime = NSTimeInterval()
     var myHour = 0
     var myMin = 0
     var mySec = 0
@@ -34,8 +36,9 @@ class EventCell: UITableViewCell {
     var showedDetail = false
     var recordState = false
     var crossLabel: UILabel
-    var startTime = NSTimeInterval()
     var timer : NSTimer!
+    
+    var timerStart = false
     
     //Gesture handler
     var originalCenter = CGPoint()
@@ -78,6 +81,12 @@ class EventCell: UITableViewCell {
         let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
         recognizer.delegate = self
         addGestureRecognizer(recognizer)
+        
+        myTimeInterval = NSTimeInterval(0.0)
+        if((savedTimeInterval == nil)){
+            savedTimeInterval = NSTimeInterval(0.0)
+        }
+        
 
     }
     
@@ -198,6 +207,10 @@ class EventCell: UITableViewCell {
                     self.EventName.alpha = self.recordState ? 0.0 : 1.0
                     self.urgentImg.alpha = self.recordState ? 0.0 : 1.0
                     self.ballIcon.alpha = self.recordState ? 0.0 : 1.0
+                    
+                    // TIMER STOPPED //
+                    savedTimeInterval = NSTimeInterval( myMin * 60 + mySec)
+                    timer.invalidate()
                     return
 
                 }
@@ -233,17 +246,19 @@ class EventCell: UITableViewCell {
     
     func updateTime() {
         
+        
+        
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
         //Find the difference between current time and start time.
         
-        myTimeInterval = currentTime - startTime
+        myTimeInterval = (currentTime - startTime + savedTimeInterval)
         
         //calculate the minutes in elapsed time.
         
-        let minutes = Int(myTimeInterval / 60.0)
+        myMin = Int(myTimeInterval / 60.0)
         
-        myTimeInterval = myTimeInterval - NSTimeInterval(minutes) * 60
+        myTimeInterval = myTimeInterval - NSTimeInterval(myMin) * 60
         
         //calculate the seconds in elapsed time.
         
@@ -255,17 +270,23 @@ class EventCell: UITableViewCell {
         
         let fraction = Int(myTimeInterval * 100)
 
-        
         //add the leading zero for minutes, seconds and millseconds and store them as string constants
         
-        let strMinutes = String(format: "%02d", minutes)
-        let strSeconds = String(format: "%02d", mySec)
-        //let strFraction = String(format: "%02d", fraction)
+        changeTimeLabel()
         
-        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+    }
+    
+    func changeTimeLabel() {
+        
+        let strMinutes = String(format: "%02d", myMin)
+        let strSeconds = String(format: "%02d", mySec)
+        
+        /* let strFraction = String(format: "%02d", fraction) */
+        /* concatenate minuets, seconds and milliseconds as assign it to the UILabel */
         
         TimerLabel.text = "\(strMinutes):\(strSeconds)"
-        
+
+    
     }
     
 
