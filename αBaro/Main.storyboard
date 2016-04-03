@@ -295,7 +295,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="littleFish.png" id="KPS-uU-CWI">
-                                <rect key="frame" x="197" y="311" width="39" height="27"/>
+                                <rect key="frame" x="130" y="309" width="39" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
