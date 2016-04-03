@@ -17,16 +17,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var baseImage: UIButton!
     @IBOutlet weak var percentLAbel: UILabel!
-    @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var bkgImage: UIImageView!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var monthTag: UILabel!
-    @IBOutlet weak var dayTag: UILabel!
     @IBOutlet weak var ringImage: UIImageView!
     @IBOutlet weak var Dimmer: UIImageView!
     @IBOutlet weak var NiceTalk: UILabel!
-    @IBOutlet weak var cloud1: UIImageView!
-    @IBOutlet weak var cloud2: UIImageView!
     @IBOutlet weak var R2Image: UIButton!
     
     
@@ -91,10 +85,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
 
         //NSLog(tempString)
         
-        self.timeLabel.center.y -= 50
-        self.monthTag.center.y -= 50
-        self.dayTag.center.y -= 50
-        self.greetingLabel.center.y -= 50
         
         self.ringImage.center.y += 30
         self.baseImage.center.y += 30
@@ -104,9 +94,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
         self.R2Image.center.y += 30
         self.R2Image.alpha = 0.0
-        
-        self.cloud1.alpha -= 1.0
-        self.cloud2.alpha -= 1.0
+
         
         
         //print(event.count)
@@ -125,10 +113,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
         UIView.animateWithDuration(1.0, delay: 1.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [] , animations: {
             
-            self.timeLabel.center.y += 50
-            self.monthTag.center.y += 50
-            self.dayTag.center.y += 50
-            self.greetingLabel.center.y += 50
             
             self.ringImage.center.y -= 30
             self.baseImage.center.y -= 30
@@ -177,8 +161,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         
-        self.cloud1.center.y -= 15
-        self.cloud2.center.x -= 10
+
         
         var adelay = 0.0
         
@@ -193,25 +176,15 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             self.arrowImage.alpha -= 1.0
             }, completion:nil )
         
-        UIView.animateWithDuration(1.5, delay: adelay, options: [ .CurveEaseIn, ], animations: {
-            self.cloud1.alpha += 1.0
-            self.cloud2.alpha += 1.0
-            }, completion: nil)
-        
-        UIView.animateWithDuration(2.0, delay: adelay, options: [ .CurveEaseIn, .Autoreverse, .Repeat ], animations: {
-            self.cloud1.center.y += 15
-            self.cloud2.center.x += 10
-            }, completion: nil)
-        
+
     }
     
     override func viewDidDisappear(animated: Bool) {
-        self.cloud1.alpha -= 1.0
-        self.cloud2.alpha -= 1.0
+
     }
     
     func updatePercent() {
-            self.percentLAbel.text = String.localizedStringWithFormat("%d%%", myPercent)
+            self.percentLAbel.text = String.localizedStringWithFormat("%d", myPercent)
         if(self.myPercent < self.percentage){
             myPercent++}
         progressIndicatorView.progress = CGFloat(Double(myPercent)/100.0)
@@ -231,38 +204,38 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         let minutes = components.minute
         let day = components.day
         let month = components.month
+//        
+//        if(minutes <= 9){
+//            self.timeLabel.text = String.localizedStringWithFormat("It's %d:0%d, ",hour,minutes)
+//        }else{
+//            self.timeLabel.text = String.localizedStringWithFormat("It's %d:%d, ",hour,minutes)
+//        }
+//        
+//        if( hour > 21 && hour <= 24 ){
+//            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" Good night : )")
+//        }
+//        if( hour > 13 && hour <= 17 ){
+//            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" Have a wonderful afternoon.")
+//        }
+//        if( hour > 17 && hour <= 21 ){
+//            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" Good evening.")
+//        }
+//        if( hour > 0 && hour <= 5){
+//            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" I'm so sleepy right now.")
+//        }
+//        if( hour > 5 && hour <= 9){
+//            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" Good morning, Yay!")
+//        }
+//        if( hour > 9 && hour <= 13){
+//            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" Boring work, huh?")
+//        }
+//        
+//        
+//    
         
-        if(minutes <= 9){
-            self.timeLabel.text = String.localizedStringWithFormat("It's %d:0%d, ",hour,minutes)
-        }else{
-            self.timeLabel.text = String.localizedStringWithFormat("It's %d:%d, ",hour,minutes)
-        }
-        
-        if( hour > 21 && hour <= 24 ){
-            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" Good night : )")
-        }
-        if( hour > 13 && hour <= 17 ){
-            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" Have a wonderful afternoon.")
-        }
-        if( hour > 17 && hour <= 21 ){
-            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" Good evening.")
-        }
-        if( hour > 0 && hour <= 5){
-            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" I'm so sleepy right now.")
-        }
-        if( hour > 5 && hour <= 9){
-            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" Good morning, Yay!")
-        }
-        if( hour > 9 && hour <= 13){
-            self.timeLabel.text = self.timeLabel.text!.stringByAppendingString(" Boring work, huh?")
-        }
-        
-        
-    
-        
-        self.monthTag.text = String.localizedStringWithFormat(exchangeMonth(inDay: month))
-        self.dayTag.text = String.localizedStringWithFormat("%dth",day)
-
+//        self.monthTag.text = String.localizedStringWithFormat(exchangeMonth(inDay: month))
+//        self.dayTag.text = String.localizedStringWithFormat("%dth",day)
+//
 
     }
     
@@ -324,8 +297,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             self.baseImage.transform = CGAffineTransformMakeScale(-1, 1)
             self.NiceTalk.transform = CGAffineTransformMakeScale(1, 1)
             self.NiceTalk.alpha += 1.0
-            self.cloud1.alpha -= 1.0
-            self.cloud2.alpha -= 1.0
             }, completion:nil )
             
             flipped = true
@@ -346,8 +317,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                 self.baseImage.transform = CGAffineTransformMakeScale(1, 1)
                 self.NiceTalk.transform = CGAffineTransformMakeScale(-1, 1)
                 self.NiceTalk.alpha -= 1.0
-                self.cloud1.alpha += 1.0
-                self.cloud2.alpha += 1.0
                 }, completion:nil )
             
             flipped = false
