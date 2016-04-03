@@ -24,7 +24,11 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var TimerLabel: UILabel!
     
     var myTimeInterval : NSTimeInterval!
+    
+    ///// Below is important /////
     var savedTimeInterval : NSTimeInterval!
+    /////    ^^^^^^^^^^^    /////
+    
     var startTime = NSTimeInterval()
     var myHour = 0
     var myMin = 0
@@ -39,6 +43,8 @@ class EventCell: UITableViewCell {
     var timer : NSTimer!
     
     var timerStart = false
+    
+    
     
     //Gesture handler
     var originalCenter = CGPoint()
@@ -209,7 +215,7 @@ class EventCell: UITableViewCell {
                     self.ballIcon.alpha = self.recordState ? 0.0 : 1.0
                     
                     // TIMER STOPPED //
-                    savedTimeInterval = NSTimeInterval( myMin * 60 + mySec)
+                    savedTimeInterval = NSTimeInterval( myMin * 60 + mySec )
                     timer.invalidate()
                     return
 
@@ -268,7 +274,7 @@ class EventCell: UITableViewCell {
         
         //find out the fraction of milliseconds to be displayed.
         
-        let fraction = Int(myTimeInterval * 100)
+        //let fraction = Int(myTimeInterval * 100)
 
         //add the leading zero for minutes, seconds and millseconds and store them as string constants
         
@@ -285,7 +291,6 @@ class EventCell: UITableViewCell {
         /* concatenate minuets, seconds and milliseconds as assign it to the UILabel */
         
         TimerLabel.text = "\(strMinutes):\(strSeconds)"
-
     
     }
     

@@ -313,7 +313,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        // If detail cell, then response nothing
+        /* If detail cell, then response nothing */
         if(detailRow.contains(indexPath.row)){
             
             // Print Testing //
@@ -329,7 +329,7 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         
         if(selectedCell.showedDetail == false){
         
-            //Below are adding mew detail cell if possible
+            /* Below are adding mew detail cell if possible */
             events.insert(Event(name: "DETAILS", timeRemaining: 0.00), atIndex: indexPath.row + 1)
             
             detailRow.insert(indexPath.row + 1, atIndex: 0)
@@ -346,7 +346,8 @@ class TableViewController: UITableViewController, TableViewCellDelegate, UITextF
         }
         
         else{
-            // showed detail == true and and is showinhg details //
+            /* showed detail == true and and is showing details */
+            
             
 
             let toremove = detailRow.indexOf(indexPath.row + 1)
