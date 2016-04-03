@@ -79,9 +79,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.bkgImage.center.y -= 2
         
         //Set baseImage
-        let baseImageString = String(self.percentage / 10 * 10)
-        var tempString = "level"
-        tempString = tempString.stringByAppendingString(baseImageString)
+        //let baseImageString = String(self.percentage / 10 * 10)
+        var tempString = "TankBase"
+        //tempString = String("TankBase")
 
         //NSLog(tempString)
         
@@ -313,7 +313,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                 }, completion:nil )
             
             UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9 , options: [ .CurveEaseInOut ] , animations: {
-                self.baseImage.setBackgroundImage(UIImage(named: "level40"), forState: .Normal)
+                self.baseImage.setBackgroundImage(UIImage(named: "TankBase"), forState: .Normal)
                 self.baseImage.transform = CGAffineTransformMakeScale(1, 1)
                 self.NiceTalk.transform = CGAffineTransformMakeScale(-1, 1)
                 self.NiceTalk.alpha -= 1.0

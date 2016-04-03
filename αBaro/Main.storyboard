@@ -246,7 +246,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Guy-df-8tj">
                                 <rect key="frame" x="58" y="113" width="258" height="258"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="level40.png"/>
+                                <state key="normal" backgroundImage="TankBase.png"/>
                                 <state key="highlighted">
                                     <color key="titleShadowColor" red="0.1484375" green="0.1484375" blue="0.1484375" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -254,6 +254,13 @@
                                     <action selector="BallHited:" destination="pnE-0b-r0V" eventType="touchUpInside" id="v3i-VG-dJf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sit down and enjoy your nice cup of coffee" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9wL-EY-N4c">
+                                <rect key="frame" x="63" y="178" width="250" height="146"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Xkh-2T-hf7">
                                 <rect key="frame" x="335" y="628" width="30" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -287,13 +294,10 @@
                                 <color key="textColor" red="0.47058823529411764" green="0.86274509803921573" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sit down and enjoy your nice cup of coffee" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9wL-EY-N4c">
-                                <rect key="frame" x="63" y="178" width="250" height="146"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="littleFish.png" id="KPS-uU-CWI">
+                                <rect key="frame" x="205" y="311" width="39" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="0.82200969827586212" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -1092,6 +1096,7 @@
         <image name="RingBlue.png" width="1620" height="1620"/>
         <image name="SETTINGS.png" width="86" height="82"/>
         <image name="SHARE.png" width="94" height="80"/>
+        <image name="TankBase.png" width="1038" height="1038"/>
         <image name="arrow.png" width="49" height="25"/>
         <image name="barbottom.png" width="1809" height="279"/>
         <image name="baritem.png" width="1809" height="279"/>
@@ -1100,7 +1105,7 @@
         <image name="drop button.png" width="276" height="278"/>
         <image name="indicatorGreen.png" width="30" height="258"/>
         <image name="introButton.png" width="267" height="61"/>
-        <image name="level40.png" width="1215" height="1215"/>
+        <image name="littleFish.png" width="138" height="93"/>
         <image name="littleIcon.png" width="126" height="120"/>
         <image name="settingsbar.png" width="1809" height="279"/>
     </resources>

@@ -61,6 +61,9 @@
 		7A70730F1C3CAD8600B9E9E3 /* checkmark-circled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A70730C1C3CAD8600B9E9E3 /* checkmark-circled.png */; };
 		7A7073101C3CAD8600B9E9E3 /* backspace.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A70730D1C3CAD8600B9E9E3 /* backspace.png */; };
 		7A7073141C3CBD5A00B9E9E3 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7073131C3CBD5A00B9E9E3 /* 0.png */; };
+		7A70E3421CB1D9280060C3FB /* TankBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A70E3411CB1D9280060C3FB /* TankBack.png */; };
+		7A70E3441CB1DA590060C3FB /* TankBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A70E3431CB1DA590060C3FB /* TankBase.png */; };
+		7A70E3461CB1DBD30060C3FB /* littleFish.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A70E3451CB1DBD30060C3FB /* littleFish.png */; };
 		7A7FF6681C0A5223008C03FB /* level0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF65E1C0A5223008C03FB /* level0.png */; };
 		7A7FF6691C0A5223008C03FB /* level10.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF65F1C0A5223008C03FB /* level10.png */; };
 		7A7FF66A1C0A5223008C03FB /* level20.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7FF6601C0A5223008C03FB /* level20.png */; };
@@ -244,6 +247,9 @@
 		7A70730C1C3CAD8600B9E9E3 /* checkmark-circled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-circled.png"; sourceTree = "<group>"; };
 		7A70730D1C3CAD8600B9E9E3 /* backspace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backspace.png; sourceTree = "<group>"; };
 		7A7073131C3CBD5A00B9E9E3 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		7A70E3411CB1D9280060C3FB /* TankBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TankBack.png; sourceTree = "<group>"; };
+		7A70E3431CB1DA590060C3FB /* TankBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TankBase.png; sourceTree = "<group>"; };
+		7A70E3451CB1DBD30060C3FB /* littleFish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = littleFish.png; sourceTree = "<group>"; };
 		7A7FF65E1C0A5223008C03FB /* level0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level0.png; sourceTree = "<group>"; };
 		7A7FF65F1C0A5223008C03FB /* level10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level10.png; sourceTree = "<group>"; };
 		7A7FF6601C0A5223008C03FB /* level20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level20.png; sourceTree = "<group>"; };
@@ -433,9 +439,11 @@
 				7A0381221C1F6B5A00B8C9E7 /* CELL1.png */,
 				7A5C12531C3361B6007688B0 /* LCH.png */,
 				7A5C12551C33775B007688B0 /* cloud2.png */,
+				7A70E3451CB1DBD30060C3FB /* littleFish.png */,
 				7ADE43BC1C7EE5AA00B085EE /* pullIndicator.png */,
 				7A46E05A1C72846000C5705A /* RecingBkg.png */,
 				7A46E0541C6E809F00C5705A /* CellBkg.png */,
+				7A70E3431CB1DA590060C3FB /* TankBase.png */,
 				7A7072ED1C3C611A00B9E9E3 /* DetailBkg.png */,
 				7A46E0581C72683800C5705A /* PauseBkg.png */,
 				7ACF23651C6D8CC6008F9826 /* GIFTCELL.png */,
@@ -455,6 +463,7 @@
 				7A70730D1C3CAD8600B9E9E3 /* backspace.png */,
 				7A472BBC1C20E184005CAF1D /* urgentIndi.png */,
 				7A7072F91C3C89B300B9E9E3 /* 3.png */,
+				7A70E3411CB1D9280060C3FB /* TankBack.png */,
 				7A7072FF1C3CABD100B9E9E3 /* 4.png */,
 				7A7073131C3CBD5A00B9E9E3 /* 0.png */,
 				7A7073001C3CABD100B9E9E3 /* 5.png */,
@@ -732,6 +741,7 @@
 				D0E11C221BFAFE0200DDA208 /* SETTINGS.png in Resources */,
 				D09281911BE2FA160050819E /* popup.png in Resources */,
 				7A7073051C3CABD100B9E9E3 /* 4.png in Resources */,
+				7A70E3461CB1DBD30060C3FB /* littleFish.png in Resources */,
 				7A472BCD1C220F3D005CAF1D /* barbottom.png in Resources */,
 				7ADE43BD1C7EE5AA00B085EE /* pullIndicator.png in Resources */,
 				7A5C12501C335904007688B0 /* DefaultBase.png in Resources */,
@@ -770,11 +780,13 @@
 				D09281861BE2FA160050819E /* BaroIcon.png in Resources */,
 				7A6EB4771C8113BA006A406E /* pulltorefresharrow.png in Resources */,
 				7A7FF66D1C0A5223008C03FB /* level50.png in Resources */,
+				7A70E3441CB1DA590060C3FB /* TankBase.png in Resources */,
 				D092818D1BE2FA160050819E /* introButton.png in Resources */,
 				7A5C12541C3361B6007688B0 /* LCH.png in Resources */,
 				7A5C124C1C334C46007688B0 /* BarBlue.png in Resources */,
 				7A7073061C3CABD100B9E9E3 /* 5.png in Resources */,
 				7A472BBD1C20E184005CAF1D /* urgentIndi.png in Resources */,
+				7A70E3421CB1D9280060C3FB /* TankBack.png in Resources */,
 				D0E11C1C1BFAED6A00DDA208 /* drop button.png in Resources */,
 				D0CFAF371BCB1E4C00D10615 /* Images.xcassets in Resources */,
 				7A7072F01C3C625E00B9E9E3 /* DetailBox.png in Resources */,
