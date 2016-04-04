@@ -18,7 +18,7 @@ class CircleTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
-        //1
+        //1 1
         self.transitionContext = transitionContext
         
         //2
