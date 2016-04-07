@@ -34,22 +34,16 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     var event = [NSManagedObject]()
     
     var myPercent = 0
-    var percentage = 42
+    var percentage = 4
     var animated = false
     
     // Animation related stuff
-    let progressIndicatorView = leonLoaderView(frame: CGRectZero)
-    
+       
 
     
     
     override func viewDidLoad() {
         
-        progressIndicatorView.frame = CGRectMake(0, 0, 100, 100)
-        //self.bkgImage.addSubview(progressIndicatorView)
-        
-        progressIndicatorView.center.y = self.R2Image.center.y
-        progressIndicatorView.center.x = self.view.center.x
         
         
         //progressIndicatorView.autoresizingMask = self.view.FlexibleWidth | .FlexibleHeight
@@ -69,8 +63,14 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
         super.viewDidLoad()
         
+        // test coredata works
+        UpdateDays(percentage)
+        fetchDays()
         
+        percentage++
         
+        UpdateDays(percentage)
+        fetchDays()
 
         
         // bkg calibrate
@@ -187,7 +187,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             self.percentLAbel.text = String.localizedStringWithFormat("%d", myPercent)
         if(self.myPercent < self.percentage){
             myPercent++}
-        progressIndicatorView.progress = CGFloat(Double(myPercent)/100.0)
+        //progressIndicatorView.progress = CGFloat(Double(myPercent)/100.0)
     }
     
 
@@ -339,7 +339,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
 
 
     
-    func saveName(name: String) {
+    func UpdateDays(continueDays: Int) {
         //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
@@ -347,25 +347,44 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         let managedContext = appDelegate.managedObjectContext
         
         //2
-        let entity =  NSEntityDescription.entityForName("Entity",inManagedObjectContext:managedContext!)
+        let entity =  NSEntityDescription.entityForName("Day",inManagedObjectContext:managedContext!)
         
-        let person = NSManagedObject(entity: entity!,
+        let day = NSManagedObject(entity: entity!,
             insertIntoManagedObjectContext: managedContext)
         
         //3
-        person.setValue(name, forKey: "name")
+        day.setValue(continueDays, forKey: "continueDays")
         
         //4
         do {
             try managedContext!.save()
             print("saved!")
             //5
-            event.append(person)
+            event.append(day)
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
     
+    func fetchDays(){
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "Day")
+        
+        //3
+        do {
+            let results =
+            try managedContext!.executeFetchRequest(fetchRequest)
+            print(results)
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
     
     // @IBAction func shareButton
     

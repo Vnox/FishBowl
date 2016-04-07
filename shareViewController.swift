@@ -7,250 +7,111 @@
 //
 
 import UIKit
+import Charts
 
 class shareViewController: UIViewController {
     
     @IBOutlet weak var needLabel: UILabel!
     @IBOutlet weak var hourLabel: UILabel!
-    @IBOutlet weak var myEventsView: UIView!
-    @IBOutlet weak var percentDisplayButton: UIButton!
+  
     @IBOutlet weak var myButton: UIButton!
     
-    var pressedIt = false
-
-    let progressIndicatorView = leonLoaderView(frame: CGRectZero)
-    let colorCircle1 = leonLoaderView(frame: CGRectZero)
-    let colorCircle2 = leonLoaderView(frame: CGRectZero)
-    let colorCircle3 = leonLoaderView(frame: CGRectZero)
-    let colorCircle4 = leonLoaderView(frame: CGRectZero)
-    let colorCircle5 = leonLoaderView(frame: CGRectZero)
-    let greyCircle = leonLoaderView(frame: CGRectZero)
-    
-    var myPercent = 0
-    var percentage = 42
+    @IBOutlet weak var statsView: LineChartView!
+   
     
     // simulate model //
     //在这里加入百分比//
     
-    var thing1 = 5
-    var thing2 = 10
-    var thing3 = 10
-    var thing4 = 45
-    var thing5 = 30
-    
-    var temp1 = 0
-    var temp2 = 0
-    var temp3 = 0
-    var temp4 = 0
-    var temp5 = 0
-    
-    var p1 = 0
-    var p2 = 0
-    var p3 = 0
-    var p4 = 0
-    var p5 = 0
-    
-    var t1 : NSTimer!
-    var t2 : NSTimer!
-    var t3 : NSTimer!
-    var t4 : NSTimer!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        thing1 += thing2
-        thing2 += thing3
-        thing3 += thing4
-        thing4 += thing5
-        
-        temp1 = thing1
-        temp2 = thing2
-        temp3 = thing3
-        temp4 = thing4
-        temp5 = thing5
-        
-        NSLog("VDIDL")
-        self.myEventsView.center.y += 400
-        self.percentDisplayButton.center.x = self.view.center.x
-        self.displayLabel.userInteractionEnabled = false
+//        let months = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8", "Day 9", "Day 10", "Day 11", "Day 12", "Day 13", "Day 14", "Day 15", "Day 16", "Day 17", "Day 18", "Day 19", "Day 20", "Day 21"]
+//        let unitsSold = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0,]
         
         
-        colorCircle1.center = self.percentDisplayButton.center
-        colorCircle2.center = self.percentDisplayButton.center
-        colorCircle3.center = self.percentDisplayButton.center
-        colorCircle4.center = self.percentDisplayButton.center
-        colorCircle5.center = self.percentDisplayButton.center
-        greyCircle.center = self.percentDisplayButton.center
+        let months = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"]
+        let unitsSold = [1.0, 2.0, 3.0, 4.0, 5.0]
         
-        colorCircle1.circlePathLayer.strokeColor = UIColor.redColor().CGColor
-        colorCircle2.circlePathLayer.strokeColor = UIColor.orangeColor().CGColor
-        colorCircle3.circlePathLayer.strokeColor = UIColor.yellowColor().CGColor
-        colorCircle4.circlePathLayer.strokeColor = UIColor.greenColor().CGColor
-        colorCircle5.circlePathLayer.strokeColor = UIColor.cyanColor().CGColor
-        greyCircle.circlePathLayer.strokeColor = UIColor.blackColor().CGColor
+        setChart(months, values: unitsSold)
+
+    }
+    
+    func setChart(dataPoints: [String], values: [Double]) {
         
-        colorCircle1.circlePathLayer.lineWidth = 20
-        colorCircle2.circlePathLayer.lineWidth = 20
-        colorCircle3.circlePathLayer.lineWidth = 20
-        colorCircle4.circlePathLayer.lineWidth = 20
-        colorCircle5.circlePathLayer.lineWidth = 20
-        greyCircle.circlePathLayer.lineWidth = 18
+        var dataEntries: [ChartDataEntry] = []
         
-        colorCircle1.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
-        colorCircle2.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
-        colorCircle3.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
-        colorCircle4.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
-        colorCircle5.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
-        
-        progressIndicatorView.frame = CGRectMake(150, 190, 100, 100)
-        
-        self.view.insertSubview(greyCircle, atIndex: 1)
-        self.view.insertSubview(progressIndicatorView, aboveSubview: greyCircle)
-        self.view.insertSubview(colorCircle5, aboveSubview: progressIndicatorView)
-        self.view.insertSubview(colorCircle4, aboveSubview: colorCircle5)
-        self.view.insertSubview(colorCircle3, aboveSubview: colorCircle4)
-        self.view.insertSubview(colorCircle2, aboveSubview: colorCircle3)
-        self.view.insertSubview(colorCircle1, aboveSubview: colorCircle2)
-       
-        
-        progressIndicatorView.center.x = self.view.center.x
-        progressIndicatorView.center.y = self.percentDisplayButton.center.y
-        progressIndicatorView.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
-        
-        greyCircle.progress = 1
-        greyCircle.alpha = 0.25
-        
-        displayLabel.center.x = self.view.center.x
-        displayLabel.center.y = self.percentDisplayButton.center.y
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
         
         
-        self.view.layer.cornerRadius = 7
-        self.view.clipsToBounds = true
+        var colors: [UIColor] = []
         
-        NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
+//        for i in 0..<dataPoints.count {
+//            let red = Double(arc4random_uniform(256))
+//            let green = Double(arc4random_uniform(256))
+//            let blue = Double(arc4random_uniform(256))
+//            
+//            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+//            colors.append(color)
+//        }
+        
+//        pieChartDataSet.colors = colors
+//        
+    
+        
+        
+        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
+        lineChartDataSet.setColor(UIColor.whiteColor())
+        lineChartDataSet.lineWidth = 3
+        lineChartDataSet.valueTextColor = UIColor.whiteColor()
+        //lineChartDataSet.drawCirclesEnabled = false
+        lineChartDataSet.drawCircleHoleEnabled = false
+        lineChartDataSet.circleColors = [UIColor.whiteColor()]
+        
+        let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
         
         
         
-        // Do any additional setup after loading the view.
+        statsView.backgroundColor = UIColor(red: 34, green: 53, blue: 95, alpha: 0.0)
+        statsView.gridBackgroundColor = UIColor(red: 34, green: 53, blue: 95, alpha: 0.0)
+        statsView.borderColor = UIColor(red: 34, green: 53, blue: 95, alpha: 0.0)
+        
+        statsView.xAxis.gridAntialiasEnabled = false
+        statsView.descriptionTextColor = UIColor.whiteColor()
+        statsView.infoTextColor = UIColor.whiteColor()
+        //statsView.leftAxis.zeroLineColor = UIColor.whiteColor()
+        //statsView.leftAxis.axisLineColor = UIColor.whiteColor()
+        statsView.xAxis.labelTextColor = UIColor.whiteColor()
+        //statsView.leftAxis.labelTextColor = UIColor.whiteColor()
+        statsView.legend.textColor = UIColor.whiteColor()
+        
+        statsView.leftAxis.drawLabelsEnabled = false
+        statsView.rightAxis.drawLabelsEnabled = false
+        statsView.leftAxis.drawAxisLineEnabled = false
+        statsView.rightAxis.drawAxisLineEnabled = false
+        
+        
+        statsView.xAxis.drawLabelsEnabled = false
+        statsView.xAxis.drawAxisLineEnabled = false
+        statsView.leftAxis.drawGridLinesEnabled = false
+        statsView.rightAxis.drawGridLinesEnabled = false
+        statsView.xAxis.drawGridLinesEnabled = false
+
+        
+        statsView.data = lineChartData
+        
     }
 
     
     
-    @IBOutlet weak var displayLabel: UILabel!
     @IBAction func backTouched(sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
     }
-    
-    @IBAction func displayTouched(sender: UIButton) {
-        if(self.pressedIt == false){
-            
-            if(t2 != nil){
-                t2.invalidate()
-            }
-            
-            
-            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [] , animations: {
-                self.myEventsView.center.y -= 400
-                self.needLabel.center.y += 400
-                self.hourLabel.center.y += 400
-                self.myButton.center.y += 400
-                }, completion: nil)
-
-            
-            self.percentage = 100
-            
-            thing1 = temp1
-            thing2 = temp2
-            thing3 = temp3
-            thing4 = temp4
-            thing5 = temp5
-            
-            t1 = NSTimer.scheduledTimerWithTimeInterval(0.005, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
-            t1.invalidate()
-            
-            t2 = NSTimer.scheduledTimerWithTimeInterval(0.005, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
-            
-            
-            self.pressedIt = true
-            
-            return
-        }else{
-            
-            if(t2 != nil){
-                t2.invalidate()
-            }
-            
-            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [] , animations: {
-                self.myEventsView.center.y += 400
-                self.needLabel.center.y -= 400
-                self.hourLabel.center.y -= 400
-                self.myButton.center.y -= 400
-                }, completion: nil)
-            
-            self.percentage = 42
-            thing1 = 0
-            thing2 = 0
-            thing3 = 0
-            thing4 = 0
-            thing5 = 0
-            
-            t1 = NSTimer.scheduledTimerWithTimeInterval(0.005, target: self, selector: Selector("updatePercent"), userInfo: nil, repeats: true)
-            t1.invalidate()
-            
-            t2 = NSTimer.scheduledTimerWithTimeInterval(0.005, target: self, selector: Selector("updateSections"), userInfo: nil, repeats: true)
-            
-            
-            self.pressedIt = false
-            return
-
-        
-        
-        }
-        
-        
-    }
-    
-   
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
-    func updatePercent() {
-        
-        self.displayLabel.text = String.localizedStringWithFormat("%d%%", myPercent)
-        if(self.myPercent < self.percentage){
-            myPercent++}else if(self.myPercent > self.percentage){
-            myPercent--
-        }
-        progressIndicatorView.progress = CGFloat(Double(myPercent)/100.0)
-    }
-    
-    func updateSections() {
-        
-        
-        if(self.p1 < self.thing1){p1++}else if(self.p1 > self.thing1){p1--}
-        colorCircle1.progress = CGFloat(Double(p1)/100.0)
-        
-        if(self.p2 < self.thing2){p2++}else if(self.p2 > self.thing2){p2--}
-        colorCircle2.progress = CGFloat(Double(p2)/100.0)
-        
-        if(self.p3 < self.thing3){p3++}else if(self.p3 > self.thing3){p3--}
-        colorCircle3.progress = CGFloat(Double(p3)/100.0)
-        
-        if(self.p4 < self.thing4){p4++}else if(self.p4 > self.thing4){p4--}
-        colorCircle4.progress = CGFloat(Double(p4)/100.0)
-        
-        if(self.p5 < self.thing5){p5++}else if(self.p5 > self.thing5){p5--}
-        colorCircle5.progress = CGFloat(Double(p5)/100.0)
-    
-    
-    }
-
+ 
     
 
     

@@ -1,5 +1,3 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+pod 'MonkeyKing'
+pod 'Charts'
 use_frameworks!
-
-pod 'MonkeyKing', '~> 0.9.1'
